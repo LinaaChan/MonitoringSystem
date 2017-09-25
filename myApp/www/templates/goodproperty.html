@@ -1,10 +1,69 @@
 <ion-view title={{goodName}}>
 
   <ion-content>
-    <div class="list list-borderless">
-      <div class="item">
+    <div class="list card">
+      <!--<div class="item">
         <a class="button button-block button-positive">货物特性</a>
+      </div>-->
+      <div class="item item-divider">
+        货物特性
       </div>
+      <label class="item ">
+        联合国编号
+        <span class="item-note">{{detailInfo.UNnum}}</span>
+      </label>
+      <label class="item ">
+        CAS编号
+        <span class="item-note">{{detailInfo.CASNum}}</span>
+      </label>
+      <label class="item ">
+        分子式
+        <span class="item-note">{{detailInfo.formula}}</span>
+      </label>
+      <label class="item ">
+        熔点（凝固点）℃
+        <span class="item-note">{{detailInfo.meltingpoint}}</span>
+      </label>
+      <label class="item ">
+        沸点℃
+        <span class="item-note">{{detailInfo.boilingpoint}}</span>
+      </label>
+      <label class="item ">
+      闪点℃
+        <span class="item-note">{{detailInfo.flashingpoint}}</span>
+      </label>
+      <label class="item ">
+        爆炸上限、下限%
+        <span class="item-note">{{detailInfo.boom}}</span>
+      </label>
+      <label class="item ">
+        相对密度(水=1)
+        <span class="item-note">{{detailInfo.density}}</span>
+      </label>
+      <label class="item ">
+        动力粘度（25℃时）
+        <span class="item-note">{{detailInfo.viscosity}}</span>
+      </label>
+      <label class="item ">
+      饱和蒸气压 MPa(37.8)
+        <span class="item-note">{{detailInfo.pa}}</span>
+      </label>
+      <div class="item ">
+      溶解性
+        <div class="item-note item-text-wrap">{{detailInfo.dissolution}}</div>
+      </div>
+      <div class="item ">
+      毒理学特性
+        <div class="item-note item-text-wrap">{{detailInfo.toxicological}}</div>
+      </div>
+      <label class="item ">
+      健康危害
+        <div class="item-note item-text-wrap">{{detailInfo.hazard}}</span>
+      </label>
+      <label class="item ">
+        燃爆危险
+        <span class="item-note">{{detailInfo.explosiveDanger}}</span>
+      </label>
     </div>
   </ion-content>
 

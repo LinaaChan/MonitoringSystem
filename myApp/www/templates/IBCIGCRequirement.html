@@ -1,10 +1,108 @@
 <ion-view title={{goodName}}>
 
   <ion-content>
-    <div class="list list-borderless">
-      <div class="item">
-        <a class="button button-block button-positive">IBC/IGC要求</a>
+    <div class="list card">
+      <div class="item item-divider">
+        IBC/IGC要求
+        <!--<a class="button button-block button-positive">IBC/IGC要求</a>-->
       </div>
+      <label class="item ">
+        污染类别XYZ
+       <span class="item-note">{{detailInfo.XYZ}}</span>
+      </label>
+      <label class="item">
+        持久性(油类)
+       <span class="item-note">{{detailInfo.persistence}}</span>
+      </label>
+      <label class="item">
+       污染危害性货物
+       <span class="item-note">{{detailInfo.hazardousGoods}}</span>
+      </label>
+      <label class="item">
+       强制预洗要求
+       <span class="item-note">{{detailInfo.preRequirement}}</span>
+      </label>
+      <label class="item">
+      危害性
+       <span class="item-note">{{detailInfo.SP}}</span>
+      </label>
+      <label class="item">
+      IBC船型
+       <span class="item-note">{{detailInfo.IBC}}</span>
+      </label>
+      <label class="item">
+      舱型
+       <span class="item-note">{{detailInfo.TankType}}</span>
+      </label>
+      <label class="item">
+      液货舱透气
+       <span class="item-note">{{detailInfo.ventilating}}</span>
+      </label>
+      <label class="item">
+      液货舱控制环境
+       <span class="item-note">{{detailInfo.environmentCtrl}}</span>
+      </label>
+      <label class="item">
+      电气设备I'
+       <span class="item-note">{{detailInfo.I1}}</span>
+      </label>
+      <label class="item">
+        电气设备I''
+        <span class="item-note">{{detailInfo.I2}}</span>
+      </label>
+      <label class="item">
+        电气设备I''
+        <span class="item-note">{{detailInfo.I2}}</span>
+      </label>
+      <label class="item">
+        电气设备I'''
+        <span class="item-note">{{detailInfo.I3}}</span>
+      </label>
+      <label class="item">
+        IBC测量
+        <span class="item-note">{{detailInfo.IBCMeasurement}}</span>
+      </label>
+      <label class="item">
+       蒸气探测
+        <span class="item-note">{{detailInfo.streamDetection}}</span>
+      </label>
+      <label class="item">
+       防火
+        <span class="item-note">{{detailInfo.fireproofing}}</span>
+      </label>
+      <label class="item">
+      应急设备
+        <span class="item-note">{{detailInfo.emergencyEquipment}}</span>
+      </label>
+      <label class="item">
+      IBC第15/16章特殊要求
+        <span class="item-note">{{detailInfo.specialRequest}}</span>
+      </label>
+      <label class="item">
+      IGC船型
+        <span class="item-note">{{detailInfo.IGCType}}</span>
+      </label>
+      <label class="item">
+      要求的C型独立液货舱
+        <span class="item-note">{{detailInfo.independentTank}}</span>
+      </label>
+      <label class="item">
+      液货舱内蒸气空间的控制
+        <span class="item-note">{{detailInfo.streamCtrl}}</span>
+      </label>
+      <label class="item">
+      气体探测
+        <span class="item-note">{{detailInfo.gasDetection}}</span>
+      </label>
+      <label class="item">
+      IGC测量
+        <span class="item-note">{{detailInfo.IGCMeasurement}}</span>
+      </label>
+      <label class="item">
+      IGC特殊要求
+        <span class="item-note">{{detailInfo.IGCSpecialRequest}}</span>
+      </label>
+
     </div>
   </ion-content>
 
