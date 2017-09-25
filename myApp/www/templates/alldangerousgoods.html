@@ -1,0 +1,58 @@
+<ion-view title="全部危险货物">
+
+  <ion-content>
+    <div class="list list-borderless">
+      <!--<label class="item col col-33">
+        <input type="text"/>
+        <a class="button button-positive" ui-sref="alldangerousgoods">更多...</a>
+      </label>-->
+      <!--<div class="item">
+        <a class="button icon ion-search">搜索</a>
+      </div>-->
+      <div class="row" style="flex-flow: row wrap"><!--//row wrap用于自动换行-->
+        <div class="item col col-33" ng-repeat="index in data" style="text-align: center" >
+          <a class="button button-positive" ng-click="goToDetail(index.ChineseName)">{{index.ChineseName}}</a>
+        </div>
+     <!--   <div class="item col col-33">
+          <a class="button button-positive">航煤</a>
+        </div>
+        <div class="item col col-33">
+          <a class="button button-positive">丙烯腈</a>
+        </div>-->
+      </div>
+      <!--<div class="row">-->
+        <!--<div class="item col col-33">-->
+          <!--<a class="button button-positive">苯乙烯</a>-->
+        <!--</div>-->
+        <!--<div class="item col col-33">-->
+          <!--<a class="button button-positive">盐酸</a>-->
+        <!--</div>-->
+        <!--<div class="item col col-33">-->
+          <!--<a class="button button-positive">柴油</a>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<div class="row">
+        <div class="item col col-33">
+          <a class="button button-positive">更多...</a>
+        </div>
+        <div class="item col col-33">
+          <a class="button button-positive" ui-sref="alldangerousgoods">分类搜索</a>
+        </div>
+      </div>-->
+    </div>
+  </ion-content>
+  <div class="tabs tabs-icon-top tabs-positive">
+    <a class="tab-item">
+      <i class="icon ion-ios-search "></i>
+      搜索
+    </a>
+    <a class="tab-item">
+      <i class="icon ion-ios-person-outline"></i>
+      首页
+    </a>
+    <a class="tab-item">
+      <i class="icon ion-android-arrow-back"></i>
+      返回
+    </a>
+  </div>
+</ion-view>
