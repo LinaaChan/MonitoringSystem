@@ -81,3 +81,6 @@ angular.module('starter.controllers', [])
     $scope.goodName = $stateParams.goodNameoilFence;
 
   })
+  .controller('classSearchCtrl', function($scope,$http,$q,$state) {
+
+  })
