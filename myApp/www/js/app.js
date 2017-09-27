@@ -79,6 +79,11 @@ angular.module('starter', ['ionic','starter.controllers'])
         templateUrl: 'templates/classification_search.html',
         controller: 'classSearchCtrl'
       })
+   .state('searchResult', {
+        url: '/searchResult/:searchGood/:searchUN/:dork/:dangerGoodClass',
+        templateUrl: 'templates/search_result.html',
+        controller: 'searchResultCtrl'
+      })
 
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/homepage');

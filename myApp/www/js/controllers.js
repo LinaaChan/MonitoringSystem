@@ -81,6 +81,19 @@ angular.module('starter.controllers', [])
     $scope.goodName = $stateParams.goodNameoilFence;
 
   })
-  .controller('classSearchCtrl', function($scope,$http,$q,$state) {
-
+  .controller('classSearchCtrl', function($scope,$state) {
+    $scope.search_good = function () {
+     if($scope.good_name==undefined&&$scope.un_num==undefined&&$scope.dork==undefined&&$scope.class==undefined){
+       alert('搜索条件不能全为空');
+     }else{
+       $state.go('searchResult',{searchGood:$scope.good_name,searchUN:$scope.un_num,dork:$scope.dork,dangerGoodClass:$scope.class})
+     }
+    }
+  })
+  .controller('searchResultCtrl', function($scope,$stateParams) {
+    console.log($stateParams.searchGood);
+    console.log($stateParams.searchUN);
+    console.log($stateParams.dork);
+    console.log($stateParams.dangerGoodClass);
+    
   })
