@@ -1,0 +1,42 @@
+<ion-view title='应急处置支持信息'>
+
+  <ion-content>
+    <div class="list list-borderless">
+      <div class="item">
+        <a class="button button-positive">{{goodName}}</a>
+      </div>
+      <div class="item">
+        <p>以下为建议措施，请根据实际情况自行选择:</p>
+      </div>
+      <label class="item ">
+        1.灭火方法<br/>
+        <div class="item-message item-text-wrap">{{emergencyMethod.extinguishing}}</div>
+      </label>
+      <label class="item ">
+        2.围油栏<br/>
+        <div class="item-message item-text-wrap">{{emergencyMethod.oilfence}}</div>
+      </label>
+      <label class="item ">
+       3.处置人员个人防护
+        <div class="item-message item-text-wrap">{{emergencyMethod.PersonalProtection}}</div>
+      </label>
+      <label class="item ">
+       4.急救 皮肤接触
+        <div class="item-note item-text-wrap">{{emergencyMethod.skinExposure}}</div>
+      </label>
+      <label class="item ">
+       5.急救 眼睛接触
+        <div class="item-message item-text-wrap">{{emergencyMethod.eyeExposure}}</div>
+      </label>
+      <label class="item ">
+       6.急救 吸入
+        <div class="item-message item-text-wrap">{{emergencyMethod.inhalation}}</div>
+      </label>
+      <label class="item">
+       7.急救 食入<br/>
+        <div class="item-message item-text-wrap">{{emergencyMethod.ingestion}}</div>
+      </label>
+    </div>
+  </ion-content>
+
+</ion-view>

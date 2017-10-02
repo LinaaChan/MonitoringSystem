@@ -1,4 +1,4 @@
-<ion-view title="危险货物数据库">
+<ion-view title="应急处置资料库">
 
   <ion-content>
     <div class="list list-borderless">
@@ -7,32 +7,29 @@
       </div>
       <div class="row">
         <div class="item col col-33">
-          <a class="button button-positive">苯</a>
+          <a class="button button-positive" ng-click="goToDetail('苯')">苯</a>
         </div>
         <div class="item col col-33">
-          <a class="button button-positive">航煤</a>
+          <a class="button button-positive" ng-click="goToDetail('航煤')">航煤</a>
         </div>
         <div class="item col col-33">
-          <a class="button button-positive">丙烯腈</a>
-        </div>
-      </div>
-      <div class="row">
-        <div class="item col col-33">
-          <a class="button button-positive">苯乙烯</a>
-        </div>
-        <div class="item col col-33">
-          <a class="button button-positive">盐酸</a>
-        </div>
-        <div class="item col col-33">
-          <a class="button button-positive">柴油</a>
+          <a class="button button-positive" ng-click="goToDetail('丙烯腈')">丙烯腈</a>
         </div>
       </div>
       <div class="row">
         <div class="item col col-33">
-          <a class="button button-positive" ui-sref="alldangerousgoods">更多...</a>
+          <a class="button button-positive" ng-click="goToDetail('苯乙烯')">苯乙烯</a>
         </div>
         <div class="item col col-33">
-          <a class="button button-positive" ui-sref="classificationSearch">分类搜索</a>
+          <a class="button button-positive" ng-click="goToDetail('盐酸')">盐酸</a>
+        </div>
+        <div class="item col col-33">
+          <a class="button button-positive" ng-click="goToDetail('柴油')">柴油</a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="item col col-33">
+          <a class="button button-positive" ui-sref="alldangergoods_emergency">更多...</a>
         </div>
       </div>
     </div>

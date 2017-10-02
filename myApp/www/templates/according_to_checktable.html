@@ -1,0 +1,19 @@
+<ion-view title={{proName}}>
+  <ion-content>
+     <div class="list">
+       <select class="item item-body" style="margin-top:12px;width: 100%" ng-change="change(selectedItem.content)"   ng-model="selectedItem.content" >
+         <option value="" >请选择一个项目</option>
+         <option value="partA">A部分-通用-实际</option>
+         <option value="partB">B部分-通用-口头</option>
+         <option value="partC">C部分-散液-口头</option>
+         <option value="partD">D部分-液化气-口头</option>
+      </select>
+
+     </div>
+    <div class="list">
+       <label class="item item-text-wrap" ng-repeat="index in data" ng-click="goToDetail(index.proName)">
+         {{index.proName}}:{{index.proContent.proTitle}}
+       </label>
+    </div>
+  </ion-content>
+</ion-view>

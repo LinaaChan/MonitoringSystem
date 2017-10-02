@@ -1,0 +1,19 @@
+<ion-view title={{proName}}>
+  <ion-content>
+     <div class="list">
+       <label class="item">{{proName}}:{{detailData.proTitle}}</label>
+    </div>
+    <div class="item item-divider">检查要点</div>
+    <div class="item item-text-wrap" ng-repeat="index in detailData.checkPoint">
+      {{index.content}}
+    </div>
+    <div class="item item-divider">检查依据</div>
+    <div class="item item-text-wrap" ng-repeat="index in detailData.checkReason">
+      {{index.reasonName}}
+    </div>
+    <div class="item item-divider">常见缺陷</div>
+    <div class="item item-text-wrap" ng-repeat="index in detailData.weaknessItem">
+      {{index}}
+    </div>
+  </ion-content>
+</ion-view>

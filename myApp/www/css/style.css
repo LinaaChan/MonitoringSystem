@@ -1,1 +1,5 @@
 /* Empty. Add your own CSS if you like */
+.item-message {
+  float: left;
+  color: #aaa;
+  font-size: 14px; }
