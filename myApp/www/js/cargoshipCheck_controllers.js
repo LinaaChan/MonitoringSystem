@@ -52,16 +52,26 @@ angular.module('cargoship.controllers', [])
         for(var i=0;i<data.cargoshipInfo.partA.length;i++){
           if($scope.proName==data.cargoshipInfo.partA[i].proName){
             $scope.detailData = data.cargoshipInfo.partA[i].proContent;
-            console.log($scope.detailData);
           }
         }
-
-      }else if(param=='partB'){
-        $scope.data = data.cargoshipInfo.partB;
-      }else if(param=='partC'){
-        $scope.data = data.cargoshipInfo.partC;
+      }else if($scope.param=='partB'){
+        for(var i=0;i<data.cargoshipInfo.partB.length;i++){
+          if($scope.proName==data.cargoshipInfo.partB[i].proName){
+            $scope.detailData = data.cargoshipInfo.partB[i].proContent;
+          }
+        }
+      }else if($scope.param=='partC'){
+        for(var i=0;i<data.cargoshipInfo.partC.length;i++){
+          if($scope.proName==data.cargoshipInfo.partC[i].proName){
+            $scope.detailData = data.cargoshipInfo.partC[i].proContent;
+          }
+        }
       }else{
-        $scope.data = data.cargoshipInfo.partD;
+        for(var i=0;i<data.cargoshipInfo.partD.length;i++){
+          if($scope.proName==data.cargoshipInfo.partD[i].proName){
+            $scope.detailData = data.cargoshipInfo.partD[i].proContent;
+          }
+        }
       }
     }).error(function (data) {
       defer.reject(data);

@@ -1,15 +1,18 @@
 <ion-view title={{proName}}>
   <ion-content>
      <div class="list">
-       <label class="item">{{proName}}:{{detailData.proTitle}}</label>
+       <strong class="item item-text-wrap">{{proName}}:{{detailData.proTitle}}</strong>
     </div>
     <div class="item item-divider">检查要点</div>
     <div class="item item-text-wrap" ng-repeat="index in detailData.checkPoint">
-      {{index.content}}
+      {{index}}
     </div>
     <div class="item item-divider">检查依据</div>
     <div class="item item-text-wrap" ng-repeat="index in detailData.checkReason">
       {{index.reasonName}}
+        <div style="margin-left:4px; " class="item-text-wrap" ng-bind-html="index.item">
+        </div>
+
     </div>
     <div class="item item-divider">常见缺陷</div>
     <div class="item item-text-wrap" ng-repeat="index in detailData.weaknessItem">
