@@ -3,10 +3,11 @@
   <ion-content>
     <div class="list list-borderless">
       <div class="item-input-inset">
-        <label class="item-input-wrapper">
+        <form class="item-input-wrapper">
           <i class="icon ion-ios-search placeholder-icon"></i>
-          <input type="search" placeholder="请输入项目名称" ng-model="searchContent">
-        </label>
+          <input type="search" placeholder="请输入项目名称" ng-model="input.content">
+        </form>
+        <button class="button button-clear button-positive" ng-click="search()">确认</button>
       </div>
       <div class="item">
         <a class="button button-block button-positive" ui-sref="checktable">按船岸检查表</a>

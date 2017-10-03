@@ -45,6 +45,16 @@ angular.module('starter', ['ionic','starter.controllers','cargoship.controllers'
         templateUrl: 'templates/cargoship_check.html',
         controller: 'cargoshipCtrl'
       })*/
+     /* .state('cargoship_search', {
+        url: '/cargoship_search',
+        templateUrl: 'templates/cargoship_search.html',
+        controller: 'cargoshipSearchCtrl'
+      })*/
+      .state('cargoship_searchresult', {
+        url: '/cargoship_searchresult/:cargoSearchWord',
+        templateUrl: 'templates/cargoship_searchresult.html',
+        controller: 'cargoshipSearchResultCtrl'
+      })
       .state('dangerousgoods', {
         url: '/dangerousgood',
         templateUrl: 'templates/dangerousgoodsDB.html',
@@ -102,7 +112,8 @@ angular.module('starter', ['ionic','starter.controllers','cargoship.controllers'
       })
       .state('oilshipcheck', {
         url: '/oilshipcheck',
-        templateUrl: 'templates/oilship_check.html'
+        templateUrl: 'templates/oilship_check.html',
+        controller:'cargoshipSearchCtrl'
       })
       .state('checktable', {
         url: '/checktable',
@@ -113,6 +124,16 @@ angular.module('starter', ['ionic','starter.controllers','cargoship.controllers'
         url: '/checktable_detail/:proName/:param',
         templateUrl: 'templates/checktable_detail.html',
         controller:'checkTableDetailCtrl'
+      })
+      .state('emergency_search', {
+        url: '/emergency_search',
+        templateUrl: 'templates/emergency_search.html',
+        controller:'emergencySearchCtrl'
+      })
+      .state('emergency_searchresult', {
+        url: '/emergency_searchresult/:emergencySearchWord',
+        templateUrl: 'templates/emergency_searchresult.html',
+        controller:'emergencySearchResultCtrl'
       })
 
     // if none of the above states are matched, use this as the fallback
