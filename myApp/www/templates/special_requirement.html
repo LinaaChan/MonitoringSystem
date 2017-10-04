@@ -1,0 +1,28 @@
+<ion-view title={{goodName}}>
+<!--
+点击特殊要求，根据该货物所属种类（基本信息中的“种类”），
+若是油类，则详细信息页无内容，
+若是化学品船，则进入的详细信息页显示： IBC 特殊要求及操作要求
+若是液化气船，则进入的详细信息页显示： IGC 特殊要求
+-->
+  <ion-content>
+    <div class="list card">
+      <div class="item item-divider">
+        特殊要求
+      </div>
+      <label class="item ">
+        IBC 特殊要求
+        <span class="item-note"></span>
+      </label>
+      <label class="item ">
+        操作要求
+        <span class="item-note"></span>
+      </label>
+      <label class="item ">
+        IGC 特殊要求
+        <span class="item-note"></span>
+      </label>
+    </div>
+  </ion-content>
+
+</ion-view>

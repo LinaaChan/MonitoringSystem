@@ -1,0 +1,21 @@
+<ion-view title="搜索">
+
+  <ion-content>
+    <div class="list list-borderless">
+      <div class="item-input-inset">
+        <form class="item-input-wrapper">
+          <i class="icon ion-ios-search placeholder-icon"></i>
+          <input type="search" placeholder="请输入项目名称" ng-model="input.content">
+        </form>
+        <button class="button button-clear button-positive" ng-click="search()">确认</button>
+      </div>
+    </div>
+    <div class="list list-borderless">
+      <div class="row" style="flex-flow: row wrap"><!--//row wrap用于自动换行-->
+        <div class="item col col-30" ng-repeat="index in searchResult" style="text-align: center" >
+          <a class="button button-positive" ng-click="goToDetail(index)">{{index}}</a>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

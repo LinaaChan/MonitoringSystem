@@ -1,0 +1,47 @@
+<ion-view title={{goodName}}>
+<!--基本信息页面：英文名EnglishName、别名vulgo、种类classification、联合国编号UNnum、CAS编号CASNum、污染类别(有毒液体物质)、持久性（油类）、危害性（IBC）、分子式-->
+  <ion-content>
+    <div class="list card">
+      <div class="item item-divider">
+        货物特性
+      </div>
+      <label class="item ">
+        英文名
+        <span class="item-note">{{detailInfo.EnglishName}}</span>
+      </label>
+      <label class="item ">
+        别名
+        <span class="item-note">{{detailInfo.vulgo}}</span>
+      </label>
+      <label class="item ">
+        种类
+        <span class="item-note">{{detailInfo.classification}}</span>
+      </label>
+      <label class="item ">
+        联合国编号
+        <span class="item-note">{{detailInfo.property.UNnum}}</span>
+      </label>
+      <label class="item ">
+        CAS编号
+        <span class="item-note">{{detailInfo.property.CASNum}}</span>
+      </label>
+      <label class="item ">
+        污染类别(有毒液体物质)
+        <span class="item-note"></span>
+      </label>
+      <label class="item ">
+        持久性（油类）
+        <span class="item-note"></span>
+      </label>
+      <label class="item ">
+        危害性（IBC）
+        <span class="item-note"></span>
+      </label>
+      <label class="item ">
+        分子式
+        <span class="item-note"></span>
+      </label>
+    </div>
+  </ion-content>
+
+</ion-view>

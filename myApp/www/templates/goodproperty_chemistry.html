@@ -1,0 +1,35 @@
+<ion-view title={{goodName}}>
+<!--理化特性页面：熔点（凝固点）℃meltingpoint、沸点℃boilingpoint、闪点℃flashingpoint、爆炸上限 下限%boom、相对密度(水=1)density、溶解性dissolution-->
+  <ion-content>
+    <div class="list card">
+      <div class="item item-divider">
+        货物特性
+      </div>
+      <label class="item ">
+        熔点（凝固点）℃
+        <span class="item-note">{{detailInfo.meltingpoint}}</span>
+      </label>
+      <label class="item ">
+        沸点℃
+        <span class="item-note">{{detailInfo.boilingpoint}}</span>
+      </label>
+      <label class="item ">
+        闪点℃
+        <span class="item-note">{{detailInfo.flashingpoint}}</span>
+      </label>
+      <label class="item ">
+        爆炸上限 下限%
+        <span class="item-note">{{detailInfo.boom}}</span>
+      </label>
+      <label class="item ">
+        相对密度(水=1)
+        <span class="item-note">{{detailInfo.density}}</span>
+      </label>
+      <label class="item ">
+        溶解性
+        <span class="item-note">{{detailInfo.dissolution}}</span>
+      </label>
+    </div>
+  </ion-content>
+
+</ion-view>

@@ -55,27 +55,73 @@ angular.module('starter', ['ionic','starter.controllers','cargoship.controllers'
         templateUrl: 'templates/cargoship_searchresult.html',
         controller: 'cargoshipSearchResultCtrl'
       })
+      /*模块一级界面1，危险货物数据库*/
       .state('dangerousgoods', {
         url: '/dangerousgood',
         templateUrl: 'templates/dangerousgoodsDB.html',
-        //controller: 'cargoshipCtrl'
+        controller: 'dangerousgoodsDBCtrl'
       })
+      /*模块一级界面2，所有危险货物数据库*/
       .state('alldangerousgoods', {
         url: '/alldangerousgood',
         templateUrl: 'templates/alldangerousgoods.html',
         controller: 'allDangerGoodCtrl'
       })
+      /*模块二级界面,货物特性和船舶适载要求*/
       .state('dangerousgoodsdetails', {
         url: '/dangerousgoodsdetails/:goodName',
         templateUrl: 'templates/dangerousgoods_details.html',
         controller: 'dangerGoodDetailCtrl'
       })
-      .state('goodproperty', {
-        url: '/goodproperty/:goodNameForProperty',
-        templateUrl: 'templates/goodproperty.html',
-        controller: 'goodPropertyCtrl'
+      /*模块三级界面1，货物特性列表：基本信息、理化特性、作业要求*/
+      .state('goodpropertylist', {
+        url: '/goodpropertylist/:checkGoodName',
+        templateUrl: 'templates/goodproperty_list.html',
+        controller: 'goodPropertyListCtrl'
       })
-      .state('IBCIGC', {
+      /*模块三级界面2，船舶适载要求：构造要求、设备要求、适载要求*/
+      .state('cargoshiplist', {
+        url: '/cargoshiplist/:checkCargoShip',
+        templateUrl: 'templates/cargoRquirement.html',
+        controller: 'cargoShipListCtrl'
+      })
+      /*模块四级页面1,基本信息页面，参数*/
+      .state('goodproperty_basicInfo', {
+        url: '/goodproperty_basicInfo/:goodNameForBasicInfo',
+        templateUrl: 'templates/goodproperty_basicInfo.html',
+        controller: 'goodPropertyBasicInfoCtrl'
+      })
+      /*模块四级页面2,理化特性页面，参数*/
+      .state('goodproperty_chemistry', {
+        url: '/goodproperty_chemistry/:goodNameForChemistry',
+        templateUrl: 'templates/goodproperty_chemistry.html',
+        controller: 'goodPropertyChemistryCtrl'
+      })
+      /*模块四级页面3,作业要求：围油栏、船舶污染清除协议（1万总吨以下）*/
+      .state('goodproperty_workRequirement', {
+        url: '/goodproperty_workRequirement/:goodNameForRequirement',
+        templateUrl: 'templates/goodproperty_requirement.html',
+        controller: 'goodPropertyRequirementCtrl'
+      })
+      /*模块四级页面4,船舶适载要求-构造要求*/
+      .state('infrastructure_requirement', {
+        url: '/infrastructure_requirement/:goodNameInfrastructure',
+        templateUrl: 'templates/infrastructure_requirement.html',
+        controller: 'infrastructureRequirementCtrl'
+      })
+      /*模块四级页面5,船舶适载要求-设备要求*/
+      .state('equipment_requirement', {
+        url: '/equipment_requirement/:goodNameEquipment',
+        templateUrl: 'templates/equipment_requirement.html',
+        controller: 'equipmentRequirementCtrl'
+      })
+      /*模块四级页面6,船舶适载要求-特殊要求*/
+      .state('special_requirement', {
+        url: '/special_requirement/:goodNameSpecial',
+        templateUrl: 'templates/special_requirement.html',
+        controller: 'specialRequirementCtrl'
+      })
+   /*   .state('IBCIGC', {
         url: '/IBCIGC/:goodNameIBCIGC',
         templateUrl: 'templates/IBCIGCRequirement.html',
         controller: 'IBCIGCCtrl'
@@ -84,7 +130,7 @@ angular.module('starter', ['ionic','starter.controllers','cargoship.controllers'
         url: '/oilFence/:goodNameoilFence',
         templateUrl: 'templates/oilFence.html',
         controller: 'oilFenceCtrl'
-      })
+      })*/
     .state('classificationSearch', {
         url: '/classificationSearch',
         templateUrl: 'templates/classification_search.html',
