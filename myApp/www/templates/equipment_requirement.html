@@ -10,41 +10,41 @@
       <div class="item item-divider">
         设备要求
       </div>
-      <label class="item item-text-wrap" ng-if="detailInfo.basicInfo.classification=='化学品'">
+      <label class="item " ng-if="detailInfo.basicInfo.classification=='化学品'">
         电气设备-温度等级要求
-        <span class="item-note">{{detailInfo.EquipmentRequest.Chemical.I1}}</span>
+        <div class="item-note item-text-wrap">{{detailInfo.EquipmentRequest.Chemical.I1}}</div>
       </label>
-      <label class="item item-text-wrap" ng-if="detailInfo.basicInfo.classification=='化学品'">
+      <label class="item" ng-if="detailInfo.basicInfo.classification=='化学品'">
         电气设备-设备分类要求
-        <span class="item-note">{{detailInfo.EquipmentRequest.Chemical.I2}}</span>
+        <div class="item-note item-text-wrap">{{detailInfo.EquipmentRequest.Chemical.I2}}</div>
       </label>
-      <label class="item item-text-wrap" ng-if="detailInfo.basicInfo.classification=='化学品'">
+      <label class="item" ng-if="detailInfo.basicInfo.classification=='化学品'">
         电气设备-闪点要求
-        <span class="item-note">{{detailInfo.EquipmentRequest.Chemical.I3}}</span>
+        <div class="item-note item-text-wrap">{{detailInfo.EquipmentRequest.Chemical.I3}}</div>
       </label>
-      <label class="item item-text-wrap" ng-if="detailInfo.basicInfo.classification=='化学品'">
+      <label class="item" ng-if="detailInfo.basicInfo.classification=='化学品'">
         测量要求（IBC）
-        <span class="item-note">{{detailInfo.EquipmentRequest.Chemical.IBCMeasurement}}</span>
+        <div class="item-note item-text-wrap">{{detailInfo.EquipmentRequest.Chemical.IBCMeasurement}}</div>
       </label>
-      <label class="item item-text-wrap" ng-if="detailInfo.basicInfo.classification=='化学品'">
+      <label class="item" ng-if="detailInfo.basicInfo.classification=='化学品'">
         蒸气探测要求
-        <span class="item-note">{{detailInfo.EquipmentRequest.Chemical.steamDetection}}</span>
+        <div class="item-note item-text-wrap">{{detailInfo.EquipmentRequest.Chemical.steamDetection}}</div>
       </label>
-      <label class="item item-text-wrap" ng-if="detailInfo.basicInfo.classification=='化学品'">
+      <label class="item " ng-if="detailInfo.basicInfo.classification=='化学品'">
         防火要求
-        <span class="item-note">{{detailInfo.EquipmentRequest.Chemical.fireproofing}}</span>
+        <div class="item-note item-text-wrap">{{detailInfo.EquipmentRequest.Chemical.fireproofing}}</div>
       </label>
-      <label class="item item-text-wrap" ng-if="detailInfo.basicInfo.classification=='化学品'">
+      <label class="item" ng-if="detailInfo.basicInfo.classification=='化学品'">
         应急设备要求
-        <span class="item-note">{{detailInfo.EquipmentRequest.Chemical.emergencyEquipment}}</span>
+        <div class="item-note item-text-wrap">{{detailInfo.EquipmentRequest.Chemical.emergencyEquipment}}</div>
       </label>
-      <label class="item item-text-wrap" ng-if="detailInfo.basicInfo.classification=='液化气体'">
+      <label class="item" ng-if="detailInfo.basicInfo.classification=='液化气体'">
         气体探测要求
-        <span class="item-note">{{detailInfo.EquipmentRequest.Liquidgas.gasDetection}}</span>
+        <div class="item-note item-text-wrap">{{detailInfo.EquipmentRequest.Liquidgas.gasDetection}}</div>
       </label>
-      <label class="item item-text-wrap" ng-if="detailInfo.basicInfo.classification=='液化气体'">
+      <label class="item" ng-if="detailInfo.basicInfo.classification=='液化气体'">
         测量要求（IGC）
-        <span class="item-note">{{detailInfo.EquipmentRequest.Liquidgas.IGCMeasurement}}</span>
+        <div class="item-note item-text-wrap">{{detailInfo.EquipmentRequest.Liquidgas.IGCMeasurement}}</div>
       </label>
     </div>
   </ion-content>
