@@ -12,10 +12,10 @@ angular.module('dangerousGoods.controllers', [])
     var defer = $q.defer();
     $http({
       method: 'get',
-      url: './templates/info.json'
+      url: './templates/DBInfo.json'
     }).success(function (data) {
       defer.resolve(data);
-      $scope.data = data.info;
+      $scope.data = data.DBInfo;
     }).error(function (data) {
       defer.reject(data);
     })
@@ -46,7 +46,6 @@ angular.module('dangerousGoods.controllers', [])
 /*模块三级页面1，货物特性列表：基本信息、理化特性、作业要求*/
   .controller('goodPropertyListCtrl', function($scope,$stateParams,$state) {
     $scope.goodName = $stateParams.checkGoodName;
-    console.log($scope.goodName);
     $scope.goToPropertyBasicInfo = function () {
       $state.go('goodproperty_basicInfo',{goodNameForBasicInfo:$stateParams.checkGoodName});
     }
@@ -78,12 +77,12 @@ angular.module('dangerousGoods.controllers', [])
     var defer = $q.defer();
     $http({
       method: 'get',
-      url: './templates/info.json'
+      url: './templates/DBInfo.json'
     }).success(function (data) {
       defer.resolve(data);
-      for(var i=0;i<data.info.length;i++){
-        if(data.info[i].ChineseName==$scope.goodName){
-          $scope.detailInfo = data.info[i];
+      for(var i=0;i<data.DBInfo.length;i++){
+        if(data.DBInfo[i].ChineseName==$scope.goodName){
+          $scope.detailInfo = data.DBInfo[i].basicInfo;
         }
       }
     }).error(function (data) {
@@ -97,12 +96,12 @@ angular.module('dangerousGoods.controllers', [])
     var defer = $q.defer();
     $http({
       method: 'get',
-      url: './templates/info.json'
+      url: './templates/DBInfo.json'
     }).success(function (data) {
       defer.resolve(data);
-      for(var i=0;i<data.info.length;i++){
-        if(data.info[i].ChineseName==$scope.goodName){
-          $scope.detailInfo = data.info[i].property;
+      for(var i=0;i<data.DBInfo.length;i++){
+        if(data.DBInfo[i].ChineseName==$scope.goodName){
+          $scope.detailInfo = data.DBInfo[i].property;
         }
       }
     }).error(function (data) {
@@ -116,13 +115,12 @@ angular.module('dangerousGoods.controllers', [])
     var defer = $q.defer();
     $http({
       method: 'get',
-      url: './templates/info.json'
+      url: './templates/DBInfo.json'
     }).success(function (data) {
       defer.resolve(data);
-      for(var i=0;i<data.info.length;i++){
-        if(data.info[i].ChineseName==$scope.goodName){
-          $scope.detailInfo = data.info[i];
-          console.log($scope.detailInfo);
+      for(var i=0;i<data.DBInfo.length;i++){
+        if(data.DBInfo[i].ChineseName==$scope.goodName){
+          $scope.detailInfo = data.DBInfo[i].jobRequirements;
         }
       }
     }).error(function (data) {
@@ -135,13 +133,12 @@ angular.module('dangerousGoods.controllers', [])
     var defer = $q.defer();
     $http({
       method: 'get',
-      url: './templates/info.json'
+      url: './templates/DBInfo.json'
     }).success(function (data) {
       defer.resolve(data);
-      for(var i=0;i<data.info.length;i++){
-        if(data.info[i].ChineseName==$scope.goodName){
-          $scope.detailInfo = data.info[i];
-          console.log($scope.detailInfo);
+      for(var i=0;i<data.DBInfo.length;i++){
+        if(data.DBInfo[i].ChineseName==$scope.goodName){
+          $scope.detailInfo = data.DBInfo[i];
         }
       }
     }).error(function (data) {
@@ -154,13 +151,12 @@ angular.module('dangerousGoods.controllers', [])
     var defer = $q.defer();
     $http({
       method: 'get',
-      url: './templates/info.json'
+      url: './templates/DBInfo.json'
     }).success(function (data) {
       defer.resolve(data);
-      for(var i=0;i<data.info.length;i++){
-        if(data.info[i].ChineseName==$scope.goodName){
-          $scope.detailInfo = data.info[i];
-          console.log($scope.detailInfo);
+      for(var i=0;i<data.DBInfo.length;i++){
+        if(data.DBInfo[i].ChineseName==$scope.goodName){
+          $scope.detailInfo = data.DBInfo[i];
         }
       }
     }).error(function (data) {
@@ -173,13 +169,12 @@ angular.module('dangerousGoods.controllers', [])
     var defer = $q.defer();
     $http({
       method: 'get',
-      url: './templates/info.json'
+      url: './templates/DBInfo.json'
     }).success(function (data) {
       defer.resolve(data);
-      for(var i=0;i<data.info.length;i++){
-        if(data.info[i].ChineseName==$scope.goodName){
-          $scope.detailInfo = data.info[i];
-          console.log($scope.detailInfo);
+      for(var i=0;i<data.DBInfo.length;i++){
+        if(data.DBInfo[i].ChineseName==$scope.goodName){
+          $scope.detailInfo = data.DBInfo[i];
         }
       }
     }).error(function (data) {

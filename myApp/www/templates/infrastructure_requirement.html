@@ -9,33 +9,33 @@
       <div class="item item-divider">
         构造要求
       </div>
-      <label class="item ">
+      <label class="item item-text-wrap" ng-if="detailInfo.basicInfo.classification=='化学品'">
         船型要求（IBC）
-        <span class="item-note"></span>
+        <span class="item-note">{{detailInfo.StructuralRequest.Chemical.IBCType}}</span>
       </label>
-      <label class="item ">
+      <label class="item item-text-wrap" ng-if="detailInfo.basicInfo.classification=='化学品'">
         舱型要求
-        <span class="item-note"></span>
+        <span class="item-note">{{detailInfo.StructuralRequest.Chemical.TankType}}</span>
       </label>
-      <label class="item ">
+      <label class="item item-text-wrap" ng-if="detailInfo.basicInfo.classification=='化学品'">
         液货舱透气要求
-        <span class="item-note"></span>
+        <span class="item-note">{{detailInfo.StructuralRequest.Chemical.ventilating}}</span>
       </label>
-      <label class="item ">
+      <label class="item item-text-wrap" ng-if="detailInfo.basicInfo.classification=='化学品'">
         液货舱环境控制要求
-        <span class="item-note"></span>
+        <span class="item-note">{{detailInfo.StructuralRequest.Chemical.environmentCtrl}}</span>
       </label>
-      <label class="item ">
+      <label class="item item-text-wrap" ng-if="detailInfo.basicInfo.classification=='液化气体'">
         船型要求（IGC）
-        <span class="item-note"></span>
+        <span class="item-note">{{detailInfo.StructuralRequest.Liquidgas.IGCType}}</span>
       </label>
-      <label class="item ">
+      <label class="item item-text-wrap" ng-if="detailInfo.basicInfo.classification=='液化气体'">
         是否要求C型独立液货舱
-        <span class="item-note"></span>
+        <span class="item-note">{{detailInfo.StructuralRequest.Liquidgas.independentTank}}</span>
       </label>
-      <label class="item ">
+      <label class="item item-text-wrap" ng-if="detailInfo.basicInfo.classification=='液化气体'">
         液货舱内蒸气空间的控制
-        <span class="item-note"></span>
+        <span class="item-note">{{detailInfo.StructuralRequest.Liquidgas.steamCtrl}}</span>
       </label>
     </div>
   </ion-content>

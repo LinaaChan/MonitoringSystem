@@ -1,0 +1,563 @@
+{
+  "DBInfo":[
+    {
+      "Number":1,
+      "ChineseName":"燃料油",
+      "basicInfo": {
+        "EnglishName": "Heavy Oil",
+        "vulgo": "-",
+        "classification":"油类",
+        "Unnum":"-",
+        "CASNum":"-",
+        "XYZ":"-",
+        "persistance":"是",
+        "Harmfulness":"/",
+        "formula":"-"
+      },
+      "property":{
+        "meltingpoint":"-",
+        "boilingpoint":"360～460",
+        "flashingpoint":"大于等于60",
+        "boom":"7.5、0.6",
+        "density":"＜1",
+        "dissolution":"不溶于水"
+      },
+      "jobRequirements":{
+        "oilfence":"需要",
+        "emergencyStandby":"需要"
+      },
+      "StructuralRequest":{
+        "Chemical": {
+          "IBCType": "/",
+          "TankType": "/",
+          "ventilating": "/",
+          "environmentCtrl": "/"
+        },
+        "Liquidgas":{
+          "IGCType":"/",
+          "independentTank":"/",
+          "steamCtrl":"/"
+        }
+      },
+      "EquipmentRequest":{
+        "Chemical":{
+          "I1":"/",
+          "I2":"/",
+          "I3":"/",
+          "IBCMeasurement":"/",
+          "steamDetection":"/",
+          "fireproofing":"/",
+          "emergencyEquipment":"/"
+        },
+        "Liquidgas":{
+          "gasDetection":"/",
+          "IGCMeasurement":"/"
+        }
+      },
+      "specialRequest":{
+        "Chemical":{
+          "IBCspecialRequest":"/"
+        },
+        "Liquidgas":{
+          "IGCspecialRequest":"/"
+        }
+      }
+    },{
+      "Number":3,
+      "ChineseName":"苯",
+      "basicInfo": {
+        "EnglishName": "Benzene",
+        "vulgo": "-",
+        "classification":"化学品",
+        "Unnum":"1114",
+        "CASNum":"71-43-2",
+        "XYZ":"Y",
+        "persistance":"/",
+        "Harmfulness":"安全/污染 危害性",
+        "formula":"C6H6"
+      },
+      "property":{
+        "meltingpoint":"5.5",
+        "boilingpoint":"80.1",
+        "flashingpoint":"-11",
+        "boom":"8.0、1.2",
+        "density":"0.88",
+        "dissolution":"不溶于水"
+      },
+      "jobRequirements":{
+        "oilfence":"需要",
+        "emergencyStandby":"需要"
+      },
+      "StructuralRequest":{
+        "Chemical": {
+          "IBCType": "3型船舶",
+          "TankType": "2G",
+          "ventilating": "控制式透气",
+          "environmentCtrl": "无特殊要求"
+        },
+        "Liquidgas":{
+          "IGCType":"/",
+          "independentTank":"/",
+          "steamCtrl":"/"
+        }
+      },
+      "EquipmentRequest":{
+        "Chemical":{
+          "I1":"T1",
+          "I2":"IIA",
+          "I3":"闪点不超过60℃",
+          "IBCMeasurement":"闭式测量",
+          "steamDetection":"易燃蒸气、有毒蒸气",
+          "fireproofing":"抗乙醇泡沫或多用途泡沫、普通泡沫，包括所有非抗乙醇泡沫，其中包括氟化蛋白质和水膜泡沫AFFF",
+          "emergencyEquipment":"无特殊要求"
+        },
+        "Liquidgas":{
+          "gasDetection":"/",
+          "IGCMeasurement":"/"
+        }
+      },
+      "specialRequest":{
+        "Chemical":{
+          "IBCspecialRequest":"15.12.1, 15.17, 15.19.6, 16.2.9"
+        },
+        "Liquidgas":{
+          "IGCspecialRequest":"/"
+        }
+      }
+    },{
+      "Number":7,
+      "ChineseName":"正丁烷",
+      "basicInfo": {
+        "EnglishName": "N-Butane",
+        "vulgo": "-",
+        "classification":"液化气体",
+        "Unnum":"1011",
+        "CASNum":"106-97-8",
+        "XYZ":"-",
+        "persistance":"/",
+        "Harmfulness":"/",
+        "formula":"C4H10"
+      },
+      "property":{
+        "meltingpoint":"-138.4",
+        "boilingpoint":"-0.5",
+        "flashingpoint":"-60",
+        "boom":"8.5、1.5",
+        "density":"0.58",
+        "dissolution":"易溶于水"
+      },
+      "jobRequirements":{
+        "oilfence":"不需要",
+        "emergencyStandby":"需要"
+      },
+      "StructuralRequest":{
+        "Chemical": {
+          "IBCType": "/",
+          "TankType": "/",
+          "ventilating": "/",
+          "environmentCtrl": "/"
+        },
+        "Liquidgas":{
+          "IGCType":"2G/2PG",
+          "independentTank":"否",
+          "steamCtrl":"无特殊要求"
+        }
+      },
+      "EquipmentRequest":{
+        "Chemical":{
+          "I1":"/",
+          "I2":"/",
+          "I3":"/",
+          "IBCMeasurement":"/",
+          "steamDetection":"/",
+          "fireproofing":"/",
+          "emergencyEquipment":"/"
+        },
+        "Liquidgas":{
+          "gasDetection":"易燃蒸汽的探测",
+          "IGCMeasurement":"间接型、封闭型或限制型"
+        }
+      },
+      "specialRequest":{
+        "Chemical":{
+          "IBCspecialRequest":"/"
+        },
+        "Liquidgas":{
+          "IGCspecialRequest":"-"
+        }
+      }
+    },{
+      "Number":8,
+      "ChineseName":"氨",
+      "basicInfo": {
+        "EnglishName": "Ammonia",
+        "vulgo": "氨气(液氨)",
+        "classification":"液化气体",
+        "Unnum":"1005",
+        "CASNum":"7664-41-7",
+        "XYZ":"Y",
+        "persistance":"/",
+        "Harmfulness":"/",
+        "formula":"NH3"
+      },
+      "property":{
+        "meltingpoint":"-77.7",
+        "boilingpoint":"-33.5",
+        "flashingpoint":"-54",
+        "boom":"27.4、15.7",
+        "density":"0.82(-79℃)",
+        "dissolution":"易溶于水"
+      },
+      "jobRequirements":{
+        "oilfence":"不需要",
+        "emergencyStandby":"需要"
+      },
+      "StructuralRequest":{
+        "Chemical": {
+          "IBCType": "/",
+          "TankType": "/",
+          "ventilating": "/",
+          "environmentCtrl": "/"
+        },
+        "Liquidgas":{
+          "IGCType":"2G/2PG",
+          "independentTank":"否",
+          "steamCtrl":"无特殊要求"
+        }
+      },
+      "EquipmentRequest":{
+        "Chemical":{
+          "I1":"/",
+          "I2":"/",
+          "I3":"/",
+          "IBCMeasurement":"/",
+          "steamDetection":"/",
+          "fireproofing":"/",
+          "emergencyEquipment":"/"
+        },
+        "Liquidgas":{
+          "gasDetection":"有毒蒸汽的探测",
+          "IGCMeasurement":"间接型或封闭型"
+        }
+      },
+      "specialRequest":{
+        "Chemical":{
+          "IBCspecialRequest":"/"
+        },
+        "Liquidgas":{
+          "IGCspecialRequest":"14.4.2，14.4.3，14.4.4，17.2.1，17.13"
+        }
+      }
+    },{
+      "Number":19,
+      "ChineseName":"苯乙烯",
+      "basicInfo": {
+        "EnglishName": "Styrene",
+        "vulgo": "-",
+        "classification":"化学品",
+        "Unnum":"2055",
+        "CASNum":"100-42-5",
+        "XYZ":"Y",
+        "persistance":"/",
+        "Harmfulness":"安全/污染 危害性",
+        "formula":"C8H8"
+      },
+      "property":{
+        "meltingpoint":"-30.6",
+        "boilingpoint":"146",
+        "flashingpoint":"34.4",
+        "boom":"6.1、1.1",
+        "density":"0.91",
+        "dissolution":"不溶于水"
+      },
+      "jobRequirements":{
+        "oilfence":"需要",
+        "emergencyStandby":"需要"
+      },
+      "StructuralRequest":{
+        "Chemical": {
+          "IBCType": "3型船舶",
+          "TankType": "2G",
+          "ventilating": "控制式透气",
+          "environmentCtrl": "无特殊要求"
+        },
+        "Liquidgas":{
+          "IGCType":"/",
+          "independentTank":"/",
+          "steamCtrl":"/"
+        }
+      },
+      "EquipmentRequest":{
+        "Chemical":{
+          "I1":"T1",
+          "I2":"IIA",
+          "I3":"闪点不超过60℃",
+          "IBCMeasurement":"限制式测量",
+          "steamDetection":"易燃蒸气",
+          "fireproofing":"抗乙醇泡沫或普通泡沫，包括所有非抗乙醇泡沫，其中包括氟化蛋白质和水膜泡沫AFFF",
+          "emergencyEquipment":"无特殊要求"
+        },
+        "Liquidgas":{
+          "gasDetection":"/",
+          "IGCMeasurement":"/"
+        }
+      },
+      "specialRequest":{
+        "Chemical":{
+          "IBCspecialRequest":"15.13, 15.19.6, 16.6.1, 16.6.2"
+        },
+        "Liquidgas":{
+          "IGCspecialRequest":"/"
+        }
+      }
+    },{
+      "Number":26,
+      "ChineseName":"柴油",
+      "basicInfo": {
+        "EnglishName": "Diesel oil ",
+        "vulgo": "柴油",
+        "classification":"油类",
+        "Unnum":"1202",
+        "CASNum":"68334-30-5",
+        "XYZ":"-",
+        "persistance":"否",
+        "Harmfulness":"/",
+        "formula":"大于11个C原子的有机物组成的混合物"
+      },
+      "property":{
+        "meltingpoint":"-29.56",
+        "boilingpoint":"180～360",
+        "flashingpoint":"45-90",
+        "boom":"6.5、0.6",
+        "density":"0.70—0.75 ",
+        "dissolution":"不溶于水"
+      },
+      "jobRequirements":{
+        "oilfence":"需要",
+        "emergencyStandby":"需要"
+      },
+      "StructuralRequest":{
+        "Chemical": {
+          "IBCType": "/",
+          "TankType": "/",
+          "ventilating": "/",
+          "environmentCtrl": "/"
+        },
+        "Liquidgas":{
+          "IGCType":"/",
+          "independentTank":"/",
+          "steamCtrl":"/"
+        }
+      },
+      "EquipmentRequest":{
+        "Chemical":{
+          "I1":"/",
+          "I2":"/",
+          "I3":"/",
+          "IBCMeasurement":"/",
+          "steamDetection":"/",
+          "fireproofing":"/",
+          "emergencyEquipment":"/"
+        },
+        "Liquidgas":{
+          "gasDetection":"/",
+          "IGCMeasurement":"/"
+        }
+      },
+      "specialRequest":{
+        "Chemical":{
+          "IBCspecialRequest":"15.13, 15.19.6, 16.6.1, 16.6.2"
+        },
+        "Liquidgas":{
+          "IGCspecialRequest":"/"
+        }
+      }
+    },{
+      "Number":33,
+      "ChineseName":"丙烯腈",
+      "basicInfo": {
+        "EnglishName": "Cyanoethylene",
+        "vulgo": "-",
+        "classification":"化学品",
+        "Unnum":"1093",
+        "CASNum":"107-13-1",
+        "XYZ":"Y",
+        "persistance":"/",
+        "Harmfulness":"安全/污染 危害性",
+        "formula":"C3H3N"
+      },
+      "property":{
+        "meltingpoint":"-83.6",
+        "boilingpoint":"77.3",
+        "flashingpoint":"-5",
+        "boom":"28.0、2.8",
+        "density":"0.81",
+        "dissolution":"微溶于水"
+      },
+      "jobRequirements":{
+        "oilfence":"不需要",
+        "emergencyStandby":"需要"
+      },
+      "StructuralRequest":{
+        "Chemical": {
+          "IBCType": "2型船舶",
+          "TankType": "2G",
+          "ventilating": "控制式透气",
+          "environmentCtrl": "无特殊要求"
+        },
+        "Liquidgas":{
+          "IGCType":"/",
+          "independentTank":"/",
+          "steamCtrl":"/"
+        }
+      },
+      "EquipmentRequest":{
+        "Chemical":{
+          "I1":"T1",
+          "I2":"IIB",
+          "I3":"闪点不超过60℃",
+          "IBCMeasurement":"闭式测量",
+          "steamDetection":"易燃蒸气、有毒蒸气",
+          "fireproofing":"抗乙醇泡沫或多用途泡沫",
+          "emergencyEquipment":"应为船上每个人员配足在应急逃生时使用的合适的呼吸防毒面具和眼保护设备，并应符合下列要求：1 不能使用过滤式的呼吸防毒面具；2 自给式呼吸器一般应具有至少为15min 的持续工作时间的能力；.3 不得将应急逃生防毒面具用于消防或装卸货物的目的，并应对其作出有效的标志。"
+        },
+        "Liquidgas":{
+          "gasDetection":"/",
+          "IGCMeasurement":"/"
+        }
+      },
+      "specialRequest":{
+        "Chemical":{
+          "IBCspecialRequest":"15.12, 15.13, 15.17, 15.19"
+        },
+        "Liquidgas":{
+          "IGCspecialRequest":"/"
+        }
+      }
+    },{
+      "Number":54,
+      "ChineseName":"盐酸",
+      "basicInfo": {
+        "EnglishName": "Chlorane",
+        "vulgo": "氢氯酸",
+        "classification":"化学品",
+        "Unnum":"1789",
+        "CASNum":"7647-01-0",
+        "XYZ":"Z",
+        "persistance":"/",
+        "Harmfulness":"安全/污染 危害性",
+        "formula":"HCl"
+      },
+      "property":{
+        "meltingpoint":"-27.32",
+        "boilingpoint":"110",
+        "flashingpoint":"-",
+        "boom":"-",
+        "density":"1.18",
+        "dissolution":"易溶于水"
+      },
+      "jobRequirements":{
+        "oilfence":"不需要",
+        "emergencyStandby":"需要"
+      },
+      "StructuralRequest":{
+        "Chemical": {
+          "IBCType": "3型船舶",
+          "TankType": "1G",
+          "ventilating": "控制式透气",
+          "environmentCtrl": "无特殊要求"
+        },
+        "Liquidgas":{
+          "IGCType":"/",
+          "independentTank":"/",
+          "steamCtrl":"/"
+        }
+      },
+      "EquipmentRequest":{
+        "Chemical":{
+          "I1":"/",
+          "I2":"/",
+          "I3":"非易燃货物",
+          "IBCMeasurement":"限制式测量",
+          "steamDetection":"有毒蒸气",
+          "fireproofing":"无特殊要求",
+          "emergencyEquipment":" 应为船上每个人员配足在应急逃生时使用的合适的呼吸防毒面具和眼保护设备，并应符合下列要求：1 不能使用过滤式的呼吸防毒面具；2 自给式呼吸器一般应具有至少为15min 的持续工作时间的能力；.3 不得将应急逃生防毒面具用于消防或装卸货物的目的，并应对其作出有效的标志。"
+        },
+        "Liquidgas":{
+          "gasDetection":"/",
+          "IGCMeasurement":"/"
+        }
+      },
+      "specialRequest":{
+        "Chemical":{
+          "IBCspecialRequest":"15.11"
+        },
+        "Liquidgas":{
+          "IGCspecialRequest":"/"
+        }
+      }
+    },{
+      "Number":59,
+      "ChineseName":"航煤",
+      "basicInfo": {
+        "EnglishName": "Kerosene Type Aviation Turbine Fuel",
+        "vulgo": "-",
+        "classification":"油类",
+        "Unnum":"1223",
+        "CASNum":"8008-20-6",
+        "XYZ":"-",
+        "persistance":"否",
+        "Harmfulness":"/",
+        "formula":"-"
+      },
+      "property":{
+        "meltingpoint":"≤12.44",
+        "boilingpoint":"＞160",
+        "flashingpoint":"＞37.8",
+        "boom":"3.7、0.6",
+        "density":"＜1",
+        "dissolution":"不溶于水"
+      },
+      "jobRequirements":{
+        "oilfence":"需要",
+        "emergencyStandby":"需要"
+      },
+      "StructuralRequest":{
+        "Chemical": {
+          "IBCType": "/",
+          "TankType": "/",
+          "ventilating": "/",
+          "environmentCtrl": "/"
+        },
+        "Liquidgas":{
+          "IGCType":"/",
+          "independentTank":"/",
+          "steamCtrl":"/"
+        }
+      },
+      "EquipmentRequest":{
+        "Chemical":{
+          "I1":"/",
+          "I2":"/",
+          "I3":"/",
+          "IBCMeasurement":"/",
+          "steamDetection":"/",
+          "fireproofing":"/",
+          "emergencyEquipment":"/"
+        },
+        "Liquidgas":{
+          "gasDetection":"/",
+          "IGCMeasurement":"/"
+        }
+      },
+      "specialRequest":{
+        "Chemical":{
+          "IBCspecialRequest":"/"
+        },
+        "Liquidgas":{
+          "IGCspecialRequest":"/"
+        }
+      }
+    }
+  ]
+}
