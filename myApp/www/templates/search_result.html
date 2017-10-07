@@ -6,8 +6,8 @@
         搜索结果
       </div>
       <div class="row row-wrap">
-        <div class="item col col-33">
-          <a class="button button-positive">苯</a>
+        <div class="item col col-33" ng-repeat="index in result">
+          <a class="button button-positive" ng-click="goToPropertyDetail(index.ChineseName)">{{index.ChineseName}}</a>
         </div>
       </div>
 

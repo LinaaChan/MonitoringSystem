@@ -3,13 +3,13 @@
     <div class="list">
       <label class="item item-input">
         <span class="input-label">名称</span>
-        <input type="text" ng-model="$parent.good_name"/>
+        <input type="text" ng-model="content.good_name"/>
       </label>
       <label class="item item-input">
         <span class="input-label">UN编号</span>
-        <input type="text" ng-model="$parent.un_num"/>
+        <input type="text" ng-model="content.un_num"/>
       </label>
-      <label class="item item-input item-select">
+     <!-- <label class="item item-input item-select">
         <div class="input-label">
           码头泊位
         </div>
@@ -18,15 +18,15 @@
           <option value="green">Green</option>
           <option value="red">Red</option>
         </select>
-      </label>
+      </label>-->
       <label class="item item-input item-select">
         <div class="input-label">
           危险货物类别
         </div>
-        <select ng-model="$parent.class">
-          <option value="blue">Blue</option>
-          <option value="green">Green</option>
-          <option value="red">Red</option>
+        <select ng-model="content.classification">
+          <option value="油类">油类</option>
+          <option value="化学品">化学品</option>
+          <option value="液化气体">液化气体</option>
         </select>
       </label>
       <a class="button button-block button-positive" ng-click="search_good()">搜索</a>

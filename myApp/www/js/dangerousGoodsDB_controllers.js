@@ -204,18 +204,36 @@ angular.module('dangerousGoods.controllers', [])
 
   })*/
   .controller('classSearchCtrl', function($scope,$state) {
+    $scope.content={
+      good_name:'',
+      un_num:'',
+      classification:''
+    }
     $scope.search_good = function () {
-     if($scope.good_name==undefined&&$scope.un_num==undefined&&$scope.dork==undefined&&$scope.class==undefined){
+     if($scope.content.good_name==''&&$scope.content.un_num==''&&$scope.content.classification==''){
        alert('搜索条件不能全为空');
      }else{
-       $state.go('searchResult',{searchGood:$scope.good_name,searchUN:$scope.un_num,dork:$scope.dork,dangerGoodClass:$scope.class})
+       $state.go('searchResult',{searchGood:$scope.content.good_name,searchUN:$scope.content.un_num,dangerGoodClass:$scope.content.classification})
      }
     }
   })
-  .controller('searchResultCtrl', function($scope,$stateParams) {
-    console.log($stateParams.searchGood);
-    console.log($stateParams.searchUN);
-    console.log($stateParams.dork);
-    console.log($stateParams.dangerGoodClass);
-
+  .controller('searchResultCtrl', function($scope,$stateParams,$http,$q,$state) {
+    /*DBInfo.json文件有些地方需要修改，需要将一下的字段放到数组的第一级字段中（为了不影响之前的代码，只能重复添加）*/
+    console.log($stateParams.searchGood);//货物名称
+    console.log($stateParams.searchUN);//UN编号
+ //   console.log($stateParams.dork);//码头泊位(还需要确定对应的是哪一个字段)
+    console.log($stateParams.dangerGoodClass);//危险货物类别
+      var defer = $q.defer();
+      $http({
+        method: 'get',
+        url: './templates/DBInfo.json'
+      }).success(function (data) {
+        /*使用JsonSql插件进行对json文件的查询操作，后续需要修改，可将之前进行的循环查询代码全部替换为使用插件查询以提高速度*/
+        $scope.result = jsonsql.query("select ChineseName from json.DBInfo where (ChineseName=='"+$stateParams.searchGood+"' || Unnum=='"+$stateParams.searchUN+"' || classification=='"+$stateParams.dangerGoodClass+"') order by ChineseName",data);
+      }).error(function (data) {
+        defer.reject(data);
+      })
+    $scope.goToPropertyDetail = function (goodName) {
+      $state.go('dangerousgoodsdetails',{goodName:goodName});//跳转到二级页面，传递参数goodName
+    }
   })

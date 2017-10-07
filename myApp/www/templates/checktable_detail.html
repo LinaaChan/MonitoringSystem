@@ -4,18 +4,18 @@
        <strong class="item item-text-wrap">{{proName}}:{{detailData.proTitle}}</strong>
     </div>
     <div class="item item-divider">检查要点</div>
-    <div class="item item-text-wrap" ng-repeat="index in detailData.checkPoint">
+    <div class="item item-text-wrap" ng-repeat="index in detailData.proContent.checkPoint">
       {{index}}
     </div>
     <div class="item item-divider">检查依据</div>
-    <div class="item item-text-wrap" ng-repeat="index in detailData.checkReason">
+    <div class="item item-text-wrap" ng-repeat="index in detailData.proContent.checkReason">
       {{index.reasonName}}
         <div style="margin-left:4px; " class="item-text-wrap" ng-bind-html="index.item">
         </div>
 
     </div>
     <div class="item item-divider">常见缺陷</div>
-    <div class="item item-text-wrap" ng-repeat="index in detailData.weaknessItem">
+    <div class="item item-text-wrap" ng-repeat="index in detailData.proContent.weaknessItem">
       {{index}}
     </div>
   </ion-content>

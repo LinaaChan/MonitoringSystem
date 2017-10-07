@@ -12,11 +12,11 @@
       </div>
       <label class="item" ng-if="detailInfo.basicInfo.classification=='化学品'">
         IBC 特殊要求及操作要求
-        <span class="item-note item-text-wrap">{{detailInfo.specialRequest.Chemical.IBCspecialRequest}}</span>
+        <span class="item-note item-text-wrap" ng-bind-html="detailInfo.specialRequest.Chemical.IBCspecialRequest"></span>
       </label>
       <label class="item" ng-if="detailInfo.basicInfo.classification=='液化气体'">
         IGC 特殊要求
-        <span class="item-note item-text-wrap">{{detailInfo.specialRequest.Liquidgas.IGCspecialRequest}}</span>
+        <span class="item-note item-text-wrap" ng-bind-html="detailInfo.specialRequest.Liquidgas.IGCspecialRequest"></span>
       </label>
     </div>
   </ion-content>

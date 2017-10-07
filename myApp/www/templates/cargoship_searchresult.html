@@ -2,8 +2,8 @@
 
   <ion-content>
     <div class="list">
-      <label  class="item item-text-wrap" ng-repeat="index in searchResult" ng-click="goToDetail(index.itemName,index.part)">
-        {{index.itemName}}:{{index.itemTitle}}
+      <label  class="item item-text-wrap" ng-repeat="index in searchResult" ng-click="goToDetail(index.proName,index.part)">
+        {{index.proName}}:{{index.proTitle}}
       </label>
     </div>
     <div style="text-align: center" ng-if="searchResult==''||searchResult==null" >

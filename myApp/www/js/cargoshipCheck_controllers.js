@@ -21,7 +21,7 @@ angular.module('cargoship.controllers', [])
         url: './templates/cargoship.json'
       }).success(function (data) {
         defer.resolve(data);
-        if(param=='partA'){
+       /* if(param=='partA'){
           $scope.data = data.cargoshipInfo.partA;
         }else if(param=='partB'){
           $scope.data = data.cargoshipInfo.partB;
@@ -29,7 +29,9 @@ angular.module('cargoship.controllers', [])
           $scope.data = data.cargoshipInfo.partC;
         }else{
           $scope.data = data.cargoshipInfo.partD;
-        }
+        }*/
+        $scope.data = jsonsql.query("select * from json.cargoshipInfo where (part=='"+param+"')",data);
+
         $scope.goToDetail = function (proname) {
           $state.go('checktable_detail',{proName:proname,param:param})
         }
@@ -43,12 +45,17 @@ angular.module('cargoship.controllers', [])
     var defer = $q.defer();
     $scope.param = $stateParams.param;
     $scope.proName = $stateParams.proName;
+    console.log($scope.param);
+    console.log($scope.proName);
     $http({
       method: 'get',
       url: './templates/cargoship.json'
     }).success(function (data) {
       defer.resolve(data);
-      if($scope.param=='partA'){
+      $scope.result = jsonsql.query("select * from json.cargoshipInfo where (part=='"+$scope.param+"' && proName=='"+$scope.proName+"') order by proTitle",data);
+      console.log($scope.result);
+      $scope.detailData = $scope.result[0];
+      /*if($scope.param=='partA'){
         for(var i=0;i<data.cargoshipInfo.partA.length;i++){
           if($scope.proName==data.cargoshipInfo.partA[i].proName){
             $scope.detailData = data.cargoshipInfo.partA[i].proContent;
@@ -72,7 +79,7 @@ angular.module('cargoship.controllers', [])
             $scope.detailData = data.cargoshipInfo.partD[i].proContent;
           }
         }
-      }
+      }*/
     }).error(function (data) {
       defer.reject(data);
     })
@@ -84,7 +91,7 @@ angular.module('cargoship.controllers', [])
     }
   })
   .controller('cargoshipSearchResultCtrl', function($scope,$stateParams,$state,$q,$http) {
-
+  console.log($stateParams.cargoSearchWord);
   $scope.searchResult = [];
     var defer = $q.defer();
     $http({
@@ -93,7 +100,8 @@ angular.module('cargoship.controllers', [])
     }).success(function (data) {
       defer.resolve(data);
       /*搜索项目的名称*/
-      for(var i=0;i<data.cargoshipInfo.partA.length;i++){
+      $scope.searchResult = jsonsql.query("select * from json.cargoshipInfo where (proTitle=='"+$stateParams.cargoSearchWord+"' || proName=='"+$stateParams.cargoSearchWord+"')",data);
+     /* for(var i=0;i<data.cargoshipInfo.partA.length;i++){
         if(data.cargoshipInfo.partA[i].proContent.proTitle==$stateParams.cargoSearchWord){
           $scope.searchResult.push({'itemTitle':data.cargoshipInfo.partA[i].proContent.proTitle,'itemName':data.cargoshipInfo.partA[i].proName,'part':'partA'});
         }
@@ -109,8 +117,9 @@ angular.module('cargoship.controllers', [])
         if(data.cargoshipInfo.partD[i].proContent.proTitle==$stateParams.cargoSearchWord){
           $scope.searchResult.push({'itemTitle':data.cargoshipInfo.partC[i].proContent.proTitle,'itemName':data.cargoshipInfo.partC[i].proName,'part':'partD'});
         }
-        $scope.searchNote = "----------找不到匹配结果-----------";
-      }
+
+      }*/
+      $scope.searchNote = "----------找不到匹配结果-----------";
       $scope.goToDetail = function (proname,param) {
         $state.go('checktable_detail',{proName:proname,param:param})
       }

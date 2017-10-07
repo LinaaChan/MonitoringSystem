@@ -137,7 +137,7 @@ angular.module('starter', ['ionic','starter.controllers','cargoship.controllers'
         controller: 'classSearchCtrl'
       })
    .state('searchResult', {
-        url: '/searchResult/:searchGood/:searchUN/:dork/:dangerGoodClass',
+        url: '/searchResult/:searchGood/:searchUN/:dangerGoodClass',
         templateUrl: 'templates/search_result.html',
         controller: 'searchResultCtrl'
       })
