@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 angular.module('starter', ['ionic','starter.controllers','cargoship.controllers','dangerousGoods.controllers','emergencySupport.controllers'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform,$ionicPopup,$location,$ionicHistory) {
   $ionicPlatform.ready(function() {
     if(window.cordova && window.cordova.plugins.Keyboard) {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -21,6 +21,35 @@ angular.module('starter', ['ionic','starter.controllers','cargoship.controllers'
       StatusBar.styleDefault();
     }
   });
+  $ionicPlatform.registerBackButtonAction(function (e) {
+    function showConfirm() {
+      var confirmPopup = $ionicPopup.confirm({
+        title: '<strong>退出应用?</strong>',
+        template: '你确定要退出应用吗?',
+        okText: '退出',
+        cancelText: '取消'
+      });
+      confirmPopup.then(function (res) {
+        if (res) {
+          ionic.Platform.exitApp();
+        } else {
+          // Don't close
+        }
+      });
+    }
+    //判断处于哪个页面时双击退出
+    if ($location.path() == '/homepage' ) {
+      showConfirm();
+    } else if ($ionicHistory.backView() ) {
+      $ionicHistory.goBack();
+    } else {
+      // This is the last page: Show confirmation popup
+      showConfirm();
+    }
+    e.preventDefault();
+    return false;
+  }, 101);
+
 })
   .config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider) {
 

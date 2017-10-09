@@ -8,38 +8,38 @@ angular.module('cargoship.controllers', [])
 */
 
   .controller('oilShipCheckCtrl', function($scope,$q,$state,$http) {
-  /* $scope.selected= [
-       {"name":"A部分-通用-实际","value":"partA"},
-       {"name":"B部分-通用-口头","value":"partB"},
-       {"name":"C部分-散液-口头","value":"partC"},
-       {"name":"D部分-液化气-口头","value":"partD"}
-       ]*/
-    $scope.change = function (param) {
-      var defer = $q.defer();
-      $http({
-        method: 'get',
-        url: './templates/cargoship.json'
-      }).success(function (data) {
-        defer.resolve(data);
-       /* if(param=='partA'){
-          $scope.data = data.cargoshipInfo.partA;
-        }else if(param=='partB'){
-          $scope.data = data.cargoshipInfo.partB;
-        }else if(param=='partC'){
-          $scope.data = data.cargoshipInfo.partC;
-        }else{
-          $scope.data = data.cargoshipInfo.partD;
-        }*/
-        $scope.data = jsonsql.query("select * from json.cargoshipInfo where (part=='"+param+"')",data);
-
-        $scope.goToDetail = function (proname) {
-          $state.go('checktable_detail',{proName:proname,param:param})
+    var defer = $q.defer();
+    $http({
+      method: 'get',
+      url: './templates/cargoship.json'
+    }).success(function (data) {
+      defer.resolve(data);
+      $scope.partA_data = jsonsql.query("select * from json.cargoshipInfo where (part=='partA')",data);
+      $scope.partB_data = jsonsql.query("select * from json.cargoshipInfo where (part=='partB')",data);
+      $scope.partC_data = jsonsql.query("select * from json.cargoshipInfo where (part=='partC')",data);
+      $scope.partD_data = jsonsql.query("select * from json.cargoshipInfo where (part=='partD')",data);
+      $scope.groups= [
+        {"name":"A部分-通用-实际","value":"partA","items": $scope.partA_data, show: false},
+        {"name":"B部分-通用-口头","value":"partB","items": $scope.partB_data, show: false},
+        {"name":"C部分-散液-口头","value":"partC","items": $scope.partC_data, show: false},
+        {"name":"D部分-液化气-口头","value":"partD","items":$scope.partD_data, show: false}
+      ]
+      $scope.goToDetail = function (proname,param) {
+        $state.go('checktable_detail',{proName:proname,param:param})
+      }
+    }).error(function (data) {
+      defer.reject(data);
+    })
+        /*
+         * if given group is the selected group, deselect it
+         * else, select the given group
+         */
+        $scope.toggleGroup = function(group) {
+          group.show = !group.show;
+        };
+        $scope.isGroupShown = function(group) {
+          return group.show;
         }
-      }).error(function (data) {
-        defer.reject(data);
-      })
-    }
-
   })
   .controller('checkTableDetailCtrl', function($scope,$stateParams,$q,$http) {
     var defer = $q.defer();
