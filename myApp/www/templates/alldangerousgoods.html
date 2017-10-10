@@ -2,11 +2,13 @@
 
   <ion-content>
     <div class="list list-borderless">
-      <div class="row" style="flex-flow: row wrap"><!--//row wrap用于自动换行-->
-        <div class="item col col-50" ng-repeat="index in data" style="text-align: center" >
-          <a class="button button-positive" ng-click="goToDetail(index.ChineseName)">{{index.ChineseName}}</a>
+      <!--<div class="row" style="flex-flow: row wrap">&lt;!&ndash;//row wrap用于自动换行&ndash;&gt;-->
+       <div class="item row" style="flex-flow: row wrap">
+        <div class="col col-50" ng-repeat="index in data" style="text-align: center" >
+          <a class="button button-block button-positive" ng-click="goToDetail(index.ChineseName)">{{index.ChineseName}}</a>
         </div>
-      </div>
+       </div>
+      <!--</div>-->
     </div>
   </ion-content>
   <div class="tabs tabs-icon-top tabs-positive">
