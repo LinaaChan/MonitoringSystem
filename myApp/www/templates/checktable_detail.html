@@ -1,22 +1,44 @@
 <ion-view title={{proName}}>
+  <ion-nav-buttons side="right">
+    <a class="button"  ui-sref="homepage">回到首页</a>
+  </ion-nav-buttons>
   <ion-content>
      <div class="list">
        <strong class="item item-text-wrap">{{proName}}:{{detailData.proTitle}}</strong>
-    </div>
+
     <div class="item item-divider">检查要点</div>
     <div class="item item-text-wrap" ng-repeat="index in detailData.proContent.checkPoint">
       {{index}}
     </div>
-    <div class="item item-divider">检查依据</div>
-    <div class="item item-text-wrap" ng-repeat="index in detailData.proContent.checkReason">
-      {{index.reasonName}}
-        <div style="margin-left:4px; " class="item-text-wrap" ng-bind-html="index.item">
-        </div>
 
-    </div>
     <div class="item item-divider">常见缺陷</div>
     <div class="item item-text-wrap" ng-repeat="index in detailData.proContent.weaknessItem">
       {{index}}
     </div>
+
+    <div class="item item-icon-right" ng-click="modal.show()">
+      检查依据
+      <span class="item-note">
+     查看更多
+      <i class="icon ion-chevron-right"></i>
+    </span>
+    </div>
+    </div>
   </ion-content>
+  <script id="my-modal.html" type="text/ng-template">
+    <div class="modal">
+      <ion-header-bar class="bar bar-positive">
+        <h1 class="title">检查依据</h1>
+        <a class="button icon ion-close-round button-positive" side="right" ng-click="modal.hide()"></a>
+      </ion-header-bar>
+      <ion-content>
+       <div class="list">
+          <div class="item item-text-wrap" ng-repeat="index in detailData.proContent.checkReason">
+            {{index.reasonName}}
+            <div style="margin-left:4px; " class="item-text-wrap" ng-bind-html="index.item">
+            </div>
+       </div>
+      </ion-content>
+    </div>
+  </script>
 </ion-view>

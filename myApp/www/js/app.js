@@ -168,7 +168,7 @@ angular.module('starter', ['ionic','starter.controllers','cargoship.controllers'
    .state('searchResult', {
         url: '/searchResult/:searchGood/:searchUN/:dangerGoodClass',
         templateUrl: 'templates/search_result.html',
-        controller: 'searchResultCtrl'
+        controller: 'classSearchResultCtrl'
       })
    .state('dangergoods_emergency', {
         url: '/dangergoods_emergency',
@@ -194,6 +194,11 @@ angular.module('starter', ['ionic','starter.controllers','cargoship.controllers'
         url: '/checktable',
         templateUrl: 'templates/according_to_checktable.html',
         controller:'oilShipCheckCtrl'
+      })
+      .state('dangergood_result', {
+        url: '/dangergood_result/:dangerSearchWord',
+        templateUrl: 'templates/dangergood_searchResult.html',
+        controller:'searchResultCtrl'
       })
       .state('checktable_detail', {
         url: '/checktable_detail/:proName/:param',

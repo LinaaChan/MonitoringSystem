@@ -1,6 +1,18 @@
 <ion-view title="全部危险货物">
-
+  <ion-nav-buttons side="right">
+    <a class="button"  ui-sref="homepage">回到首页</a>
+  </ion-nav-buttons>
   <ion-content>
+   <!--用于搜查什么？？？？暂时用于搜索货物-->
+    <div class="list list-borderless">
+      <div class="item-input-inset">
+        <form class="item-input-wrapper">
+          <i class="icon ion-ios-search placeholder-icon"></i>
+          <input style="width: 100%" type="search" placeholder="请输入货物名称" ng-model="input.content">
+        </form>
+        <button class="button button-clear button-positive" ng-click="search()">确认</button>
+      </div>
+    </div>
     <div class="list list-borderless">
       <!--<div class="row" style="flex-flow: row wrap">&lt;!&ndash;//row wrap用于自动换行&ndash;&gt;-->
        <div class="item row" style="flex-flow: row wrap">
@@ -11,7 +23,7 @@
       <!--</div>-->
     </div>
   </ion-content>
-  <div class="tabs tabs-icon-top tabs-positive">
+  <!--<div class="tabs tabs-icon-top tabs-positive">
     <a class="tab-item">
       <i class="icon ion-ios-search "></i>
       搜索
@@ -24,5 +36,5 @@
       <i class="icon ion-android-arrow-back"></i>
       返回
     </a>
-  </div>
+  </div>-->
 </ion-view>

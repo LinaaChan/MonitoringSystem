@@ -9,6 +9,7 @@ angular.module('dangerousGoods.controllers', [])
   })
   /*危险货物数据库控制器，模块一级界面2*/
   .controller('allDangerGoodCtrl', function($scope,$http,$q,$state) {
+    $scope.input={'content':''}
     var defer = $q.defer();
     $http({
       method: 'get',
@@ -19,6 +20,13 @@ angular.module('dangerousGoods.controllers', [])
     }).error(function (data) {
       defer.reject(data);
     })
+    $scope.search = function () {
+      if($scope.input.content==''){
+        alert("关键字不能为空！");
+      }else {
+        $state.go('dangergood_result',{'dangerSearchWord':$scope.input.content})
+      }
+    }
     $scope.goToDetail = function (goodName) {
       $state.go('dangerousgoodsdetails',{goodName:goodName});
     }
@@ -32,15 +40,6 @@ angular.module('dangerousGoods.controllers', [])
     $scope.goToCargoList = function () {
       $state.go('cargoshiplist',{checkCargoShip:$stateParams.goodName});
     }
-   /* $scope.goToProperty = function (goodName) {
-      $state.go('goodproperty',{goodNameForProperty:$stateParams.goodName});
-    }
-    $scope.goToIBCIGC = function (goodName) {
-      $state.go('IBCIGC',{goodNameIBCIGC:$stateParams.goodName});
-    }
-    $scope.goToOilFence = function (goodName) {
-      $state.go('oilFence',{goodNameoilFence:$stateParams.goodName});
-    }*/
   })
 
 /*模块三级页面1，货物特性列表：基本信息、理化特性、作业要求*/
@@ -181,28 +180,8 @@ angular.module('dangerousGoods.controllers', [])
       defer.reject(data);
     })
   })
-/*  .controller('IBCIGCCtrl', function($scope,$stateParams,$http,$q,$state) {
-    $scope.goodName = $stateParams.goodNameIBCIGC;
-    var defer = $q.defer();
-    $http({
-      method: 'get',
-      url: './templates/info.json'
-    }).success(function (data) {
-      defer.resolve(data);
-      for(var i=0;i<data.info.length;i++){
-        if(data.info[i].ChineseName==$scope.goodName){
-          $scope.detailInfo = data.info[i].IBCIGC;
-          console.log($scope.detailInfo);
-        }
-      }
-    }).error(function (data) {
-      defer.reject(data);
-    })
-  })*/
-/*  .controller('oilFenceCtrl', function($scope,$stateParams,$http,$q,$state) {
-    $scope.goodName = $stateParams.goodNameoilFence;
 
-  })*/
+//单独的搜索页面
   .controller('classSearchCtrl', function($scope,$state) {
     $scope.content={
       good_name:'',
@@ -217,12 +196,13 @@ angular.module('dangerousGoods.controllers', [])
      }
     }
   })
-  .controller('searchResultCtrl', function($scope,$stateParams,$http,$q,$state) {
+  //危险货物数据库分类搜索结果页面
+  .controller('classSearchResultCtrl', function($scope,$stateParams,$http,$q,$state) {
     /*DBInfo.json文件有些地方需要修改，需要将一下的字段放到数组的第一级字段中（为了不影响之前的代码，只能重复添加）*/
-    console.log($stateParams.searchGood);//货物名称
-    console.log($stateParams.searchUN);//UN编号
+  //  console.log($stateParams.searchGood);//货物名称
+   // console.log($stateParams.searchUN);//UN编号
  //   console.log($stateParams.dork);//码头泊位(还需要确定对应的是哪一个字段)
-    console.log($stateParams.dangerGoodClass);//危险货物类别
+   // console.log($stateParams.dangerGoodClass);//危险货物类别
       var defer = $q.defer();
       $http({
         method: 'get',
@@ -234,6 +214,29 @@ angular.module('dangerousGoods.controllers', [])
         defer.reject(data);
       })
     $scope.goToPropertyDetail = function (goodName) {
+      $state.go('dangerousgoodsdetails',{goodName:goodName});//跳转到二级页面，传递参数goodName
+    }
+  })
+//危险货物数据库模糊搜索页面控制器
+  .controller('searchResultCtrl', function($scope,$state,$stateParams,$http,$q) {
+   console.log($stateParams.dangerSearchWord);
+    $scope.searchResult=[];
+    var defer = $q.defer();
+    $http({
+      method: 'get',
+      url: './templates/DBInfo.json'
+    }).success(function (data) {
+      var reg = new RegExp($stateParams.dangerSearchWord);
+      for(var i=0;i<data.DBInfo.length;i++){
+        if(data.DBInfo[i].ChineseName.match(reg)||data.DBInfo[i].basicInfo.EnglishName.match(reg))
+          $scope.searchResult.push(data.DBInfo[i].ChineseName);
+      }
+      console.log($scope.searchResult);
+      $scope.searchNote="----------找不到相应货物-----------";
+    }).error(function (data) {
+      defer.reject(data);
+    })
+    $scope.goToDetail = function (goodName) {
       $state.go('dangerousgoodsdetails',{goodName:goodName});//跳转到二级页面，传递参数goodName
     }
   })

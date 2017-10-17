@@ -1,8 +1,20 @@
 <ion-view title="全部危险货物">
+  <ion-nav-buttons side="right">
+    <a class="button"  ui-sref="homepage">回到首页</a>
+  </ion-nav-buttons>
   <ion-content>
-    <div style="text-align: center">
-    <a class="button button-clear ion-search button-positive button-large" ui-sref="emergency_search">搜索</a>
+    <div class="list list-borderless">
+      <div class="item-input-inset">
+        <form class="item-input-wrapper">
+          <i class="icon ion-ios-search placeholder-icon"></i>
+          <input style="width: 100%" type="search" placeholder="请输入货物名称" ng-model="input.content">
+        </form>
+        <button class="button button-clear button-positive" ng-click="search()">确认</button>
+      </div>
     </div>
+    <!--<div style="text-align: center">
+    <a class="button button-clear ion-search button-positive button-large" ui-sref="emergency_search">搜索</a>
+    </div>-->
     <div class="list list-borderless">
       <div class="row" style="flex-flow: row wrap"><!--//row wrap用于自动换行-->
         <div class="item col col-50" ng-repeat="index in data" style="text-align: center" >

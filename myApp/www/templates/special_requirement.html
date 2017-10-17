@@ -1,4 +1,7 @@
 <ion-view title={{goodName}}>
+  <ion-nav-buttons side="right">
+    <a class="button"  ui-sref="homepage">回到首页</a>
+  </ion-nav-buttons>
 <!--
 点击特殊要求，根据该货物所属种类（基本信息中的“种类”），
 若是油类，则详细信息页无内容，
@@ -12,7 +15,11 @@
       </div>
       <label class="item" ng-if="detailInfo.basicInfo.classification=='化学品'">
         IBC 特殊要求及操作要求
-        <span class="item-note item-text-wrap" ng-bind-html="detailInfo.specialRequest.Chemical.IBCspecialRequest"></span>
+        <div style="color: black;font-size: 15px" class="item-text-wrap" ng-repeat="index in detailInfo.specialRequest.Chemical.IBCspecialRequest">
+          <strong>{{index.title}}</strong>
+           <span class="item-note item-text-wrap" ng-bind-html="index.content"></span>
+        </div>
+
       </label>
       <label class="item" ng-if="detailInfo.basicInfo.classification=='液化气体'">
         IGC 特殊要求

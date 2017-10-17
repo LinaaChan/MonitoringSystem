@@ -1,5 +1,7 @@
 <ion-view title='应急处置支持信息'>
-
+  <ion-nav-buttons side="right">
+    <a class="button"  ui-sref="homepage">回到首页</a>
+  </ion-nav-buttons>
   <ion-content>
     <div class="list list-borderless">
       <div class="item">
@@ -22,7 +24,7 @@
       </label>
       <label class="item ">
        4.急救 皮肤接触
-        <div class="item-note item-text-wrap">{{emergencyMethod.skinExposure}}</div>
+        <div class="item-message item-text-wrap">{{emergencyMethod.skinExposure}}</div>
       </label>
       <label class="item ">
        5.急救 眼睛接触
@@ -37,6 +39,9 @@
         <div class="item-message item-text-wrap">{{emergencyMethod.ingestion}}</div>
       </label>
     </div>
+
+      <a class="button button-block button-positive" ng-click="goToGood()">货物数据库</a>
+
   </ion-content>
 
 </ion-view>
