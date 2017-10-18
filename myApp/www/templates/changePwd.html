@@ -1,0 +1,22 @@
+<ion-view title="登录">
+
+  <ion-content>
+    <div style="text-align: center;margin-top: 12px;">
+      <img ng-src="./templates/imgs/logo3.gif">
+    </div>
+    <div class="list card" style="margin-top: 12px;">
+      <label class="item item-input">
+        <span class="input-label"><strong>新的密码</strong></span>
+        <input type="password" ng-model="user.pwd1">
+      </label>
+      <label class="item item-input">
+        <span class="input-label"><strong>确认密码</strong></span>
+        <input type="password" ng-model="user.pwd2">
+      </label>
+      <div class="item ">
+        <a class="button button-positive button-block" ng-click="changePwd()">确认</a>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>

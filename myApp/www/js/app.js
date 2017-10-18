@@ -68,6 +68,16 @@ angular.module('starter', ['ionic','starter.controllers','cargoship.controllers'
         templateUrl: 'templates/homepage.html',
         controller: 'homepageCtrl'
       })
+      .state('loginPage', {
+        url: '/loginPage',
+        templateUrl: 'templates/loginPage.html',
+        controller:'loginPageCtrl'
+      })
+      .state('changePwd', {
+        url: '/changePwd/:account',
+        templateUrl: 'templates/changePwd.html',
+        controller:'changePwdCtrl'
+      })
       /*由于没有分类暂时先去掉这个船舶种类的页面，html暂时不删除*/
       /*.state('cargoshipcheck', {
         url: '/cargoshipcheck/:keyword',
@@ -217,6 +227,6 @@ angular.module('starter', ['ionic','starter.controllers','cargoship.controllers'
       })
 
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/homepage');
+    $urlRouterProvider.otherwise('/loginPage');
 
   });

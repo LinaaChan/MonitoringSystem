@@ -1,0 +1,22 @@
+<ion-view title="登录">
+
+  <ion-content>
+    <div style="text-align: center;margin-top: 12px;">
+      <img ng-src="./templates/imgs/logo3.gif">
+    </div>
+    <div class="list card" style="margin-top: 12px;">
+      <label class="item item-input">
+        <span class="input-label"><strong>账号</strong></span>
+        <input type="text" ng-model="loginData.account">
+      </label>
+      <label class="item item-input">
+        <span class="input-label"><strong>密码</strong></span>
+        <input type="password" ng-model="loginData.password">
+      </label>
+      <div class="item ">
+        <a class="button button-positive button-block" ng-click="doLogin()">登录</a>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>
