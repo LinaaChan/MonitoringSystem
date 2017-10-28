@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 /*通用控制器*/
-  .controller('homepageCtrl', function($scope,$state) {
+  .controller('homepageCtrl', function($scope,$state,$rootScope) {
     $scope.gotoCargo = function (params) {
      $state.go('oilshipcheck');
     }
@@ -27,7 +27,8 @@ angular.module('starter.controllers', [])
            if($scope.result==null||$scope.result==''){
              alert("用户不存在！");
            }else if($scope.result[0].password==$scope.loginData.password){
-             $rootScope.account=$scope.result[0].password;
+           //  $rootScope.account=$scope.result[0].password;
+             $rootScope.username = $scope.result[0].user;
              $state.go('homepage');
            }else{
              alert("密码错误！");
@@ -38,6 +39,7 @@ angular.module('starter.controllers', [])
        }
      }
   })
+  /*修改密码的功能目前暂不能实现*/
   .controller('changePwdCtrl', function($scope,$state,$rootScope,$q,$http,$rootScope) {
      $scope.user={
        "pwd1":"",

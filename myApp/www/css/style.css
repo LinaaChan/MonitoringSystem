@@ -17,3 +17,8 @@
 .list .item.item-accordion.ng-hide-remove {
   display: block !important;
 }
+/*
+ion-nav-bar .account{
+  font-size: 11px;
+}
+*/
