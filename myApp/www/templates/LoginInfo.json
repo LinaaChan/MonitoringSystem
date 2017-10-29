@@ -1,6 +1,11 @@
 {
   "members":[
     {
+      "account":"admin",
+      "password":"admin",
+      "user":"admin"
+    },
+    {
       "account":"01028321",
       "password":"01028321",
       "user":"刘政训"

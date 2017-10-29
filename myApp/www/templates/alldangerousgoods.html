@@ -1,7 +1,7 @@
 <ion-view title="全部危险货物">
   <ion-nav-buttons side="right">
     <a class="button button-clear"  style="font-size: 11px;">{{username}}</a>
-    <a class="button"  ui-sref="homepage">回到首页</a>
+    <a class="icon button button-positive ion-home"  ui-sref="homepage"></a>
   </ion-nav-buttons>
   <ion-content>
    <!--用于搜查什么？？？？暂时用于搜索货物-->
@@ -16,7 +16,7 @@
     </div>
     <div class="list list-borderless">
       <!--<div class="row" style="flex-flow: row wrap">&lt;!&ndash;//row wrap用于自动换行&ndash;&gt;-->
-       <div class="item row" style="flex-flow: row wrap">
+       <div class="item row item-text-wrap" style="flex-flow: row wrap">
         <div class="col col-50" ng-repeat="index in data" style="text-align: center" >
           <a class="button button-block button-positive" ng-click="goToDetail(index.ChineseName)">{{index.ChineseName}}</a>
         </div>
