@@ -203,13 +203,30 @@ angular.module('dangerousGoods.controllers', [])
    // console.log($stateParams.searchUN);//UN编号
  //   console.log($stateParams.dork);//码头泊位(还需要确定对应的是哪一个字段)
    // console.log($stateParams.dangerGoodClass);//危险货物类别
+      var keystr = $stateParams.searchGood+$stateParams.searchUN+$stateParams.dangerGoodClass;
+      $scope.result=[];
+      var reg = new RegExp(keystr);
       var defer = $q.defer();
       $http({
         method: 'get',
         url: './templates/DBInfo.json'
       }).success(function (data) {
         /*使用JsonSql插件进行对json文件的查询操作，后续需要修改，可将之前进行的循环查询代码全部替换为使用插件查询以提高速度*/
-        $scope.result = jsonsql.query("select ChineseName from json.DBInfo where (ChineseName=='"+$stateParams.searchGood+"' || Unnum=='"+$stateParams.searchUN+"' || classification=='"+$stateParams.dangerGoodClass+"') order by ChineseName",data);
+
+       // $scope.result = jsonsql.query("select * from json.DBInfo where (ChineseName=='"+$stateParams.searchGood+"' && Unnum=='"+$stateParams.searchUN+"' && classification=='"+$stateParams.dangerGoodClass+"')",data);
+        $scope.result_init = jsonsql.query("select * from json.DBInfo where (ChineseName=='"+$stateParams.searchGood+"' || Unnum=='"+$stateParams.searchUN+"' || classification=='"+$stateParams.dangerGoodClass+"')",data)
+        if($scope.result_init!=null ){
+          var str = "";
+          for(var i=0;i<$scope.result_init.length;i++){
+            if($stateParams.searchUN==''){ str = $scope.result_init[i].ChineseName +  $scope.result_init[i].classification;}
+            else{
+              str = $scope.result_init[i].ChineseName + $scope.result_init[i].Unnum + $scope.result_init[i].classification;
+            }
+            if(str.match(reg)){
+              $scope.result.push($scope.result_init[i]);
+            }
+          }
+        }
       }).error(function (data) {
         defer.reject(data);
       })
@@ -231,7 +248,6 @@ angular.module('dangerousGoods.controllers', [])
         if(data.DBInfo[i].ChineseName.match(reg)||data.DBInfo[i].basicInfo.EnglishName.match(reg))
           $scope.searchResult.push(data.DBInfo[i].ChineseName);
       }
-      console.log($scope.searchResult);
       $scope.searchNote="----------找不到相应货物-----------";
     }).error(function (data) {
       defer.reject(data);
