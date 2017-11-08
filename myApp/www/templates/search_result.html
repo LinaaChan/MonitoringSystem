@@ -9,11 +9,13 @@
         搜索结果
       </div>
       <div class="row row-wrap">
-        <div class="item col col-50 item-text-wrap" ng-repeat="index in result">
-          <a class="button button-positive button-block" ng-click="goToPropertyDetail(index.ChineseName)">{{index.ChineseName}}</a>
+        <div class="item col col-50 item-text-wrap" ng-repeat="index in result_list | unique: 'ChineseName'">
+          <a class="button button-positive button-block" ng-click="goToPropertyDetail(index.ChineseName,index.classification)">{{index.ChineseName}}</a>
         </div>
       </div>
-
+    </div>
+    <div style="text-align: center" ng-if="result==''||result==null" >
+      {{searchNote}}
     </div>
   </ion-content>
  <!-- <div class="tabs tabs-icon-top tabs-positive">

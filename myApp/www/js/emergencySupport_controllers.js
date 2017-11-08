@@ -11,8 +11,8 @@ angular.module('emergencySupport.controllers', [])
     }).error(function (data) {
       defer.reject(data);
     })
-    $scope.goToDetail = function (goodName) {
-      $state.go('emergencysupport_detail',{emergency_goodname:goodName});
+    $scope.goToDetail = function (goodName,type) {
+      $state.go('emergencysupport_detail',{emergency_goodname:goodName,goodtype_emer:type});
     }
     $scope.input = {'content':''};
     $scope.search = function () {
@@ -41,12 +41,12 @@ angular.module('emergencySupport.controllers', [])
       defer.reject(data);
     })
     $scope.goToGood = function () {
-      $state.go('dangerousgoodsdetails',{goodName:$stateParams.emergency_goodname})
+      $state.go('dangerousgoodsdetails',{goodName:$stateParams.emergency_goodname,goodType:$stateParams.goodtype_emer})
     }
   })
   .controller('dangerGoodEmergencyCtrl', function($scope,$state) {
-    $scope.goToDetail = function (goodName) {
-      $state.go('emergencysupport_detail',{emergency_goodname:goodName});
+    $scope.goToDetail = function (goodName,type) {
+      $state.go('emergencysupport_detail',{emergency_goodname:goodName,goodtype_emer:type});
     }
   })
   /*需要删除*/
@@ -78,7 +78,6 @@ angular.module('emergencySupport.controllers', [])
             $scope.searchResult.push(data.Emergency[i].ChineseName);
         }
         $scope.searchNote="----------找不到相应货物-----------";
-      console.log($scope.searchResult);
 
       }).error(function (data) {
         defer.reject(data);

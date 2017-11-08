@@ -6,7 +6,7 @@
   <ion-content>
     <div class="list list-borderless">
       <div class="row" style="flex-flow: row wrap"><!--//row wrap用于自动换行-->
-        <div class="item col col-50" ng-repeat="index in searchResult">
+        <div class="item item-text-wrap col col-50" ng-repeat="index in searchResult">
           <a class="button button-block button-positive" ng-click="goToDetail(index)">{{index}}</a>
         </div>
       </div>

@@ -3,8 +3,8 @@ angular.module('dangerousGoods.controllers', [])
 
 /*危险货物数据库控制器，模块一级界面1*/
   .controller('dangerousgoodsDBCtrl', function($scope,$stateParams,$state) {
-    $scope.goToPropertyDetail = function (goodName) {
-      $state.go('dangerousgoodsdetails',{goodName:goodName});//跳转到二级页面，传递参数goodName
+    $scope.goToPropertyDetail = function (goodName,goodType) {
+      $state.go('dangerousgoodsdetails',{goodName:goodName,goodType:goodType});//跳转到二级页面，传递参数goodName
     }
   })
   /*危险货物数据库控制器，模块一级界面2*/
@@ -20,20 +20,22 @@ angular.module('dangerousGoods.controllers', [])
     }).error(function (data) {
       defer.reject(data);
     })
-    $scope.search = function () {
+    $scope.do_search = function () {
       if($scope.input.content==''){
         alert("关键字不能为空！");
       }else {
         $state.go('dangergood_result',{'dangerSearchWord':$scope.input.content})
       }
     }
-    $scope.goToDetail = function (goodName) {
-      $state.go('dangerousgoodsdetails',{goodName:goodName});
+    $scope.goToDetail = function (goodName,goodType) {
+      $state.go('dangerousgoodsdetails',{goodName:goodName,goodType:goodType});
     }
   })
   /*模块二级页面，货物特性和船舶适载要求*/
   .controller('dangerGoodDetailCtrl', function($scope,$stateParams,$http,$q,$state) {
     $scope.goodName = $stateParams.goodName;
+    $scope.goodType = $stateParams.goodType;
+    console.log($stateParams.goodType);
     $scope.goToPropertyList = function () {
       $state.go('goodpropertylist',{checkGoodName:$stateParams.goodName});
     }
@@ -72,7 +74,6 @@ angular.module('dangerousGoods.controllers', [])
 /*基本信息页面：英文名、别名、种类、联合国编号、CAS编号、污染类别(有毒液体物质)、持久性（油类）、危害性（IBC）、分子式*/
   .controller('goodPropertyBasicInfoCtrl', function($scope,$stateParams,$http,$q) {
     $scope.goodName = $stateParams.goodNameForBasicInfo;
-    console.log($stateParams.goodNameForBasicInfo);
     var defer = $q.defer();
     $http({
       method: 'get',
@@ -198,40 +199,85 @@ angular.module('dangerousGoods.controllers', [])
   })
   //危险货物数据库分类搜索结果页面
   .controller('classSearchResultCtrl', function($scope,$stateParams,$http,$q,$state) {
-    /*DBInfo.json文件有些地方需要修改，需要将一下的字段放到数组的第一级字段中（为了不影响之前的代码，只能重复添加）*/
-  //  console.log($stateParams.searchGood);//货物名称
-   // console.log($stateParams.searchUN);//UN编号
- //   console.log($stateParams.dork);//码头泊位(还需要确定对应的是哪一个字段)
-   // console.log($stateParams.dangerGoodClass);//危险货物类别
-      var keystr = $stateParams.searchGood+$stateParams.searchUN+$stateParams.dangerGoodClass;
+
       $scope.result=[];
-      var reg = new RegExp(keystr);
+     // var reg_name = new RegExp($stateParams.searchGood); //关于名字的模糊匹配
       var defer = $q.defer();
       $http({
         method: 'get',
         url: './templates/DBInfo.json'
       }).success(function (data) {
         /*使用JsonSql插件进行对json文件的查询操作，后续需要修改，可将之前进行的循环查询代码全部替换为使用插件查询以提高速度*/
+        // $scope.result_init = jsonsql.query("select * from json.DBInfo where (ChineseName=='"+$stateParams.searchGood+"' || Unnum=='"+$stateParams.searchUN+"' || classification=='"+$stateParams.dangerGoodClass+"')",data)
+         $scope.name_result=[];
+         $scope.un_result=[];
+         $scope.class_result=[];
+         var condition_num = 0; //不为空的条件数
+         //当种类不为空
+         if($stateParams.dangerGoodClass!=""){
+           $scope.class_result  = jsonsql.query("select * from json.DBInfo where ( classification=='"+$stateParams.dangerGoodClass+"')",data)
+           condition_num++;
+         }
 
-       // $scope.result = jsonsql.query("select * from json.DBInfo where (ChineseName=='"+$stateParams.searchGood+"' && Unnum=='"+$stateParams.searchUN+"' && classification=='"+$stateParams.dangerGoodClass+"')",data);
-        $scope.result_init = jsonsql.query("select * from json.DBInfo where (ChineseName=='"+$stateParams.searchGood+"' || Unnum=='"+$stateParams.searchUN+"' || classification=='"+$stateParams.dangerGoodClass+"')",data)
-        if($scope.result_init!=null ){
-          var str = "";
-          for(var i=0;i<$scope.result_init.length;i++){
-            if($stateParams.searchUN==''){ str = $scope.result_init[i].ChineseName +  $scope.result_init[i].classification;}
-            else{
-              str = $scope.result_init[i].ChineseName + $scope.result_init[i].Unnum + $scope.result_init[i].classification;
-            }
-            if(str.match(reg)){
-              $scope.result.push($scope.result_init[i]);
+         //当编号不为空
+        if($stateParams.searchUN!=""){
+          var reg = new RegExp($stateParams.searchUN);
+          for(var i=0;i<data.DBInfo.length;i++){
+            if(data.DBInfo[i].Unnum.match(reg))
+              $scope.un_result.push(data.DBInfo[i]);
+          }
+          condition_num++;
+        }
+        //当名称不为空
+        if($stateParams.searchGood!=""){
+          var reg = new RegExp($stateParams.searchGood);
+            for(var i=0;i<data.DBInfo.length;i++){
+              if(data.DBInfo[i].ChineseName.match(reg))
+                $scope.name_result.push(data.DBInfo[i]);
+          }
+          condition_num++;
+        }
+        $scope.arr = [];
+        $scope.result = $scope.name_result.concat($scope.class_result.concat($scope.un_result));
+        $scope.result.sort(function(a,b){
+          return a.Number - b.Number;//时间正序
+        });
+
+        for (var i = 0; i < $scope.result.length;) {
+          var count = 0;
+          for (var j = i; j < $scope.result.length; j++) {
+            if ($scope.result[i].Number === $scope.result[j].Number) {
+              count++;
             }
           }
+          $scope.arr.push({
+            ChineseName: $scope.result[i].ChineseName,
+            classification:$scope.result[i].classification,
+            Unnum:$scope.result[i].Unnum,
+            count: count
+          })
+          i+=count;
         }
+        $scope.result_list = [];
+        for (var k = 0; k <  $scope.arr.length; k++) {
+          if(condition_num==1){
+            if($scope.arr[k].count==1)
+            $scope.result_list.push($scope.arr[k]);
+          }else if(condition_num==2){
+            if($scope.arr[k].count==2)
+              $scope.result_list.push($scope.arr[k]);
+          }else if(condition_num==3){
+            if($scope.arr[k].count==3)
+              $scope.result_list.push($scope.arr[k]);
+          }
+        }
+        $scope.searchNote="----------找不到相应货物-----------";
+
       }).error(function (data) {
         defer.reject(data);
       })
-    $scope.goToPropertyDetail = function (goodName) {
-      $state.go('dangerousgoodsdetails',{goodName:goodName});//跳转到二级页面，传递参数goodName
+    $scope.goToPropertyDetail = function (goodName,good_type) {
+      $state.go('dangerousgoodsdetails',{goodName:goodName,goodType:good_type});//跳转到二级页面，传递参数goodName
     }
   })
 //危险货物数据库模糊搜索页面控制器

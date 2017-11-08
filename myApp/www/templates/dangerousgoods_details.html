@@ -9,7 +9,7 @@
         <a class="button button-block button-positive" ng-click="goToPropertyList()">货物特性</a>
       </div>
       <div class="item">
-        <a class="button button-block button-positive" ng-click="goToCargoList ()">船舶适载要求</a>
+        <a class="button button-block button-positive" ng-click="goToCargoList ()" ng-if="goodType!='油类'">船舶适载要求</a>
       </div>
 
      <!-- <div class="item">

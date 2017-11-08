@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('starter', ['ionic','starter.controllers','cargoship.controllers','dangerousGoods.controllers','emergencySupport.controllers'])
+angular.module('starter', ['ionic','starter.controllers','cargoship.controllers','dangerousGoods.controllers','emergencySupport.controllers','starter.services'])
 
 .run(function($ionicPlatform,$ionicPopup,$location,$ionicHistory) {
   $ionicPlatform.ready(function() {
@@ -71,7 +71,8 @@ angular.module('starter', ['ionic','starter.controllers','cargoship.controllers'
       .state('loginPage', {
         url: '/loginPage',
         templateUrl: 'templates/loginPage.html',
-        controller:'loginPageCtrl'
+        controller:'loginPageCtrl',
+        cache:false
       })
       .state('changePwd', {
         url: '/changePwd/:account',
@@ -108,7 +109,7 @@ angular.module('starter', ['ionic','starter.controllers','cargoship.controllers'
       })
       /*模块二级界面,货物特性和船舶适载要求*/
       .state('dangerousgoodsdetails', {
-        url: '/dangerousgoodsdetails/:goodName',
+        url: '/dangerousgoodsdetails/:goodName/:goodType',
         templateUrl: 'templates/dangerousgoods_details.html',
         controller: 'dangerGoodDetailCtrl'
       })
@@ -191,7 +192,7 @@ angular.module('starter', ['ionic','starter.controllers','cargoship.controllers'
         controller:'allDangerGoodEmergencyCtrl'
       })
       .state('emergencysupport_detail', {
-        url: '/emergencysupport_detail/:emergency_goodname',
+        url: '/emergencysupport_detail/:emergency_goodname/:goodtype_emer',
         templateUrl: 'templates/emergencysupport_details.html',
         controller:'emergencySupportDetailCtrl'
       })
@@ -207,7 +208,7 @@ angular.module('starter', ['ionic','starter.controllers','cargoship.controllers'
       })
       .state('dangergood_result', {
         url: '/dangergood_result/:dangerSearchWord',
-        templateUrl: 'templates/dangergood_searchResult.html',
+        templateUrl: 'templates/dangergood_searchresult.html',
         controller:'searchResultCtrl'
       })
       .state('checktable_detail', {

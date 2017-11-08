@@ -1,4 +1,4 @@
-<ion-view title="登录">
+<ion-view title="登录" hide-back-button="true">
 
   <ion-content scroll="false">
     <div style="text-align: center;margin-top: 12px;">
@@ -7,16 +7,31 @@
     <div class="list card" style="margin-top: 12px;">
       <label class="item item-input">
         <span class="input-label"><strong>账号</strong></span>
-        <input type="text" ng-model="loginData.account">
+        <input type="text" ng-model="loginData.account" value="loginData.account">
       </label>
       <label class="item item-input">
         <span class="input-label"><strong>密码</strong></span>
-        <input type="password" ng-model="loginData.password">
+        <input type="password" ng-model="loginData.password" value="loginData.password">
       </label>
-      <div class="item ">
+      <ion-checkbox type="checkbox" ng-model="loginData.checked"  ng-checked="loginData.checked">记住密码</ion-checkbox>
+      <div class="item" >
+        <!--<input type="checkbox" ng-model="loginData.isLogin" checked="loginData.isLogin">自动登录-->
+       <!-- <input type="checkbox" ng-model="isChecked" ng-checked="isRemember">记住密码-->
         <a class="button button-positive button-block" ng-click="doLogin()">登录</a>
       </div>
     </div>
+
+
+    <div class="list">
+
+      <ion-checkbox ng-repeat="item in devList"
+                    ng-model="item.checked"
+                    ng-checked="item.checked">
+        {{ item.text }}
+      </ion-checkbox>
+
+
+
 
   </ion-content>
 </ion-view>
