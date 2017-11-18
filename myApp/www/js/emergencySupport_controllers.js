@@ -7,7 +7,9 @@ angular.module('emergencySupport.controllers', [])
       url: './templates/emergency.json'
     }).success(function (data) {
       defer.resolve(data);
-      $scope.data = data.Emergency;
+      $scope.data = data.Emergency.sort(function(a,b){
+        return a.capital.localeCompare(b.capital);
+      });
     }).error(function (data) {
       defer.reject(data);
     })

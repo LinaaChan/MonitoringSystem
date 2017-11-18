@@ -1,6 +1,13 @@
 <ion-view title="登录" hide-back-button="true">
+  <ion-nav-buttons side="right">
 
+    <a class="icon button button-positive iconfont icon-refresh">数据更新</a>
+
+  </ion-nav-buttons>
   <ion-content scroll="false">
+    <div style="font-family: 微软雅黑;text-align: center;margin-top: 20px;font-size: 18px;">
+      <p>散装液态危险货物作业监管支持系统</p>
+    </div>
     <div style="text-align: center;margin-top: 12px;">
       <img ng-src="./templates/imgs/logo3.png">
     </div>
@@ -17,7 +24,7 @@
       <div class="item" >
         <!--<input type="checkbox" ng-model="loginData.isLogin" checked="loginData.isLogin">自动登录-->
        <!-- <input type="checkbox" ng-model="isChecked" ng-checked="isRemember">记住密码-->
-        <a class="button button-positive button-block" ng-click="doLogin()">登录</a>
+        <a class="button  button-positive button-block" ng-click="doLogin()">登录</a>
       </div>
     </div>
 

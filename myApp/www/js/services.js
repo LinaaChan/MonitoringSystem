@@ -25,7 +25,7 @@ angular.module('starter.services', [])
       logout:function () {
         var confirmPopup = $ionicPopup.confirm({
           title: '退出登陆？',
-          template: '是否确认推出此账号，登陆信息将被清空?',
+          template: '是否确认退出此账号，登陆信息将被清空?',
           okText: '确定',
           cancelText: '取消'
         });
@@ -33,18 +33,18 @@ angular.module('starter.services', [])
           if(res) {
             // locals.set("username","");
            // locals.set("account","");
-            console.log(locals.get("isPassword"));
-            console.log("log out");
             if(locals.get("isPassword")==false||locals.get("isPassword")=="false"){
               locals.set("password","");
               locals.set("isPassword",false);
             }
             $state.go('loginPage',{},{reload:true});
-          } else {
-            console.log("conceal");
-          }
+          } else {}
         });
+      },
+      login:function () {
+
       }
+
     }
   }
   ])

@@ -8,8 +8,8 @@
        <strong class="item item-text-wrap">{{proName}}:{{detailData.proTitle}}</strong>
 
     <div class="item item-divider">检查要点</div>
-    <div class="item item-text-wrap" ng-repeat="index in detailData.proContent.checkPoint">
-      {{index}}
+    <div class="item item-text-wrap" ng-bind-html="index" ng-repeat="index in detailData.proContent.checkPoint">
+     <!-- {{index}}-->
     </div>
 
     <div class="item item-divider">常见缺陷</div>

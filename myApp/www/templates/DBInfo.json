@@ -2,6 +2,7 @@
   "DBInfo":[
     {
       "Number":1,
+      "capital":"R",
       "ChineseName":"燃料油",
       "classification":"油类",
       "Unnum":"-",
@@ -26,7 +27,8 @@
       },
       "jobRequirements":{
         "oilfence":"需要",
-        "emergencyStandby":"需要"
+        "emergencyStandby":"需要",
+        "MandatoryPrewash":"否"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -76,6 +78,7 @@
       }
     },{
       "Number":2,
+      "capital":"Y",
       "ChineseName":"乙二醇",
       "classification":"油类",
       "Unnum":"-",
@@ -100,7 +103,8 @@
       },
       "jobRequirements":{
         "oilfence":"不需要",
-        "emergencyStandby":"需要"
+        "emergencyStandby":"需要",
+        "MandatoryPrewash":"否"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -150,6 +154,7 @@
       }
     },{
       "Number":3,
+      "capital":"B",
       "ChineseName":"苯",
       "classification":"化学品",
       "Unnum":"1114",
@@ -174,7 +179,8 @@
       },
       "jobRequirements":{
         "oilfence":"需要",
-        "emergencyStandby":"需要"
+        "emergencyStandby":"需要",
+        "MandatoryPrewash":"当熔点<15℃，卸载时温度不高于熔点5℃时，或当熔点>15℃，卸载时温度不高于熔点10℃时，需强制预洗"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -237,6 +243,7 @@
       }
     },{
       "Number":4,
+      "capital":"D",
       "ChineseName":"对二甲苯",
       "classification":"化学品",
       "Unnum":"1307",
@@ -261,7 +268,8 @@
       },
       "jobRequirements":{
         "oilfence":"需要",
-        "emergencyStandby":"需要"
+        "emergencyStandby":"需要",
+        "MandatoryPrewash":"当熔点<15℃，卸载时温度不高于熔点5℃时，或当熔点>15℃，卸载时温度不高于熔点10℃时，需强制预洗"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -316,6 +324,7 @@
       }
     },{
       "Number":5,
+      "capital":"J",
       "ChineseName":"甲苯",
       "classification":"化学品",
       "Unnum":"1294",
@@ -340,7 +349,8 @@
       },
       "jobRequirements":{
         "oilfence":"需要",
-        "emergencyStandby":"需要"
+        "emergencyStandby":"需要",
+        "MandatoryPrewash":"否"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -391,6 +401,7 @@
       }
     },{
       "Number":6,
+      "capital":"S",
       "ChineseName":"石脑油",
       "classification":"油类",
       "Unnum":"2553",
@@ -415,7 +426,8 @@
       },
       "jobRequirements":{
         "oilfence":"需要",
-        "emergencyStandby":"需要"
+        "emergencyStandby":"需要",
+        "MandatoryPrewash":"否"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -466,6 +478,7 @@
       }
     },{
       "Number":7,
+      "capital":"Z",
       "ChineseName":"正丁烷",
       "classification":"液化气体",
       "Unnum":"1011",
@@ -490,7 +503,8 @@
       },
       "jobRequirements":{
         "oilfence":"不需要",
-        "emergencyStandby":"需要"
+        "emergencyStandby":"需要",
+        "MandatoryPrewash":"否"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -541,6 +555,7 @@
       }
     },{
       "Number":8,
+      "capital":"A",
       "ChineseName":"氨",
       "classification":"液化气体",
       "Unnum":"1005",
@@ -565,7 +580,8 @@
       },
       "jobRequirements":{
         "oilfence":"不需要",
-        "emergencyStandby":"需要"
+        "emergencyStandby":"需要",
+        "MandatoryPrewash":"否"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -628,6 +644,7 @@
       }
     },{
       "Number":9,
+      "capital":"B",
       "ChineseName":"苯胺",
       "classification":"化学品",
       "Unnum":"1547",
@@ -652,7 +669,8 @@
       },
       "jobRequirements":{
         "oilfence":"需要",
-        "emergencyStandby":"需要"
+        "emergencyStandby":"需要",
+        "MandatoryPrewash":"否"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -715,6 +733,7 @@
       }
     },{
       "Number":10,
+      "capital":"E",
       "ChineseName":"二苯基甲烷二异氰酸酯",
       "classification":"化学品",
       "Unnum":"-",
@@ -739,7 +758,8 @@
       },
       "jobRequirements":{
         "oilfence":"不需要",
-        "emergencyStandby":"需要"
+        "emergencyStandby":"需要",
+        "MandatoryPrewash":"1、当熔点<15℃，卸载时温度不高于熔点5℃时，或当熔点>15℃，卸载时温度不高于熔点10℃时，需强制预洗；<\br>2、在卸货温度下，当粘度>50mpa▪s时，需强制预洗"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -811,6 +831,7 @@
       }
     },{
       "Number":11,
+      "capital":"J",
       "ChineseName":"聚二苯甲烷二异氰酸酯",
       "classification":"化学品",
       "Unnum":"-",
@@ -835,7 +856,8 @@
       },
       "jobRequirements":{
         "oilfence":"不需要",
-        "emergencyStandby":"需要"
+        "emergencyStandby":"需要",
+        "MandatoryPrewash":"1、当熔点<15℃，卸载时温度不高于熔点5℃时，或当熔点>15℃，卸载时温度不高于熔点10℃时，需强制预洗；<\br>2、在卸货温度下，当粘度>50mpa▪s时，需强制预洗"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -906,6 +928,7 @@
       }
     },{
       "Number":12,
+      "capital":"X",
       "ChineseName":"硝基苯",
       "classification":"化学品",
       "Unnum":"1662",
@@ -930,7 +953,8 @@
       },
       "jobRequirements":{
         "oilfence":"不需要",
-        "emergencyStandby":"需要"
+        "emergencyStandby":"需要",
+        "MandatoryPrewash":"当熔点<15℃，卸载时温度不高于熔点5℃时，或当熔点>15℃，卸载时温度不高于熔点10℃时，需强制预洗"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -997,6 +1021,7 @@
       }
     },{
       "Number":13,
+      "capital":"B",
       "ChineseName":"苯酚",
       "classification":"化学品",
       "Unnum":"1671",
@@ -1021,7 +1046,8 @@
       },
       "jobRequirements":{
         "oilfence":"不需要",
-        "emergencyStandby":"需要"
+        "emergencyStandby":"需要",
+        "MandatoryPrewash":"当熔点<15℃，卸载时温度不高于熔点5℃时，或当熔点>15℃，卸载时温度不高于熔点10℃时，需强制预洗"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -1080,6 +1106,7 @@
       }
     },{
       "Number":14,
+      "capital":"Y",
       "ChineseName":"异丙苯",
       "classification":"化学品",
       "Unnum":"1918",
@@ -1104,7 +1131,8 @@
       },
       "jobRequirements":{
         "oilfence":"需要",
-        "emergencyStandby":"需要"
+        "emergencyStandby":"需要",
+        "MandatoryPrewash":"否"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -1155,6 +1183,7 @@
       }
     },{
       "Number":15,
+      "capital":"#",
       "ChineseName":"1，6-己二胺",
       "classification":"化学品",
       "Unnum":"-",
@@ -1179,7 +1208,8 @@
       },
       "jobRequirements":{
         "oilfence":"不需要",
-        "emergencyStandby":"需要"
+        "emergencyStandby":"需要",
+        "MandatoryPrewash":"当熔点<15℃，卸载时温度不高于熔点5℃时，或当熔点>15℃，卸载时温度不高于熔点10℃时，需强制预洗"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -1246,6 +1276,7 @@
       }
     },{
       "Number":16,
+      "capital":"B",
       "ChineseName":"丙苯",
       "classification":"液化气体",
       "Unnum":"1077",
@@ -1270,7 +1301,8 @@
       },
       "jobRequirements":{
         "oilfence":"不需要",
-        "emergencyStandby":"需要"
+        "emergencyStandby":"需要",
+        "MandatoryPrewash":"否"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -1321,6 +1353,7 @@
       }
     },{
       "Number":17,
+      "capital":"H",
       "ChineseName":"混二甲苯",
       "classification":"化学品",
       "Unnum":"1307",
@@ -1345,7 +1378,8 @@
       },
       "jobRequirements":{
         "oilfence":"需要",
-        "emergencyStandby":"需要"
+        "emergencyStandby":"需要",
+        "MandatoryPrewash":"否"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -1400,6 +1434,7 @@
       }
     },{
       "Number":18,
+      "capital":"C",
       "ChineseName":"C8馏分",
       "classification":"化学品",
       "Unnum":"1262",
@@ -1424,7 +1459,8 @@
       },
       "jobRequirements":{
         "oilfence":"需要",
-        "emergencyStandby":"需要"
+        "emergencyStandby":"需要",
+        "MandatoryPrewash":"强制预洗"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -1479,6 +1515,7 @@
       }
     },{
       "Number":19,
+      "capital":"B",
       "ChineseName":"苯乙烯",
       "classification":"化学品",
       "Unnum":"2055",
@@ -1503,7 +1540,8 @@
       },
       "jobRequirements":{
         "oilfence":"需要",
-        "emergencyStandby":"需要"
+        "emergencyStandby":"需要",
+        "MandatoryPrewash":"否"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -1563,6 +1601,7 @@
       }
     },{
       "Number":20,
+      "capital":"C",
       "ChineseName":"C9",
       "classification":"化学品",
       "Unnum":"-",
@@ -1587,7 +1626,8 @@
       },
       "jobRequirements":{
         "oilfence":"需要",
-        "emergencyStandby":"需要"
+        "emergencyStandby":"需要",
+        "MandatoryPrewash":"强制预洗"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -1642,6 +1682,7 @@
       }
     },{
       "Number":21,
+      "capital":"C",
       "ChineseName":"C10馏分",
       "classification":"化学品",
       "Unnum":"2247",
@@ -1666,7 +1707,8 @@
       },
       "jobRequirements":{
         "oilfence":"需要",
-        "emergencyStandby":"需要"
+        "emergencyStandby":"需要",
+        "MandatoryPrewash":"强制预洗"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -1721,6 +1763,7 @@
       }
     },{
       "Number":22,
+      "capital":"J",
       "ChineseName":"加氢C9",
       "classification":"化学品",
       "Unnum":"-",
@@ -1745,7 +1788,8 @@
       },
       "jobRequirements":{
         "oilfence":"需要",
-        "emergencyStandby":"需要"
+        "emergencyStandby":"需要",
+        "MandatoryPrewash":"强制预洗"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -1800,6 +1844,7 @@
       }
     },{
       "Number":23,
+      "capital":"L",
       "ChineseName":"裂解汽油",
       "classification":"化学品",
       "Unnum":"-",
@@ -1824,7 +1869,8 @@
       },
       "jobRequirements":{
         "oilfence":"需要",
-        "emergencyStandby":"需要"
+        "emergencyStandby":"需要",
+        "MandatoryPrewash":"强制预洗"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -1879,6 +1925,7 @@
       }
     },{
       "Number":24,
+      "capital":"Q",
       "ChineseName":"汽油",
       "classification":"油类",
       "Unnum":"1203",
@@ -1903,7 +1950,8 @@
       },
       "jobRequirements":{
         "oilfence":"需要",
-        "emergencyStandby":"需要"
+        "emergencyStandby":"需要",
+        "MandatoryPrewash":"否"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -1954,6 +2002,7 @@
       }
     },{
       "Number":25,
+      "capital":"B",
       "ChineseName":"丙酮",
       "classification":"化学品",
       "Unnum":"1090",
@@ -1978,7 +2027,8 @@
       },
       "jobRequirements":{
         "oilfence":"不需要",
-        "emergencyStandby":"需要"
+        "emergencyStandby":"需要",
+        "MandatoryPrewash":"否"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -2029,6 +2079,7 @@
       }
     },{
       "Number":26,
+      "capital":"C",
       "ChineseName":"柴油",
       "classification":"油类",
       "Unnum":"1202",
@@ -2053,7 +2104,8 @@
       },
       "jobRequirements":{
         "oilfence":"需要",
-        "emergencyStandby":"需要"
+        "emergencyStandby":"需要",
+        "MandatoryPrewash":"否"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -2104,6 +2156,7 @@
       }
     },{
       "Number":27,
+      "capital":"B",
       "ChineseName":"丙酮氰醇",
       "classification":"化学品",
       "Unnum":"1541",
@@ -2128,7 +2181,8 @@
       },
       "jobRequirements":{
         "oilfence":"不需要",
-        "emergencyStandby":"需要"
+        "emergencyStandby":"需要",
+        "MandatoryPrewash":"否"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -2204,6 +2258,7 @@
       }
     },{
       "Number":28,
+      "capital":"J",
       "ChineseName":"甲醇",
       "classification":"化学品",
       "Unnum":"1230",
@@ -2228,7 +2283,8 @@
       },
       "jobRequirements":{
         "oilfence":"不需要",
-        "emergencyStandby":"需要"
+        "emergencyStandby":"需要",
+        "MandatoryPrewash":"否"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -2279,6 +2335,7 @@
       }
     },{
       "Number":29,
+      "capital":"X",
       "ChineseName":"硝酸",
       "classification":"化学品",
       "Unnum":"2031、2032",
@@ -2303,7 +2360,8 @@
       },
       "jobRequirements":{
         "oilfence":"不需要",
-        "emergencyStandby":"需要"
+        "emergencyStandby":"需要",
+        "MandatoryPrewash":"否"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -2357,6 +2415,7 @@
       }
     },{
       "Number":30,
+      "capital":"J",
       "ChineseName":"甲基丙烯酸甲酯",
       "classification":"化学品",
       "Unnum":"1247",
@@ -2381,7 +2440,8 @@
       },
       "jobRequirements":{
         "oilfence":"不需要",
-        "emergencyStandby":"需要"
+        "emergencyStandby":"需要",
+        "MandatoryPrewash":"否"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -2441,6 +2501,7 @@
       }
     },{
       "Number":31,
+      "capital":"J",
       "ChineseName":"己二腈",
       "classification":"化学品",
       "Unnum":"2205",
@@ -2465,7 +2526,8 @@
       },
       "jobRequirements":{
         "oilfence":"需要",
-        "emergencyStandby":"不需要"
+        "emergencyStandby":"不需要",
+        "MandatoryPrewash":"当熔点<15℃，卸载时温度不高于熔点5℃时，或当熔点>15℃，卸载时温度不高于熔点10℃时，需强制预洗"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -2516,6 +2578,7 @@
       }
     },{
       "Number":33,
+      "capital":"B",
       "ChineseName":"丙烯腈",
       "classification":"化学品",
       "Unnum":"1093",
@@ -2539,8 +2602,9 @@
         "dissolution":"微溶于水"
       },
       "jobRequirements":{
-        "oilfence":"不需要",
-        "emergencyStandby":"需要"
+        "oilfence":"需要",
+        "emergencyStandby":"需要",
+        "MandatoryPrewash":"否"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -2603,6 +2667,7 @@
       }
     },{
       "Number":34,
+      "capital":"Y",
       "ChineseName":"液化气",
       "classification":"液化气体",
       "Unnum":"1971",
@@ -2627,7 +2692,8 @@
       },
       "jobRequirements":{
         "oilfence":"需要",
-        "emergencyStandby":"需要"
+        "emergencyStandby":"需要",
+        "MandatoryPrewash":"否"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -2678,6 +2744,7 @@
       }
     },{
       "Number":35,
+      "capital":"Y",
       "ChineseName":"乙烯",
       "classification":"液化气体",
       "Unnum":"1038",
@@ -2702,7 +2769,8 @@
       },
       "jobRequirements":{
         "oilfence":"不需要",
-        "emergencyStandby":"不需要"
+        "emergencyStandby":"不需要",
+        "MandatoryPrewash":"否"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -2753,6 +2821,7 @@
       }
     },{
       "Number":36,
+      "capital":"D",
       "ChineseName":"丁二烯",
       "classification":"液化气体",
       "Unnum":"1010",
@@ -2777,7 +2846,8 @@
       },
       "jobRequirements":{
         "oilfence":"不需要",
-        "emergencyStandby":"不需要"
+        "emergencyStandby":"不需要",
+        "MandatoryPrewash":"否"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -2843,6 +2913,7 @@
       }
     },{
       "Number":37,
+      "capital":"D",
       "ChineseName":"丁烯-1",
       "classification":"液化气体",
       "Unnum":"1012",
@@ -2867,7 +2938,8 @@
       },
       "jobRequirements":{
         "oilfence":"不需要",
-        "emergencyStandby":"不需要"
+        "emergencyStandby":"不需要",
+        "MandatoryPrewash":"否"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -2918,6 +2990,7 @@
       }
     },{
       "Number":38,
+      "capital":"J",
       "ChineseName":"己烯-1",
       "classification":"化学品",
       "Unnum":"2370",
@@ -2942,7 +3015,8 @@
       },
       "jobRequirements":{
         "oilfence":"需要",
-        "emergencyStandby":"需要"
+        "emergencyStandby":"需要",
+        "MandatoryPrewash":"否"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -2993,6 +3067,7 @@
       }
     },{
       "Number":39,
+      "capital":"T",
       "ChineseName":"碳五",
       "classification":"化学品",
       "Unnum":"1265",
@@ -3017,7 +3092,8 @@
       },
       "jobRequirements":{
         "oilfence":"需要",
-        "emergencyStandby":"需要"
+        "emergencyStandby":"需要",
+        "MandatoryPrewash":"否"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -3071,6 +3147,7 @@
       }
     },{
       "Number":40,
+      "capital":"B",
       "ChineseName":"丙烷",
       "classification":"液化气体",
       "Unnum":"1978",
@@ -3095,7 +3172,8 @@
       },
       "jobRequirements":{
         "oilfence":"不需要",
-        "emergencyStandby":"不需要"
+        "emergencyStandby":"不需要",
+        "MandatoryPrewash":"否"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -3146,6 +3224,7 @@
       }
     },{
       "Number":41,
+      "capital":"H",
       "ChineseName":"混合碳四",
       "classification":"液化气体",
       "Unnum":"-",
@@ -3170,7 +3249,8 @@
       },
       "jobRequirements":{
         "oilfence":"不需要",
-        "emergencyStandby":"不需要"
+        "emergencyStandby":"不需要",
+        "MandatoryPrewash":"否"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -3236,6 +3316,7 @@
       }
     },{
       "Number":42,
+      "capital":"#",
       "ChineseName":"190号溶剂油",
       "classification":"化学品",
       "Unnum":"1203",
@@ -3260,7 +3341,8 @@
       },
       "jobRequirements":{
         "oilfence":"需要",
-        "emergencyStandby":"需要"
+        "emergencyStandby":"需要",
+        "MandatoryPrewash":"否"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -3311,6 +3393,7 @@
       }
     },{
       "Number":43,
+      "capital":"C",
       "ChineseName":"粗异丁烯（丁烯）",
       "classification":"液化气体",
       "Unnum":"1055",
@@ -3335,7 +3418,8 @@
       },
       "jobRequirements":{
         "oilfence":"不需要",
-        "emergencyStandby":"不需要"
+        "emergencyStandby":"不需要",
+        "MandatoryPrewash":"否"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -3386,6 +3470,7 @@
       }
     },{
       "Number":44,
+      "capital":"C",
       "ChineseName":"抽余碳四",
       "classification":"液化气体",
       "Unnum":"-",
@@ -3410,7 +3495,8 @@
       },
       "jobRequirements":{
         "oilfence":"不需要",
-        "emergencyStandby":"不需要"
+        "emergencyStandby":"不需要",
+        "MandatoryPrewash":"否"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -3461,6 +3547,7 @@
       }
     },{
       "Number":45,
+      "capital":"H",
       "ChineseName":"混合芳烃（苯和含10%或以上苯的混合物）",
       "classification":"化学品",
       "Unnum":"1114",
@@ -3485,7 +3572,8 @@
       },
       "jobRequirements":{
         "oilfence":"需要",
-        "emergencyStandby":"需要"
+        "emergencyStandby":"需要",
+        "MandatoryPrewash":"当熔点<15℃，卸载时温度不高于熔点5℃时，或当熔点>15℃，卸载时温度不高于熔点10℃时，需强制预洗"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -3545,6 +3633,7 @@
       }
     },{
       "Number":46,
+      "capital":"S",
       "ChineseName":"四氢呋喃",
       "classification":"化学品",
       "Unnum":"2056",
@@ -3569,7 +3658,8 @@
       },
       "jobRequirements":{
         "oilfence":"不需要",
-        "emergencyStandby":"需要"
+        "emergencyStandby":"需要",
+        "MandatoryPrewash":"否"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -3620,6 +3710,7 @@
       }
     },{
       "Number":47,
+      "capital":"J",
       "ChineseName":"聚四氢呋喃",
       "classification":"化学品",
       "Unnum":"-",
@@ -3644,7 +3735,8 @@
       },
       "jobRequirements":{
         "oilfence":"不需要",
-        "emergencyStandby":"不需要"
+        "emergencyStandby":"不需要",
+        "MandatoryPrewash":"否"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -3695,6 +3787,7 @@
       }
     },{
       "Number":48,
+      "capital":"J",
       "ChineseName":"甲苯-2,4-二异氰酸酯",
       "classification":"化学品",
       "Unnum":"2078",
@@ -3719,7 +3812,8 @@
       },
       "jobRequirements":{
         "oilfence":"不需要",
-        "emergencyStandby":"需要"
+        "emergencyStandby":"需要",
+        "MandatoryPrewash":"当熔点<15℃，卸载时温度不高于熔点5℃时，或当熔点>15℃，卸载时温度不高于熔点10℃时，需强制预洗"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -3783,6 +3877,7 @@
       }
     },{
       "Number":49,
+      "capital":"#",
       "ChineseName":"1，4-丁二醇",
       "classification":"化学品",
       "Unnum":"-",
@@ -3807,7 +3902,8 @@
       },
       "jobRequirements":{
         "oilfence":"不需要",
-        "emergencyStandby":"需要"
+        "emergencyStandby":"需要",
+        "MandatoryPrewash":"否"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -3858,6 +3954,7 @@
       }
     },{
       "Number":50,
+      "capital":"J",
       "ChineseName":"甲基叔丁基醚",
       "classification":"化学品",
       "Unnum":"2398",
@@ -3882,7 +3979,8 @@
       },
       "jobRequirements":{
         "oilfence":"需要",
-        "emergencyStandby":"需要"
+        "emergencyStandby":"需要",
+        "MandatoryPrewash":"否"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -3933,6 +4031,7 @@
       }
     },{
       "Number":51,
+      "capital":"Q",
       "ChineseName":"氢氧化钠",
       "classification":"化学品",
       "Unnum":"1824",
@@ -3957,7 +4056,8 @@
       },
       "jobRequirements":{
         "oilfence":"不需要",
-        "emergencyStandby":"需要"
+        "emergencyStandby":"需要",
+        "MandatoryPrewash":"1、当熔点<15℃，卸载时温度不高于熔点5℃时，或当熔点>15℃，卸载时温度不高于熔点10℃时，需强制预洗；<\br>2、在卸货温度下，当粘度>50mpa▪s时，需强制预洗"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -4015,6 +4115,7 @@
       }
     },{
       "Number":52,
+      "capital":"#",
       "ChineseName":"1,2-二氯乙烷",
       "classification":"化学品",
       "Unnum":"1184",
@@ -4039,7 +4140,8 @@
       },
       "jobRequirements":{
         "oilfence":"不需要",
-        "emergencyStandby":"需要"
+        "emergencyStandby":"需要",
+        "MandatoryPrewash":"否"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -4090,6 +4192,7 @@
       }
     },{
       "Number":53,
+      "capital":"L",
       "ChineseName":"氯乙烯",
       "classification":"液化气体",
       "Unnum":"1086",
@@ -4114,7 +4217,8 @@
       },
       "jobRequirements":{
         "oilfence":"不需要",
-        "emergencyStandby":"不需要"
+        "emergencyStandby":"不需要",
+        "MandatoryPrewash":"否"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -4177,6 +4281,7 @@
       }
     },{
       "Number":54,
+      "capital":"Y",
       "ChineseName":"盐酸",
       "classification":"化学品",
       "Unnum":"1789",
@@ -4201,7 +4306,8 @@
       },
       "jobRequirements":{
         "oilfence":"不需要",
-        "emergencyStandby":"需要"
+        "emergencyStandby":"需要",
+        "MandatoryPrewash":"否"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -4252,6 +4358,7 @@
       }
     },{
       "Number":55,
+      "capital":"#",
       "ChineseName":"1,1-二氯乙烷",
       "classification":"化学品",
       "Unnum":"2362",
@@ -4276,7 +4383,8 @@
       },
       "jobRequirements":{
         "oilfence":"不需要",
-        "emergencyStandby":"需要"
+        "emergencyStandby":"需要",
+        "MandatoryPrewash":"否"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -4327,6 +4435,7 @@
       }
     },{
       "Number":56,
+      "capital":"Y",
       "ChineseName":"乙烯焦油",
       "classification":"油类",
       "Unnum":"-",
@@ -4351,7 +4460,8 @@
       },
       "jobRequirements":{
         "oilfence":"不需要",
-        "emergencyStandby":"需要"
+        "emergencyStandby":"需要",
+        "MandatoryPrewash":"否"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -4402,6 +4512,7 @@
       }
     },{
       "Number":57,
+      "capital":"L",
       "ChineseName":"蜡油",
       "classification":"油类",
       "Unnum":"-",
@@ -4426,7 +4537,8 @@
       },
       "jobRequirements":{
         "oilfence":"需要",
-        "emergencyStandby":"需要"
+        "emergencyStandby":"需要",
+        "MandatoryPrewash":"否"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -4477,6 +4589,7 @@
       }
     },{
       "Number":58,
+      "capital":"Z",
       "ChineseName":"重油",
       "classification":"油类",
       "Unnum":"-",
@@ -4501,7 +4614,8 @@
       },
       "jobRequirements":{
         "oilfence":"需要",
-        "emergencyStandby":"需要"
+        "emergencyStandby":"需要",
+        "MandatoryPrewash":"否"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -4552,6 +4666,7 @@
       }
     },{
       "Number":59,
+      "capital":"H",
       "ChineseName":"航煤",
       "classification":"油类",
       "Unnum":"1223",
@@ -4576,7 +4691,8 @@
       },
       "jobRequirements":{
         "oilfence":"需要",
-        "emergencyStandby":"需要"
+        "emergencyStandby":"需要",
+        "MandatoryPrewash":"否"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -4627,6 +4743,7 @@
       }
     },{
       "Number":60,
+      "capital":"C",
       "ChineseName":"醋酸乙烯",
       "classification":"化学品",
       "Unnum":"1301",
@@ -4651,7 +4768,8 @@
       },
       "jobRequirements":{
         "oilfence":"需要",
-        "emergencyStandby":"需要"
+        "emergencyStandby":"需要",
+        "MandatoryPrewash":"否"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -4711,6 +4829,7 @@
       }
     },{
       "Number":61,
+      "capital":"L",
       "ChineseName":"沥青",
       "classification":"油类",
       "Unnum":"1999",
@@ -4735,7 +4854,8 @@
       },
       "jobRequirements":{
         "oilfence":"不需要",
-        "emergencyStandby":"需要"
+        "emergencyStandby":"需要",
+        "MandatoryPrewash":"否"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -4786,6 +4906,7 @@
       }
     },{
       "Number":62,
+      "capital":"Y",
       "ChineseName":"异戊二烯（气体）",
       "classification":"化学品",
       "Unnum":"1218",
@@ -4810,7 +4931,8 @@
       },
       "jobRequirements":{
         "oilfence":"需要",
-        "emergencyStandby":"需要"
+        "emergencyStandby":"需要",
+        "MandatoryPrewash":"否"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -4872,7 +4994,8 @@
         }
       }
     },{
-      "Number":68,
+      "Number":63,
+      "capital":"Y",
       "ChineseName":"异戊二烯（液体）",
       "classification":"液化气体",
       "Unnum":"1218",
@@ -4897,7 +5020,8 @@
       },
       "jobRequirements":{
         "oilfence":"需要",
-        "emergencyStandby":"需要"
+        "emergencyStandby":"需要",
+        "MandatoryPrewash":"否"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -4956,7 +5080,8 @@
         }
       }
     },{
-      "Number":63,
+      "Number":64,
+      "capital":"R",
       "ChineseName":"壬烷",
       "classification":"化学品",
       "Unnum":"1920",
@@ -4981,7 +5106,8 @@
       },
       "jobRequirements":{
         "oilfence":"需要",
-        "emergencyStandby":"需要"
+        "emergencyStandby":"需要",
+        "MandatoryPrewash":"否"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -5031,7 +5157,8 @@
         }
       }
     },{
-      "Number":64,
+      "Number":65,
+      "capital":"J",
       "ChineseName":"加氢汽油",
       "classification":"油类",
       "Unnum":"-",
@@ -5056,7 +5183,8 @@
       },
       "jobRequirements":{
         "oilfence":"需要",
-        "emergencyStandby":"不需要"
+        "emergencyStandby":"不需要",
+        "MandatoryPrewash":"强制预洗"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -5106,7 +5234,8 @@
         }
       }
     },{
-      "Number":65,
+      "Number":66,
+      "capital":"Y",
       "ChineseName":"异丁烷",
       "classification":"液化气体",
       "Unnum":"1969",
@@ -5131,7 +5260,8 @@
       },
       "jobRequirements":{
         "oilfence":"不需要",
-        "emergencyStandby":"需要"
+        "emergencyStandby":"需要",
+        "MandatoryPrewash":"否"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -5181,7 +5311,8 @@
         }
       }
     },{
-      "Number":66,
+      "Number":67,
+      "capital":"N",
       "ChineseName":"凝析油",
       "classification":"油类",
       "Unnum":"1267",
@@ -5206,7 +5337,8 @@
       },
       "jobRequirements":{
         "oilfence":"需要",
-        "emergencyStandby":"需要"
+        "emergencyStandby":"需要",
+        "MandatoryPrewash":"否"
       },
       "StructuralRequest":{
         "Chemical": {
@@ -5256,7 +5388,8 @@
         }
       }
     },{
-      "Number":67,
+      "Number":68,
+      "capital":"Y",
       "ChineseName":"原油",
       "classification":"油类",
       "Unnum":"1267",
@@ -5281,7 +5414,8 @@
       },
       "jobRequirements":{
         "oilfence":"需要",
-        "emergencyStandby":"需要"
+        "emergencyStandby":"需要",
+        "MandatoryPrewash":"否"
       },
       "StructuralRequest":{
         "Chemical": {

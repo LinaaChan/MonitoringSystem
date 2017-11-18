@@ -8,7 +8,7 @@ angular.module('starter.controllers', [])
      $state.go('dangerousgoods');
     }
     //弹出确认框
-    $scope.showConfirm = function(){
+    $scope.showConfirm_logout = function(){
       logoutService.logout();
     }
   })
@@ -129,4 +129,12 @@ angular.module('starter.controllers', [])
       });
       return output;
     };
-  });
+  })
+/*.directive('scrollHeight',function($window){
+  return{
+    restrict:'AE',
+    link:function(scope,element,attr){
+      element[0].style.height=($window.innerHeight-44-49-200)+'px';
+    }
+  }
+})*/

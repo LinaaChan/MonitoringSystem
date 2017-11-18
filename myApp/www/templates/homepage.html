@@ -1,18 +1,17 @@
-<ion-view view-title="液货船监管支持系统" hide-back-button="true">
+<ion-view view-title="请选择功能模块" hide-back-button="true">
   <!--修改密码按钮,在离线情况下，没有办法实现修改密码的功能-->
  <!-- <ion-nav-buttons side="left" >
     <a class="icon  button button-positive ion-locked" ui-sref="changePwd"></a>
   </ion-nav-buttons>-->
   <!--数据库更新按钮，以备将来数据库网络更新使用-->
   <ion-nav-buttons side="right">
-    <a class="button button-clear" style="font-size: 11px;" ng-click="showConfirm()">{{username}}</a>
-    <a class="icon button button-positive iconfont icon-refresh"></a>
-
+    <a class="button button-clear" style="font-size: 11px;" >{{username}}</a>
+    <a class="icon button button-positive iconfont ion-log-out" ng-click="showConfirm_logout()"></a>
   </ion-nav-buttons>
-  <ion-content class="padding">
+  <ion-content scroll="false">
 
-    <div class="list list-borderless">
-      <div class="item">
+    <div class="list list-borderless" style="background-color: #4cd964">
+      <div  class="item">
         <a class="button button-block button-positive" ng-click="gotoCargo()">液货船作业检查</a>
       </div>
       <div class="item">
@@ -22,6 +21,7 @@
         <a class="button button-block button-positive" ui-sref="dangergoods_emergency">应急处置支持</a>
       </div>
     </div>
+
   </ion-content>
  <!-- <div class="tabs tabs-icon-top tabs-positive">
     <a class="tab-item">

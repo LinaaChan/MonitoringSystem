@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 angular.module('starter', ['ionic','starter.controllers','cargoship.controllers','dangerousGoods.controllers','emergencySupport.controllers','starter.services'])
 
-.run(function($ionicPlatform,$ionicPopup,$location,$ionicHistory) {
+.run(function($ionicPlatform,$ionicPopup,$location,$ionicHistory,$rootScope,logoutService,locals,$ionicPopup,$state) {
   $ionicPlatform.ready(function() {
     if(window.cordova && window.cordova.plugins.Keyboard) {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -20,7 +20,26 @@ angular.module('starter', ['ionic','starter.controllers','cargoship.controllers'
     if(window.StatusBar) {
       StatusBar.styleDefault();
     }
+
+    //首次进入app，判断手机缓存中是否有记录，若有则自动登陆
+     /*   if(locals.get("password")!=locals.get("account"))
+        {
+          $state.go("loginPage");
+         /!* event.preventDefault();
+          $ionicPopup.alert({
+            title: "提示",
+            template: "请先登陆！",
+            okText:"知道了"
+          }).then(function(){
+            $state.go("loginPage");
+          })*!/}else{
+          $rootScope.username = locals.get("username");
+          $state.go("homepage");
+        }*/
+
+    /*  })*/
   });
+
   $ionicPlatform.registerBackButtonAction(function (e) {
     function showConfirm() {
       var confirmPopup = $ionicPopup.confirm({
@@ -31,6 +50,11 @@ angular.module('starter', ['ionic','starter.controllers','cargoship.controllers'
       });
       confirmPopup.then(function (res) {
         if (res) {
+          //退出APP的时候要和自行退出账号一样的效果，若不记住密码，则需重新登陆
+          if(locals.get("isPassword")==false||locals.get("isPassword")=="false"){
+            locals.set("password","");
+            locals.set("isPassword",false);
+          }
           ionic.Platform.exitApp();
         } else {
           // Don't close
@@ -79,7 +103,7 @@ angular.module('starter', ['ionic','starter.controllers','cargoship.controllers'
         templateUrl: 'templates/changePwd.html',
         controller:'changePwdCtrl'
       })
-      /*由于没有分类暂时先去掉这个船舶种类的页面，html暂时不删除*/
+      /*由于没有分类暂时先去掉这个船舶种类的页面，html暂时不删除
       /*.state('cargoshipcheck', {
         url: '/cargoshipcheck/:keyword',
         templateUrl: 'templates/cargoship_check.html',

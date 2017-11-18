@@ -16,7 +16,10 @@ angular.module('dangerousGoods.controllers', [])
       url: './templates/DBInfo.json'
     }).success(function (data) {
       defer.resolve(data);
-      $scope.data = data.DBInfo;
+      //目前为根据拼音排序
+      $scope.data =data.DBInfo.sort(function(a,b){
+        return a.capital.localeCompare(b.capital);
+      });
     }).error(function (data) {
       defer.reject(data);
     })
@@ -35,12 +38,14 @@ angular.module('dangerousGoods.controllers', [])
   .controller('dangerGoodDetailCtrl', function($scope,$stateParams,$http,$q,$state) {
     $scope.goodName = $stateParams.goodName;
     $scope.goodType = $stateParams.goodType;
-    console.log($stateParams.goodType);
     $scope.goToPropertyList = function () {
       $state.go('goodpropertylist',{checkGoodName:$stateParams.goodName});
     }
     $scope.goToCargoList = function () {
       $state.go('cargoshiplist',{checkCargoShip:$stateParams.goodName});
+    }
+    $scope.goToPropertyReuirement = function () {
+      $state.go('goodproperty_workRequirement',{goodNameForRequirement:$stateParams.goodName});
     }
   })
 
@@ -121,6 +126,7 @@ angular.module('dangerousGoods.controllers', [])
       for(var i=0;i<data.DBInfo.length;i++){
         if(data.DBInfo[i].ChineseName==$scope.goodName){
           $scope.detailInfo = data.DBInfo[i].jobRequirements;
+          console.log($scope.detailInfo );
         }
       }
     }).error(function (data) {
@@ -240,7 +246,7 @@ angular.module('dangerousGoods.controllers', [])
         $scope.arr = [];
         $scope.result = $scope.name_result.concat($scope.class_result.concat($scope.un_result));
         $scope.result.sort(function(a,b){
-          return a.Number - b.Number;//时间正序
+          return a.Number - b.Number;//按number关键字排序
         });
 
         for (var i = 0; i < $scope.result.length;) {
