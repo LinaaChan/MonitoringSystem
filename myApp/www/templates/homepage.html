@@ -1,4 +1,4 @@
-<ion-view view-title="请选择功能模块" hide-back-button="true">
+<ion-view view-title="监管支持系统" hide-back-button="true">
   <!--修改密码按钮,在离线情况下，没有办法实现修改密码的功能-->
  <!-- <ion-nav-buttons side="left" >
     <a class="icon  button button-positive ion-locked" ui-sref="changePwd"></a>
@@ -8,9 +8,18 @@
     <a class="button button-clear" style="font-size: 11px;" >{{username}}</a>
     <a class="icon button button-positive iconfont ion-log-out" ng-click="showConfirm_logout()"></a>
   </ion-nav-buttons>
-  <ion-content scroll="false">
+  <ion-content  style="width: 100%;height: 100%;background-color: #f5f5f9" class="padding" scroll="false">
 
-    <div class="list list-borderless" style="background-color: #4cd964">
+    <div class="list card" style=" margin-top: 18px;box-shadow:0 0 20px #62C2FC;  display:flex;justify-content:center;align-items:center;color: #ffffff;height: 100px;width: 100%;background:#62C2FC;text-align: center"  ng-click="gotoCargo()">
+      <i style="font-size: 150%;" class="iconfont icon-chuan">&nbsp;<span>液货船作业检查</span></i>
+    </div>
+    <div class="list card" style="margin-top: 18px;box-shadow:0 0 20px #178ED6; display:flex;justify-content:center;align-items:center;color: #ffffff;height: 100px;width: 100%;text-align: center;background:#178ED6 " ng-click="gotoDangerousGoods()">
+       <i style="font-size: 150%;" class="iconfont icon-ft-dangerous"> &nbsp;<span>危险货物数据库</span></i>
+    </div>
+    <div class="list card" style="margin-top: 18px;box-shadow:0 0 20px #08659B; display:flex;justify-content:center;align-items:center;color: #ffffff;height: 100px;width: 100%;text-align:center; background:#08659B " ui-sref="dangergoods_emergency">
+     <i style="font-size: 150%;" class="iconfont icon-yingjichuzhi"> &nbsp;<span>应急处置支持</span></i>
+    </div>
+<!--    <div class="list list-borderless" style="background-color: #4cd964">
       <div  class="item">
         <a class="button button-block button-positive" ng-click="gotoCargo()">液货船作业检查</a>
       </div>
@@ -20,7 +29,7 @@
       <div class="item">
         <a class="button button-block button-positive" ui-sref="dangergoods_emergency">应急处置支持</a>
       </div>
-    </div>
+    </div>-->
 
   </ion-content>
  <!-- <div class="tabs tabs-icon-top tabs-positive">

@@ -3,9 +3,41 @@
     <a class="button button-clear"  style="font-size: 11px;">{{username}}</a>
     <a class="icon button button-positive iconfont icon-wxbzhuye"  ui-sref="homepage"></a>
   </ion-nav-buttons>
-  <ion-content>
-    <div class="list list-borderless">
-      <div class="item">
+  <ion-content class="padding">
+
+    <div class="list card" ng-click="goToPropertyList()">
+      <a class="item item-avatar item-icon-right" >
+        <img src="./templates/imgs/property.PNG">
+        <p style="font-size: 18px;margin-top: 7px;">货物特性</p>
+        <i style="color: #9e9e9e" class="icon ion-chevron-right"></i>
+      </a>
+    </div>
+    <div class="list card" ng-click="goToPropertyReuirement()">
+      <a class="item item-avatar item-icon-right"  >
+        <img src="./templates/imgs/work.PNG">
+        <p style="font-size: 18px;margin-top: 7px;">作业要求</p>
+        <i style="color: #9e9e9e" class="icon ion-chevron-right"></i>
+      </a>
+    </div>
+      <div class="list card" ng-click="goToCargoList ()" ng-if="goodType!='油类'">
+      <a class="item item-avatar item-icon-right" >
+        <img src="./templates/imgs/ship.PNG">
+        <p style="font-size: 18px;margin-top: 7px;">船舶适载要求</p>
+        <i style="color: #9e9e9e" class="icon ion-chevron-right"></i>
+      </a>
+    </div>
+  <!--  <div class="list card" style=" margin-top: 18px;box-shadow:0 0 10px #62C2FC;  display:flex;justify-content:center;align-items:center;color: #ffffff;height: 100px;width: 100%;background:#62C2FC;text-align: center"  ng-click="goToPropertyList()">
+      <i style="font-size: 150%;" class="iconfont icon-chuan">&nbsp;<span>货物特性</span></i>
+    </div>
+    <div class="list card" style="margin-top: 18px;box-shadow:0 0 10px #178ED6; display:flex;justify-content:center;align-items:center;color: #ffffff;height: 100px;width: 100%;text-align: center;background:#178ED6 " ng-click="goToPropertyReuirement()">
+      <i style="font-size: 150%;" class="iconfont icon-ft-dangerous"> &nbsp;<span>作业要求</span></i>
+    </div>
+    <div class="list card" style="margin-top: 18px;box-shadow:0 0 10px #08659B; display:flex;justify-content:center;align-items:center;color: #ffffff;height: 100px;width: 100%;text-align:center; background:#08659B " ng-click="goToCargoList ()" ng-if="goodType!='油类'">
+      <i style="font-size: 150%;" class="iconfont icon-yingjichuzhi"> &nbsp;<span>船舶适载要求</span></i>
+    </div>-->
+
+
+     <!-- <div class="item">
         <a class="button button-block button-positive" ng-click="goToPropertyList()">货物特性</a>
       </div>
       <div class="item">
@@ -13,15 +45,10 @@
       </div>
       <div class="item">
         <a class="button button-block button-positive" ng-click="goToCargoList ()" ng-if="goodType!='油类'">船舶适载要求</a>
-      </div>
-
-     <!-- <div class="item">
-        <a class="button button-block button-positive" ng-click="goToIBCIGC (goodName)">IBC/IGC要求</a>
-      </div>
-      <div class="item">
-        <a class="button button-block button-positive" ng-click="goToOilFence(goodName)">围栏油/清污协议要求</a>
       </div>-->
-    </div>
+
+
+
   </ion-content>
 
 </ion-view>

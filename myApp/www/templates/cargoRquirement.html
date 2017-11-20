@@ -4,12 +4,36 @@
     <a class="icon button button-positive iconfont icon-wxbzhuye"  ui-sref="homepage"></a>
   </ion-nav-buttons>
   <ion-content>
-    <div class="list card">
+    <div style="font-family: 微软雅黑;text-align: center;margin-top: 20px;font-size: 18px;">
+      <p>船舶适载要求</p>
+    </div>
+ <!--   <div class="list card">
       <div class="item item-divider" style="text-align: center;color: #4d4d4d">
         <a style="text-align: center;color: #4d4d4d">船舶适载要求</a>
       </div>
+    </div>-->
+    <div class="list card" ng-click="goToInfrastructure()">
+      <a class="item item-avatar item-icon-right" >
+        <img src="./templates/imgs/gouzao.PNG">
+        <p style="font-size: 18px;margin-top: 7px;">构造要求</p>
+        <i style="color: #9e9e9e" class="icon ion-chevron-right"></i>
+      </a>
     </div>
-    <div class="list card">
+    <div class="list card" ng-click="goToPropertyEquipment()">
+      <a class="item item-avatar item-icon-right" >
+        <img src="./templates/imgs/shebei.PNG">
+        <p style="font-size: 18px;margin-top: 7px;">设备要求</p>
+        <i style="color: #9e9e9e" class="icon ion-chevron-right"></i>
+      </a>
+    </div>
+    <div class="list card" ng-click="goToPropertySpecial()">
+      <a class="item item-avatar item-icon-right" >
+        <img src="./templates/imgs/teshu.PNG">
+        <p style="font-size: 18px;margin-top: 7px;">特殊要求</p>
+        <i style="color: #9e9e9e" class="icon ion-chevron-right"></i>
+      </a>
+    </div>
+   <!-- <div class="list card">
       <div class="item">
         <a class="button button-block button-positive" ng-click="goToInfrastructure()">构造要求</a>
       </div>
@@ -19,7 +43,7 @@
       <div class="item">
         <a class="button button-block button-positive" ng-click="goToPropertySpecial()">特殊要求</a>
       </div>
-    </div>
+    </div>-->
   </ion-content>
 
 </ion-view>

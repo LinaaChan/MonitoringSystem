@@ -3,35 +3,35 @@
     <a class="button button-clear"  style="font-size: 11px;">{{username}}</a>
     <a class="icon button button-positive iconfont icon-wxbzhuye"  ui-sref="homepage"></a>
   </ion-nav-buttons>
-  <ion-content>
-      <div  style="margin-top: 20px;font-size: 18px;text-align: center;color: #4d4d4d">
+  <ion-content class="padding" scroll="false">
+      <div  style="background:inherit;margin-top: 20px;font-size: 18px;text-align: center;color: #4d4d4d">
         <a style="text-align: center;color: #4d4d4d"> 常见危险货物</a>
       </div>
-    <div class="list list-borderless">
-       <div class="item row" style="flex-flow: row wrap">
+    <div class="list list-borderless" style="background: inherit">
+       <div class="item row cargolist-button" style="flex-flow: row wrap;background: inherit">
          <div class="col col-50">
-           <a class="button button-block button-positive" ng-click="goToPropertyDetail('苯','化学品')">苯</a>
+           <a class="button button-block"  ng-click="goToPropertyDetail('苯','化学品')">苯</a>
          </div>
         <div class="col col-50">
-          <div class="button button-block button-positive" ng-click="goToPropertyDetail('航煤','油类')">航煤</div>
+          <a class="button button-block" ng-click="goToPropertyDetail('航煤','油类')">航煤</a>
         </div>
         <div class="col col-50">
-          <div class="button button-block button-positive" ng-click="goToPropertyDetail('丙烯腈','化学品')">丙烯腈</div>
+          <a class="button button-block cargolist-button" ng-click="goToPropertyDetail('丙烯腈','化学品')">丙烯腈</a>
         </div>
         <div class="col col-50">
-          <div class="button button-block button-positive" ng-click="goToPropertyDetail('苯乙烯','化学品')">苯乙烯</div>
+          <a class="button button-block cargolist-button" ng-click="goToPropertyDetail('苯乙烯','化学品')">苯乙烯</a>
         </div>
         <div class="col col-50">
-          <div class="button button-block button-positive"  ng-click="goToPropertyDetail('盐酸','化学品')">盐酸</div>
+          <a class="button button-block cargolist-button"  ng-click="goToPropertyDetail('盐酸','化学品')">盐酸</a>
         </div>
         <div class="col col-50">
-          <div class="button button-block button-positive" ng-click="goToPropertyDetail('柴油','油类')">柴油</div>
+          <a class="button button-block cargolist-button" ng-click="goToPropertyDetail('柴油','油类')">柴油</a>
         </div>
         <div class="col col-50">
-          <div class="button button-block button-positive" ui-sref="alldangerousgoods">更多...</div>
+          <a class="button button-block cargolist-button" ui-sref="alldangerousgoods">更多...</a>
         </div>
         <div class="col col-50">
-          <div class="button button-block button-positive" ui-sref="classificationSearch">分类搜索</div>
+          <a class="button button-block cargolist-button" ui-sref="classificationSearch">分类搜索</a>
         </div>
       </div>
     </div>

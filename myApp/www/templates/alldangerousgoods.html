@@ -15,10 +15,10 @@
     </div>
 
     <div class="list list-borderless">
-      <div class="item row item-text-wrap" style="flex-flow: row wrap">
+      <div class="item row item-text-wrap  cargolist-button" style="flex-flow: row wrap">
         <div class="col col-50" ng-repeat="index in data" style="text-align: center" >
           <!--   <div class="item col col-50 item-text-wrap" ng-repeat="index in data" style="text-align: center" >-->
-          <a class="button button-block button-positive" ng-click="goToDetail(index.ChineseName,index.classification)">{{index.ChineseName}}</a>
+          <a class="button button-block" ng-click="goToDetail(index.ChineseName,index.classification)">{{index.ChineseName}}</a>
         </div>
       </div>
     </div>
