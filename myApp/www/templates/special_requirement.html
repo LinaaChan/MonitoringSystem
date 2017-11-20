@@ -24,7 +24,11 @@
       </label>
       <label class="item" ng-if="detailInfo.basicInfo.classification=='液化气体'">
         IGC 特殊要求
-        <span class="item-note item-text-wrap" ng-bind-html="detailInfo.specialRequest.Liquidgas.IGCspecialRequest"></span>
+        <div style="color: black;font-size: 15px" class="item-text-wrap" ng-repeat="index in detailInfo.specialRequest.Liquidgas.IGCspecialRequest">
+          <strong>{{index.title}}</strong>
+          <span class="item-note item-text-wrap" ng-bind-html="index.content"></span>
+        </div>
+
       </label>
     </div>
   </ion-content>
