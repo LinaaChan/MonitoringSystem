@@ -8,21 +8,17 @@ angular.module('dangerousGoods.controllers', [])
     }
   })
   /*危险货物数据库控制器，模块一级界面2*/
-  .controller('allDangerGoodCtrl', function($scope,$http,$q,$state) {
+  .controller('allDangerGoodCtrl', function($scope,$http,$cordovaFile) {
     $scope.input={'content':''}
-    var defer = $q.defer();
-    $http({
-      method: 'get',
-      url: './templates/DBInfo.json'
-    }).success(function (data) {
-      defer.resolve(data);
-      //目前为根据拼音排序
-      $scope.data =data.DBInfo.sort(function(a,b){
-        return a.capital.localeCompare(b.capital);
+    $cordovaFile.readAsText(cordova.file.externalDataDirectory, "DBInfo.json")
+      .then(function (data) {
+        var data_json = angular.fromJson(data);//将读取的文件转成json格式
+        $scope.data =data_json.DBInfo.sort(function(a,b){
+          return a.capital.localeCompare(b.capital);
+        });
+      }, function (error) {
+        // error
       });
-    }).error(function (data) {
-      defer.reject(data);
-    })
     $scope.do_search = function () {
       if($scope.input.content==''){
         alert("关键字不能为空！");
@@ -35,7 +31,7 @@ angular.module('dangerousGoods.controllers', [])
     }
   })
   /*模块二级页面，货物特性和船舶适载要求*/
-  .controller('dangerGoodDetailCtrl', function($scope,$stateParams,$http,$q,$state) {
+  .controller('dangerGoodDetailCtrl', function($scope,$stateParams,$state) {
     $scope.goodName = $stateParams.goodName;
     $scope.goodType = $stateParams.goodType;
     $scope.goToPropertyList = function () {
@@ -77,115 +73,101 @@ angular.module('dangerousGoods.controllers', [])
     }
   })
 /*基本信息页面：英文名、别名、种类、联合国编号、CAS编号、污染类别(有毒液体物质)、持久性（油类）、危害性（IBC）、分子式*/
-  .controller('goodPropertyBasicInfoCtrl', function($scope,$stateParams,$http,$q) {
+  .controller('goodPropertyBasicInfoCtrl', function($scope,$stateParams,$cordovaFile) {
     $scope.goodName = $stateParams.goodNameForBasicInfo;
-    var defer = $q.defer();
-    $http({
-      method: 'get',
-      url: './templates/DBInfo.json'
-    }).success(function (data) {
-      defer.resolve(data);
-      for(var i=0;i<data.DBInfo.length;i++){
-        if(data.DBInfo[i].ChineseName==$scope.goodName){
-          $scope.detailInfo = data.DBInfo[i].basicInfo;
+    $cordovaFile.readAsText(cordova.file.externalDataDirectory, "DBInfo.json")
+      .then(function (data) {
+        var data_json = angular.fromJson(data);//将读取的文件转成json格式
+        for(var i=0;i<data_json.DBInfo.length;i++){
+          if(data_json.DBInfo[i].ChineseName==$scope.goodName){
+            $scope.detailInfo = data_json.DBInfo[i].basicInfo;
+          }
         }
-      }
-    }).error(function (data) {
-      defer.reject(data);
-    })
+      }, function (error) {
+        // error
+      });
+
   })
   /*理化特性页面：熔点（凝固点）℃meltingpoint、沸点℃boilingpoint、闪点℃flashingpoint、爆炸上限 下限%boom、相对密度(水=1)density、溶解性dissolution
 */
-  .controller('goodPropertyChemistryCtrl', function($scope,$stateParams,$http,$q) {
+  .controller('goodPropertyChemistryCtrl', function($scope,$stateParams,$cordovaFile) {
     $scope.goodName = $stateParams.goodNameForChemistry;
-    var defer = $q.defer();
-    $http({
-      method: 'get',
-      url: './templates/DBInfo.json'
-    }).success(function (data) {
-      defer.resolve(data);
-      for(var i=0;i<data.DBInfo.length;i++){
-        if(data.DBInfo[i].ChineseName==$scope.goodName){
-          $scope.detailInfo = data.DBInfo[i].property;
+    $cordovaFile.readAsText(cordova.file.externalDataDirectory, "DBInfo.json")
+      .then(function (data) {
+        var data_json = angular.fromJson(data);//将读取的文件转成json格式
+        for(var i=0;i<data_json.DBInfo.length;i++){
+          if(data_json.DBInfo[i].ChineseName==$scope.goodName){
+            $scope.detailInfo = data_json.DBInfo[i].property;
+          }
         }
-      }
-    }).error(function (data) {
-      defer.reject(data);
-    })
+      }, function (error) {
+        // error
+      });
+
   })
   /*作业要求页面：围油栏oilfence、船舶污染清除协议（1万总吨以下）
 */
-  .controller('goodPropertyRequirementCtrl', function($scope,$stateParams,$http,$q) {
+  .controller('goodPropertyRequirementCtrl', function($scope,$stateParams,$cordovaFile) {
     $scope.goodName = $stateParams.goodNameForRequirement;
-    var defer = $q.defer();
-    $http({
-      method: 'get',
-      url: './templates/DBInfo.json'
-    }).success(function (data) {
-      defer.resolve(data);
-      for(var i=0;i<data.DBInfo.length;i++){
-        if(data.DBInfo[i].ChineseName==$scope.goodName){
-          $scope.detailInfo = data.DBInfo[i].jobRequirements;
-          console.log($scope.detailInfo );
+    $cordovaFile.readAsText(cordova.file.externalDataDirectory, "DBInfo.json")
+      .then(function (data) {
+        var data_json = angular.fromJson(data);//将读取的文件转成json格式
+        for(var i=0;i<data_json.DBInfo.length;i++){
+          if(data_json.DBInfo[i].ChineseName==$scope.goodName){
+            $scope.detailInfo = data_json.DBInfo[i].jobRequirements;
+            console.log($scope.detailInfo );
+          }
         }
-      }
-    }).error(function (data) {
-      defer.reject(data);
-    })
+      }, function (error) {
+        // error
+      });
+
   })
   /*构造要求页面*/
-  .controller('infrastructureRequirementCtrl', function($scope,$stateParams,$http,$q) {
+  .controller('infrastructureRequirementCtrl', function($scope,$stateParams,$cordovaFile) {
     $scope.goodName = $stateParams.goodNameInfrastructure;
-    var defer = $q.defer();
-    $http({
-      method: 'get',
-      url: './templates/DBInfo.json'
-    }).success(function (data) {
-      defer.resolve(data);
-      for(var i=0;i<data.DBInfo.length;i++){
-        if(data.DBInfo[i].ChineseName==$scope.goodName){
-          $scope.detailInfo = data.DBInfo[i];
+    $cordovaFile.readAsText(cordova.file.externalDataDirectory, "DBInfo.json")
+      .then(function (data) {
+        var data_json = angular.fromJson(data);//将读取的文件转成json格式
+        for(var i=0;i<data_json.DBInfo.length;i++){
+          if(data_json.DBInfo[i].ChineseName==$scope.goodName){
+            $scope.detailInfo = data_json.DBInfo[i];
+          }
         }
-      }
-    }).error(function (data) {
-      defer.reject(data);
-    })
+      }, function (error) {
+        // error
+      });
+
   })
   /*设备要求页面*/
-  .controller('equipmentRequirementCtrl', function($scope,$stateParams,$http,$q) {
+  .controller('equipmentRequirementCtrl', function($scope,$stateParams,$cordovaFile) {
     $scope.goodName = $stateParams.goodNameEquipment;
-    var defer = $q.defer();
-    $http({
-      method: 'get',
-      url: './templates/DBInfo.json'
-    }).success(function (data) {
-      defer.resolve(data);
-      for(var i=0;i<data.DBInfo.length;i++){
-        if(data.DBInfo[i].ChineseName==$scope.goodName){
-          $scope.detailInfo = data.DBInfo[i];
+    $cordovaFile.readAsText(cordova.file.externalDataDirectory, "DBInfo.json")
+      .then(function (data) {
+        var data_json = angular.fromJson(data);//将读取的文件转成json格式
+        for(var i=0;i<data_json.DBInfo.length;i++){
+          if(data_json.DBInfo[i].ChineseName==$scope.goodName){
+            $scope.detailInfo = data_json.DBInfo[i];
+          }
         }
-      }
-    }).error(function (data) {
-      defer.reject(data);
-    })
+      }, function (error) {
+        // error
+      });
   })
   /*特殊要求页面*/
-  .controller('specialRequirementCtrl', function($scope,$stateParams,$http,$q) {
+  .controller('specialRequirementCtrl', function($scope,$stateParams,$cordovaFile) {
     $scope.goodName = $stateParams.goodNameSpecial;
-    var defer = $q.defer();
-    $http({
-      method: 'get',
-      url: './templates/DBInfo.json'
-    }).success(function (data) {
-      defer.resolve(data);
-      for(var i=0;i<data.DBInfo.length;i++){
-        if(data.DBInfo[i].ChineseName==$scope.goodName){
-          $scope.detailInfo = data.DBInfo[i];
+    $cordovaFile.readAsText(cordova.file.externalDataDirectory, "DBInfo.json")
+      .then(function (data) {
+        var data_json = angular.fromJson(data);//将读取的文件转成json格式
+        for(var i=0;i<data_json.DBInfo.length;i++){
+          if(data_json.DBInfo[i].ChineseName==$scope.goodName){
+            $scope.detailInfo = data_json.DBInfo[i];
+          }
         }
-      }
-    }).error(function (data) {
-      defer.reject(data);
-    })
+      }, function (error) {
+        // error
+      });
   })
 
 //单独的搜索页面
@@ -204,28 +186,25 @@ angular.module('dangerousGoods.controllers', [])
     }
   })
   //危险货物数据库分类搜索结果页面
-  .controller('classSearchResultCtrl', function($scope,$stateParams,$http,$q,$state) {
-
+  .controller('classSearchResultCtrl', function($scope,$stateParams,$cordovaFile,$state) {
       $scope.result=[];
      // var reg_name = new RegExp($stateParams.searchGood); //关于名字的模糊匹配
-      var defer = $q.defer();
-      $http({
-        method: 'get',
-        url: './templates/DBInfo.json'
-      }).success(function (data) {
+    $cordovaFile.readAsText(cordova.file.externalDataDirectory, "DBInfo.json")
+      .then(function (data_read) {
+        var data = angular.fromJson(data_read);//将读取的文件转成json格式
         /*使用JsonSql插件进行对json文件的查询操作，后续需要修改，可将之前进行的循环查询代码全部替换为使用插件查询以提高速度*/
         // $scope.result_init = jsonsql.query("select * from json.DBInfo where (ChineseName=='"+$stateParams.searchGood+"' || Unnum=='"+$stateParams.searchUN+"' || classification=='"+$stateParams.dangerGoodClass+"')",data)
-         $scope.name_result=[];
-         $scope.un_result=[];
-         $scope.class_result=[];
-         var condition_num = 0; //不为空的条件数
-         //当种类不为空
-         if($stateParams.dangerGoodClass!=""){
-           $scope.class_result  = jsonsql.query("select * from json.DBInfo where ( classification=='"+$stateParams.dangerGoodClass+"')",data)
-           condition_num++;
-         }
+        $scope.name_result=[];
+        $scope.un_result=[];
+        $scope.class_result=[];
+        var condition_num = 0; //不为空的条件数
+        //当种类不为空
+        if($stateParams.dangerGoodClass!=""){
+          $scope.class_result  = jsonsql.query("select * from json.DBInfo where ( classification=='"+$stateParams.dangerGoodClass+"')",data)
+          condition_num++;
+        }
 
-         //当编号不为空
+        //当编号不为空
         if($stateParams.searchUN!=""){
           var reg = new RegExp($stateParams.searchUN);
           for(var i=0;i<data.DBInfo.length;i++){
@@ -237,9 +216,9 @@ angular.module('dangerousGoods.controllers', [])
         //当名称不为空
         if($stateParams.searchGood!=""){
           var reg = new RegExp($stateParams.searchGood);
-            for(var i=0;i<data.DBInfo.length;i++){
-              if(data.DBInfo[i].ChineseName.match(reg))
-                $scope.name_result.push(data.DBInfo[i]);
+          for(var i=0;i<data.DBInfo.length;i++){
+            if(data.DBInfo[i].ChineseName.match(reg))
+              $scope.name_result.push(data.DBInfo[i]);
           }
           condition_num++;
         }
@@ -268,7 +247,7 @@ angular.module('dangerousGoods.controllers', [])
         for (var k = 0; k <  $scope.arr.length; k++) {
           if(condition_num==1){
             if($scope.arr[k].count==1)
-            $scope.result_list.push($scope.arr[k]);
+              $scope.result_list.push($scope.arr[k]);
           }else if(condition_num==2){
             if($scope.arr[k].count==2)
               $scope.result_list.push($scope.arr[k]);
@@ -278,32 +257,29 @@ angular.module('dangerousGoods.controllers', [])
           }
         }
         $scope.searchNote="----------找不到相应货物-----------";
-
-      }).error(function (data) {
-        defer.reject(data);
-      })
+      }, function (error) {
+        // error
+      });
     $scope.goToPropertyDetail = function (goodName,good_type) {
       $state.go('dangerousgoodsdetails',{goodName:goodName,goodType:good_type});//跳转到二级页面，传递参数goodName
     }
   })
 //危险货物数据库模糊搜索页面控制器
-  .controller('searchResultCtrl', function($scope,$state,$stateParams,$http,$q) {
-   console.log($stateParams.dangerSearchWord);
+  .controller('searchResultCtrl', function($scope,$state,$stateParams,$cordovaFile) {
+
     $scope.searchResult=[];
-    var defer = $q.defer();
-    $http({
-      method: 'get',
-      url: './templates/DBInfo.json'
-    }).success(function (data) {
-      var reg = new RegExp($stateParams.dangerSearchWord);
-      for(var i=0;i<data.DBInfo.length;i++){
-        if(data.DBInfo[i].ChineseName.match(reg)||data.DBInfo[i].basicInfo.EnglishName.match(reg))
-          $scope.searchResult.push(data.DBInfo[i].ChineseName);
-      }
-      $scope.searchNote="----------找不到相应货物-----------";
-    }).error(function (data) {
-      defer.reject(data);
-    })
+    $cordovaFile.readAsText(cordova.file.externalDataDirectory, "DBInfo.json")
+      .then(function (data_read) {
+        var data = angular.fromJson(data_read);//将读取的文件转成json格式
+        var reg = new RegExp($stateParams.dangerSearchWord);
+        for(var i=0;i<data.DBInfo.length;i++){
+          if(data.DBInfo[i].ChineseName.match(reg)||data.DBInfo[i].basicInfo.EnglishName.match(reg))
+            $scope.searchResult.push(data.DBInfo[i].ChineseName);
+        }
+        $scope.searchNote="----------找不到相应货物-----------";
+      }, function (error) {
+        // error
+      });
     $scope.goToDetail = function (goodName) {
       $state.go('dangerousgoodsdetails',{goodName:goodName});//跳转到二级页面，传递参数goodName
     }

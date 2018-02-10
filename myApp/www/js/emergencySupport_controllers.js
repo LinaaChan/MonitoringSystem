@@ -1,18 +1,16 @@
 angular.module('emergencySupport.controllers', [])
 /*应急处理装置模块控制器*/
-  .controller('allDangerGoodEmergencyCtrl', function($scope,$q,$http,$state) {
-    var defer = $q.defer();
-    $http({
-      method: 'get',
-      url: './templates/emergency.json'
-    }).success(function (data) {
-      defer.resolve(data);
-      $scope.data = data.Emergency.sort(function(a,b){
-        return a.capital.localeCompare(b.capital);
+  .controller('allDangerGoodEmergencyCtrl', function($scope,$cordovaFile,$state) {
+    $cordovaFile.readAsText(cordova.file.externalDataDirectory, "emergency.json")
+      .then(function (data_read) {
+        var data = angular.fromJson(data_read);//将读取的文件转成json格式
+        $scope.data = data.Emergency.sort(function(a,b){
+          return a.capital.localeCompare(b.capital);
+        });
+      }, function (error) {
+        // error
       });
-    }).error(function (data) {
-      defer.reject(data);
-    })
+
     $scope.goToDetail = function (goodName,type) {
       $state.go('emergencysupport_detail',{emergency_goodname:goodName,goodtype_emer:type});
     }
@@ -25,23 +23,21 @@ angular.module('emergencySupport.controllers', [])
       }
     }
   })
-  .controller('emergencySupportDetailCtrl', function($scope,$stateParams,$q,$http,$state) {
+  .controller('emergencySupportDetailCtrl', function($scope,$stateParams,$cordovaFile,$state) {
     $scope.goodName=$stateParams.emergency_goodname;
-    var defer = $q.defer();
-    $http({
-      method: 'get',
-      url: './templates/emergency.json'
-    }).success(function (data) {
-      defer.resolve(data);
-      for(var i=0;i<data.Emergency.length;i++){
-        //  $scope.result = jsonsql.query("select ChineseName from json.DBInfo where (ChineseName=='"+$stateParams.searchGood+"' || Unnum=='"+$stateParams.searchUN+"' || classification=='"+$stateParams.dangerGoodClass+"') order by ChineseName",data);
-        if(data.Emergency[i].ChineseName==$scope.goodName){
-          $scope.emergencyMethod = data.Emergency[i];
+    $cordovaFile.readAsText(cordova.file.externalDataDirectory, "emergency.json")
+      .then(function (data_read) {
+        var data = angular.fromJson(data_read);//将读取的文件转成json格式
+        for(var i=0;i<data.Emergency.length;i++){
+          //  $scope.result = jsonsql.query("select ChineseName from json.DBInfo where (ChineseName=='"+$stateParams.searchGood+"' || Unnum=='"+$stateParams.searchUN+"' || classification=='"+$stateParams.dangerGoodClass+"') order by ChineseName",data);
+          if(data.Emergency[i].ChineseName==$scope.goodName){
+            $scope.emergencyMethod = data.Emergency[i];
+          }
         }
-      }
-    }).error(function (data) {
-      defer.reject(data);
-    })
+      }, function (error) {
+        // error
+      });
+
     $scope.goToGood = function () {
       $state.go('dangerousgoodsdetails',{goodName:$stateParams.emergency_goodname,goodType:$stateParams.goodtype_emer})
     }
@@ -63,27 +59,23 @@ angular.module('emergencySupport.controllers', [])
     }
 
   })
- .controller('emergencySearchResultCtrl', function($scope,$state,$q,$http,$stateParams) {
+ .controller('emergencySearchResultCtrl', function($scope,$state,$cordovaFile,$stateParams) {
 
    $scope.searchResult=[];
-    console.log($stateParams.emergencySearchWord);
-    var defer = $q.defer();
-    $http({
-        method: 'get',
-        url: './templates/emergency.json'
-      }).success(function (data) {
-        defer.resolve(data);
-        var reg = new RegExp($stateParams.emergencySearchWord);
-        //循环需要查询的数组
-        for(var i=0;i<data.Emergency.length;i++){
-          if(data.Emergency[i].ChineseName.match(reg))
-            $scope.searchResult.push(data.Emergency[i].ChineseName);
-        }
-        $scope.searchNote="----------找不到相应货物-----------";
+   $cordovaFile.readAsText(cordova.file.externalDataDirectory, "emergency.json")
+     .then(function (data_read) {
+       var data = angular.fromJson(data_read);//将读取的文件转成json格式
+       var reg = new RegExp($stateParams.emergencySearchWord);
+       //循环需要查询的数组
+       for(var i=0;i<data.Emergency.length;i++){
+         if(data.Emergency[i].ChineseName.match(reg))
+           $scope.searchResult.push(data.Emergency[i].ChineseName);
+       }
+       $scope.searchNote="----------找不到相应货物-----------";
+     }, function (error) {
+       // error
+     });
 
-      }).error(function (data) {
-        defer.reject(data);
-    })
    $scope.goToDetail = function (goodName) {
      $state.go('emergencysupport_detail',{emergency_goodname:goodName});
    }

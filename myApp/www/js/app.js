@@ -3,78 +3,60 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('starter', ['ionic','starter.controllers','cargoship.controllers','dangerousGoods.controllers','emergencySupport.controllers','starter.services'])
+angular.module('starter', ['ionic','starter.controllers','cargoship.controllers','dangerousGoods.controllers','emergencySupport.controllers','starter.services','ngCordova'])
 
-.run(function($ionicPlatform,$ionicPopup,$location,$ionicHistory,$rootScope,logoutService,locals,$ionicPopup,$state) {
-  $ionicPlatform.ready(function() {
-    if(window.cordova && window.cordova.plugins.Keyboard) {
-      // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-      // for form inputs)
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+  .run(function($ionicPlatform,$ionicPopup,$location,$ionicHistory,$rootScope,logoutService,locals,$ionicPopup,$state,$ionicPopup,$cordovaNetwork,$http,$cordovaFileTransfer,Application) {
+    $ionicPlatform.ready(function() {
+      if(window.cordova && window.cordova.plugins.Keyboard) {
+        // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+        // for form inputs)
+        cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
 
-      // Don't remove this line unless you know what you are doing. It stops the viewport
-      // from snapping when text inputs are focused. Ionic handles this internally for
-      // a much nicer keyboard experience.
-      cordova.plugins.Keyboard.disableScroll(true);
-    }
-    if(window.StatusBar) {
-      StatusBar.styleDefault();
-    }
+        // Don't remove this line unless you know what you are doing. It stops the viewport
+        // from snapping when text inputs are focused. Ionic handles this internally for
+        // a much nicer keyboard experience.
+        cordova.plugins.Keyboard.disableScroll(true);
+      }
+      if(window.StatusBar) {
+        StatusBar.styleDefault();
+      }
+    });
 
-    //首次进入app，判断手机缓存中是否有记录，若有则自动登陆
-     /*   if(locals.get("password")!=locals.get("account"))
-        {
-          $state.go("loginPage");
-         /!* event.preventDefault();
-          $ionicPopup.alert({
-            title: "提示",
-            template: "请先登陆！",
-            okText:"知道了"
-          }).then(function(){
-            $state.go("loginPage");
-          })*!/}else{
-          $rootScope.username = locals.get("username");
-          $state.go("homepage");
-        }*/
-
-    /*  })*/
-  });
-
-  $ionicPlatform.registerBackButtonAction(function (e) {
-    function showConfirm() {
-      var confirmPopup = $ionicPopup.confirm({
-        title: '<strong>退出应用?</strong>',
-        template: '你确定要退出应用吗?',
-        okText: '退出',
-        cancelText: '取消'
-      });
-      confirmPopup.then(function (res) {
-        if (res) {
-          //退出APP的时候要和自行退出账号一样的效果，若不记住密码，则需重新登陆
-          if(locals.get("isPassword")==false||locals.get("isPassword")=="false"){
-            locals.set("password","");
-            locals.set("isPassword",false);
+    $ionicPlatform.registerBackButtonAction(function (e) {
+      function showConfirm() {
+        var confirmPopup = $ionicPopup.confirm({
+          title: '<strong>退出应用?</strong>',
+          template: '你确定要退出应用吗?',
+          okText: '退出',
+          cancelText: '取消'
+        });
+        confirmPopup.then(function (res) {
+          if (res) {
+            //退出APP的时候要和自行退出账号一样的效果，若不记住密码，则需重新登陆
+            if(locals.get("isPassword")==false||locals.get("isPassword")=="false"){
+              locals.set("password","");
+              locals.set("isPassword",false);
+            }
+            ionic.Platform.exitApp();
+          } else {
+            // Don't close
           }
-          ionic.Platform.exitApp();
-        } else {
-          // Don't close
-        }
-      });
-    }
-    //判断处于哪个页面时双击退出
-    if ($location.path() == '/homepage' ) {
-      showConfirm();
-    } else if ($ionicHistory.backView() ) {
-      $ionicHistory.goBack();
-    } else {
-      // This is the last page: Show confirmation popup
-      showConfirm();
-    }
-    e.preventDefault();
-    return false;
-  }, 101);
+        });
+      }
+      //判断处于哪个页面时双击退出
+      if ($location.path() == '/homepage' ) {
+        showConfirm();
+      } else if ($ionicHistory.backView() ) {
+        $ionicHistory.goBack();
+      } else {
+        // This is the last page: Show confirmation popup
+        showConfirm();
+      }
+      e.preventDefault();
+      return false;
+    }, 101);
 
-})
+  })
   .config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider) {
 
     // Ionic uses AngularUI Router which uses the concept of states
@@ -86,7 +68,7 @@ angular.module('starter', ['ionic','starter.controllers','cargoship.controllers'
 
     $stateProvider
 
-      // Each tab has its own nav history stack:
+    // Each tab has its own nav history stack:
       .state('homepage', {
         url: '/homepage',
         templateUrl: 'templates/homepage.html',
@@ -98,22 +80,22 @@ angular.module('starter', ['ionic','starter.controllers','cargoship.controllers'
         controller:'loginPageCtrl',
         cache:false
       })
-      .state('changePwd', {
+     /* .state('changePwd', {
         url: '/changePwd/:account',
         templateUrl: 'templates/changePwd.html',
         controller:'changePwdCtrl'
-      })
+      })*/
       /*由于没有分类暂时先去掉这个船舶种类的页面，html暂时不删除
       /*.state('cargoshipcheck', {
         url: '/cargoshipcheck/:keyword',
         templateUrl: 'templates/cargoship_check.html',
         controller: 'cargoshipCtrl'
       })*/
-     /* .state('cargoship_search', {
-        url: '/cargoship_search',
-        templateUrl: 'templates/cargoship_search.html',
-        controller: 'cargoshipSearchCtrl'
-      })*/
+      /* .state('cargoship_search', {
+         url: '/cargoship_search',
+         templateUrl: 'templates/cargoship_search.html',
+         controller: 'cargoshipSearchCtrl'
+       })*/
       .state('cargoship_searchresult', {
         url: '/cargoship_searchresult/:cargoSearchWord',
         templateUrl: 'templates/cargoship_searchresult.html',
@@ -185,27 +167,27 @@ angular.module('starter', ['ionic','starter.controllers','cargoship.controllers'
         templateUrl: 'templates/special_requirement.html',
         controller: 'specialRequirementCtrl'
       })
-   /*   .state('IBCIGC', {
-        url: '/IBCIGC/:goodNameIBCIGC',
-        templateUrl: 'templates/IBCIGCRequirement.html',
-        controller: 'IBCIGCCtrl'
-      })
-      .state('oilFence', {
-        url: '/oilFence/:goodNameoilFence',
-        templateUrl: 'templates/oilFence.html',
-        controller: 'oilFenceCtrl'
-      })*/
-    .state('classificationSearch', {
+      /*   .state('IBCIGC', {
+           url: '/IBCIGC/:goodNameIBCIGC',
+           templateUrl: 'templates/IBCIGCRequirement.html',
+           controller: 'IBCIGCCtrl'
+         })
+         .state('oilFence', {
+           url: '/oilFence/:goodNameoilFence',
+           templateUrl: 'templates/oilFence.html',
+           controller: 'oilFenceCtrl'
+         })*/
+      .state('classificationSearch', {
         url: '/classificationSearch',
         templateUrl: 'templates/classification_search.html',
         controller: 'classSearchCtrl'
       })
-   .state('searchResult', {
+      .state('searchResult', {
         url: '/searchResult/:searchGood/:searchUN/:dangerGoodClass',
         templateUrl: 'templates/search_result.html',
         controller: 'classSearchResultCtrl'
       })
-   .state('dangergoods_emergency', {
+      .state('dangergoods_emergency', {
         url: '/dangergoods_emergency',
         templateUrl: 'templates/dangerousgoods_emergency.html',
         controller:'dangerGoodEmergencyCtrl'

@@ -3,6 +3,7 @@
   "app_id": "",
   "type": "ionic1",
   "integrations": {
-    "cordova": {}
+    "cordova": {},
+    "gulp": {}
   }
 }
