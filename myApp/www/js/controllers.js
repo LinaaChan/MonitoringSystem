@@ -18,10 +18,10 @@ angular.module('starter.controllers', [])
     var downloadFirstVersion = function () {
       //如果应用首次打开
       var downloading = [
-        {url:"http://captliu.win/DBInfo.json",directory:cordova.file.externalDataDirectory+ "DBInfo.json"},
-        {url:"http://captliu.win/cargoship.json",directory:cordova.file.externalDataDirectory + "cargoship.json"},
-        {url:"http://captliu.win/emergency.json",directory:cordova.file.externalDataDirectory + "emergency.json"},
-        {url:"http://captliu.win/LoginInfo.json",directory:cordova.file.externalDataDirectory + "LoginInfo.json"}
+        {url:"http://47.96.21.222/data/DBInfo.json",directory:cordova.file.externalDataDirectory+ "DBInfo.json"},
+        {url:"http://47.96.21.222/data/cargoship.json",directory:cordova.file.externalDataDirectory + "cargoship.json"},
+        {url:"http://47.96.21.222/data/emergency.json",directory:cordova.file.externalDataDirectory + "emergency.json"},
+        {url:"http://47.96.21.222/data/LoginInfo.json",directory:cordova.file.externalDataDirectory + "LoginInfo.json"}
       ]
       if (Application.isInitialRun()) {
         if ($scope.networkState == "wifi" || $scope.networkState == "4g") {
@@ -61,7 +61,7 @@ angular.module('starter.controllers', [])
           $ionicLoading.show({
             template: '首次使用请先连接网络完成初始化！'
           });
-        //如何实施检测网络
+
           $rootScope.$on('$cordovaNetwork:online', function(event, networkState){
             $scope.networkState = networkState;
             console.log($scope.networkState);
@@ -75,7 +75,6 @@ angular.module('starter.controllers', [])
 
     function onDeviceReady() {
       $scope.networkState = $cordovaNetwork.getNetwork();
-
       downloadFirstVersion();
     }
 
@@ -128,13 +127,48 @@ angular.module('starter.controllers', [])
         });
       }
     }
+    //点击刷新按钮触发事件（若需自动更新，稍作修改即可）
     $scope.doRefersh = function () {
-
+      var networkState = $cordovaNetwork.getNetwork();
+      if (networkState == "wifi" || networkState == "4g") {
+        $http({
+          method:"get",    　　// 可以是get,post,put, delete,head,jsonp;常使用的是get,post
+          url:"http://47.96.21.222/data/verCheck.json", 　　  //请求路径
+        }).success(function(data){
+          var j =0;
+          var i;
+          $ionicLoading.show({
+            template: '正在更新文件信息...'
+          });
+           for(i=0;i<data.verCheck.length;i++){
+             $cordovaFile.readAsText(cordova.file.externalDataDirectory, data.verCheck[j].name+".json")
+               .then(function (success) {
+                 var data_json = angular.fromJson(success);//将读取的文件转成json格式
+                 //比较两个版本的时间戳
+                 if(parseInt(data_json.timestamp)<parseInt(data.verCheck[j].timestamp)){
+                   console.log("本地时间戳"+data_json.timestamp);
+                   console.log("服务器时间戳"+data.verCheck[j].timestamp);
+                   $cordovaFileTransfer.download(data.verCheck[j].url ,cordova.file.externalDataDirectory+data.verCheck[j].name+".json", {}, true)
+                     .then(function (success) {
+                       console.log("下载最新版本...");
+                     }, function (err) {
+                       alert("下载出现错误！");
+                     }, function (progress) {});
+                 }
+                 j++;
+               });
+           }
+        }).error(function(data){
+        }).then(function () {
+          $ionicLoading.hide();
+        })
+      }else{
+        alert("请先连接网络")
+      }
     }
 
   })
 
-  /*修改密码的功能目前暂不能实现*/
 
   //ng-repeat去除重复
   .filter('unique', function () {
@@ -151,11 +185,4 @@ angular.module('starter.controllers', [])
       return output;
     };
   })
-/*.directive('scrollHeight',function($window){
-  return{
-    restrict:'AE',
-    link:function(scope,element,attr){
-      element[0].style.height=($window.innerHeight-44-49-200)+'px';
-    }
-  }
-})*/
+
