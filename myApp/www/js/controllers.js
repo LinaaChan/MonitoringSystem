@@ -15,6 +15,7 @@ angular.module('starter.controllers', [])
 
   .controller('loginPageCtrl', function($scope,$state,$http,$q,$rootScope,locals,$cordovaFileTransfer,$cordovaFile,$timeout,Application,$cordovaNetwork,$ionicLoading) {
 
+
     var downloadFirstVersion = function () {
       //如果应用首次打开
       var downloading = [
@@ -127,46 +128,93 @@ angular.module('starter.controllers', [])
         });
       }
     }
-    //点击刷新按钮触发事件（若需自动更新，稍作修改即可）
     $scope.doRefersh = function () {
       var networkState = $cordovaNetwork.getNetwork();
       if (networkState == "wifi" || networkState == "4g") {
         $http({
-          method:"get",    　　// 可以是get,post,put, delete,head,jsonp;常使用的是get,post
-          url:"http://47.96.21.222/data/verCheck.json", 　　  //请求路径
-        }).success(function(data){
-          var j =0;
-          var i;
+          method: 'GET',
+          url: 'http://47.96.21.222/api/export/ver',
+          headers: {
+            'Content-Type': 'application/octet-stream',
+          }
+        }).then(function successCallback(response) {
+          // 请求成功执行代码
+          var data = response.data;
           $ionicLoading.show({
             template: '正在更新文件信息...'
           });
-           for(i=0;i<data.verCheck.length;i++){
-             $cordovaFile.readAsText(cordova.file.externalDataDirectory, data.verCheck[j].name+".json")
-               .then(function (success) {
-                 var data_json = angular.fromJson(success);//将读取的文件转成json格式
-                 //比较两个版本的时间戳
-                 if(parseInt(data_json.timestamp)<parseInt(data.verCheck[j].timestamp)){
-                   console.log("本地时间戳"+data_json.timestamp);
-                   console.log("服务器时间戳"+data.verCheck[j].timestamp);
-                   $cordovaFileTransfer.download(data.verCheck[j].url ,cordova.file.externalDataDirectory+data.verCheck[j].name+".json", {}, true)
-                     .then(function (success) {
-                       console.log("下载最新版本...");
-                     }, function (err) {
-                       alert("下载出现错误！");
-                     }, function (progress) {});
-                 }
-                 j++;
-               });
-           }
-        }).error(function(data){
+          console.log(data);
+          $cordovaFile.readAsText(cordova.file.externalDataDirectory, data.verCheck[0].name+".json").then(function (local_data0) {
+            console.log(data.verCheck[0].name+".json");
+            var local_json0 = angular.fromJson(local_data0);//将读取的文件转成json格式
+            console.log(local_json0);
+            if(parseInt(local_json0.timestamp)<parseInt(data.verCheck[0].timestamp)){
+              console.log(local_json0.timestamp);
+              console.log(data.verCheck[0].timestamp);
+              $cordovaFileTransfer.download(data.verCheck[0].url ,cordova.file.externalDataDirectory+data.verCheck[0].name+".json", {}, true)
+                .then(function (success) {
+                  console.log("下载最新版本...");
+                }, function (err) {
+                  alert("下载出现错误！");
+                }, function (progress) {});
+            }
+          });
+          $cordovaFile.readAsText(cordova.file.externalDataDirectory, data.verCheck[1].name+".json").then(function (local_data1) {
+            console.log(data.verCheck[1].name+".json");
+            var local_json1 = angular.fromJson(local_data1);//将读取的文件转成json格式
+            console.log(local_json1);
+            if(parseInt(local_json1.timestamp)<parseInt(data.verCheck[1].timestamp)){
+              console.log(local_json1.timestamp);
+              console.log(data.verCheck[1].timestamp);
+              $cordovaFileTransfer.download(data.verCheck[1].url ,cordova.file.externalDataDirectory+data.verCheck[1].name+".json", {}, true)
+                .then(function (success) {
+                  console.log("下载最新版本...");
+                }, function (err) {
+                  alert("下载出现错误！");
+                }, function (progress) {});
+            }
+          });
+          $cordovaFile.readAsText(cordova.file.externalDataDirectory, data.verCheck[2].name+".json").then(function (local_data2) {
+            console.log(data.verCheck[2].name+".json");
+            var local_json2 = angular.fromJson(local_data2);//将读取的文件转成json格式
+            console.log(local_json2);
+            if(parseInt(local_json2.timestamp)<parseInt(data.verCheck[2].timestamp)){
+              console.log(local_json2.timestamp);
+              console.log(data.verCheck[2].timestamp);
+              $cordovaFileTransfer.download(data.verCheck[2].url ,cordova.file.externalDataDirectory+data.verCheck[2].name+".json", {}, true)
+                .then(function (success) {
+                  console.log("下载最新版本...");
+                }, function (err) {
+                  alert("下载出现错误！");
+                }, function (progress) {});
+            }
+          });
+          $cordovaFile.readAsText(cordova.file.externalDataDirectory, data.verCheck[3].name+".json").then(function (local_data3) {
+            console.log(data.verCheck[3].name+".json");
+            var local_json3 = angular.fromJson(local_data3);//将读取的文件转成json格式
+            console.log(local_json3);
+            if(parseInt(local_json3.timestamp)<parseInt(data.verCheck[3].timestamp)){
+              console.log(local_json3.timestamp);
+              console.log(data.verCheck[3].timestamp);
+              $cordovaFileTransfer.download(data.verCheck[3].url ,cordova.file.externalDataDirectory+data.verCheck[3].name+".json", {}, true)
+                .then(function (success) {
+                  console.log("下载最新版本...");
+                }, function (err) {
+                  alert("下载出现错误！");
+                }, function (progress) {});
+            }
+          });
+
+        }, function errorCallback(data) {
+          console.log(data);
+          // 请求失败执行代码
         }).then(function () {
           $ionicLoading.hide();
-        })
+        });
       }else{
         alert("请先连接网络")
       }
     }
-
   })
 
 
