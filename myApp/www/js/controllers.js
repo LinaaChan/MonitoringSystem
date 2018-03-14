@@ -150,35 +150,76 @@ angular.module('starter.controllers', [])
           url: 'http://47.96.21.222/data/verCheck.json',
         }).then(function successCallback(success) {
           var data = success.data;
+
           $cordovaFile.readAsText(cordova.file.externalDataDirectory, data.verCheck[0].name+".json").then(function (local_data0) {
             var local_json0 = angular.fromJson(local_data0);//将读取的文件转成json格式
             $scope.updateInfo = [];
            //第一个文件
             if(local_json0.timestamp<data.verCheck[0].timestamp) {
-              $scope.updateInfo.push({'name':data.verCheck[0].name,'isUpdated':true,'url':data.verCheck[0].url,'checked':false,'disabled':false});
+              var chineseName0 = "";
+              if(data.verCheck[0].name=="dbInfo"){
+                chineseName0="危险货物数据库";
+              }else if(data.verCheck[0].name=="emergency"){
+                chineseName0="应急处置支持数据库";
+              }else if(data.verCheck[0].name=="loginInfo"){
+                chineseName0 = "用户数据库";
+              }else{
+                chineseName0 = "液货船作业检查数据库";
+              }
+              $scope.updateInfo.push({'name':data.verCheck[0].name,'isUpdated':true,'url':data.verCheck[0].url,'checked':false,'chineseName':chineseName0});
             }else{
-              $scope.updateInfo.push({'name':data.verCheck[0].name+".json",'isUpdated':false,'url':data.verCheck[2].url,'checked':false,'disabled':false});
+              $scope.updateInfo.push({'name':data.verCheck[0].name+".json",'isUpdated':false,'url':data.verCheck[2].url,'checked':true,'chineseName':chineseName0});
             }
             $cordovaFile.readAsText(cordova.file.externalDataDirectory, data.verCheck[1].name+".json").then(function (local_data1) {
               var local_json1 = angular.fromJson(local_data1);//将读取的文件转成json格式
               if(parseInt(local_json1.timestamp)<parseInt(data.verCheck[1].timestamp)) {
-                $scope.updateInfo.push({'name':data.verCheck[1].name,'isUpdated':true,'url':data.verCheck[1].url,'checked':false,'disabled':false});
+                var chineseName1 = "";
+                if(data.verCheck[1].name=="dbInfo"){
+                  chineseName1="危险货物数据库";
+                }else if(data.verCheck[1].name=="emergency"){
+                  chineseName1="应急处置支持数据库";
+                }else if(data.verCheck[1].name=="loginInfo"){
+                  chineseName1 = "用户数据库";
+                }else{
+                  chineseName1 = "液货船作业检查数据库";
+                }
+                $scope.updateInfo.push({'name':data.verCheck[1].name,'isUpdated':true,'url':data.verCheck[1].url,'checked':true,'chineseName':chineseName1});
               }else{
-                $scope.updateInfo.push({'name':data.verCheck[1].name+".json",'isUpdated':false,'url':data.verCheck[2].url,'checked':false,'disabled':false});
+                $scope.updateInfo.push({'name':data.verCheck[1].name+".json",'isUpdated':false,'url':data.verCheck[2].url,'checked':true,'chineseName':chineseName1});
               }
               $cordovaFile.readAsText(cordova.file.externalDataDirectory, data.verCheck[2].name+".json").then(function (local_data2) {
                 var local_json2 = angular.fromJson(local_data2);//将读取的文件转成json格式
                 if(parseInt(local_json2.timestamp)<parseInt(data.verCheck[2].timestamp)) {
-                  $scope.updateInfo.push({'name':data.verCheck[2].name,'isUpdated':true,'url':data.verCheck[2].url,'checked':false,'disabled':false});
+                  var chineseName2 = "";
+                  if(data.verCheck[2].name=="dbInfo"){
+                    chineseName2="危险货物数据库";
+                  }else if(data.verCheck[2].name=="emergency"){
+                    chineseName2="应急处置支持数据库";
+                  }else if(data.verCheck[2].name=="loginInfo"){
+                    chineseName2 = "用户数据库";
+                  }else{
+                    chineseName2 = "液货船作业检查数据库";
+                  }
+                  $scope.updateInfo.push({'name':data.verCheck[2].name,'isUpdated':true,'url':data.verCheck[2].url,'checked':true,'chineseName':chineseName2});
                 }else{
-                  $scope.updateInfo.push({'name':data.verCheck[2].name+".json",'isUpdated':false,'url':data.verCheck[2].url,'checked':false,'disabled':false});
+                  $scope.updateInfo.push({'name':data.verCheck[2].name+".json",'isUpdated':false,'url':data.verCheck[2].url,'checked':true,'chineseName':chineseName2});
                 }
                 $cordovaFile.readAsText(cordova.file.externalDataDirectory, data.verCheck[3].name+".json").then(function (local_data3) {
                   var local_json3 = angular.fromJson(local_data3);//将读取的文件转成json格式
                   if(parseInt(local_json3.timestamp)<parseInt(data.verCheck[3].timestamp)) {
-                    $scope.updateInfo.push({'name':data.verCheck[3].name,'isUpdated':true,'url':data.verCheck[3].url,'checked':false,'disabled':false});
+                    var chineseName3 = "";
+                    if(data.verCheck[3].name=="dbInfo"){
+                      chineseName3="危险货物数据库";
+                    }else if(data.verCheck[3].name=="emergency"){
+                      chineseName3="应急处置支持数据库";
+                    }else if(data.verCheck[3].name=="loginInfo"){
+                      chineseName3 = "用户数据库";
+                    }else{
+                      chineseName3 = "液货船作业检查数据库";
+                    }
+                    $scope.updateInfo.push({'name':data.verCheck[3].name,'isUpdated':true,'url':data.verCheck[3].url,'checked':true,'chineseName':chineseName3});
                   }else{
-                    $scope.updateInfo.push({'name':data.verCheck[3].name+".json",'isUpdated':false,'url':data.verCheck[2].url,'checked':false,'disabled':false});
+                    $scope.updateInfo.push({'name':data.verCheck[3].name+".json",'isUpdated':false,'url':data.verCheck[2].url,'checked':true,'chineseName':chineseName3});
                   }
                   console.log($scope.updateInfo);
                   if($scope.updateInfo[0].isUpdated==false&&$scope.updateInfo[1].isUpdated==false&&$scope.updateInfo[2].isUpdated==false&&$scope.updateInfo[3].isUpdated==false){
@@ -217,7 +258,7 @@ angular.module('starter.controllers', [])
     $scope.update = function () {
       var sum=0;
       for(var i=0;i<4;i++) {
-        if ($scope.updateInfo[i].checked == true) {
+        if ($scope.updateInfo[i].isUpdated == true) {
           sum += 100;  //总进度
         }
       }
@@ -226,11 +267,9 @@ angular.module('starter.controllers', [])
       $scope.downloadProgress1=0;
       $scope.downloadProgress2=0;
       $scope.downloadProgress3=0;
-        if ($scope.updateInfo[0].checked == false && $scope.updateInfo[1].checked == false && $scope.updateInfo[2].checked == false && $scope.updateInfo[3].checked == false) {
-          alert("请选择需要更新的文件");
-        }
+
         console.log($scope.updateInfo);
-        if ($scope.updateInfo[0].checked == true) {
+        if ($scope.updateInfo[0].isUpdated == true) {
           /// var loader0 = window.navigator.dialogsPlus.progressStart("正在更新"+$scope.updateInfo[0].name,"下载中...");
           $cordovaFileTransfer.download($scope.updateInfo[0].url, cordova.file.externalDataDirectory + $scope.updateInfo[0].name + "_temp.json", {}, true)
             .then(function (success_download) {
@@ -259,7 +298,7 @@ angular.module('starter.controllers', [])
               });
             })
         }
-        if ($scope.updateInfo[1].checked == true) {
+        if ($scope.updateInfo[1].isUpdated == true) {
           //  var loader1 = window.navigator.dialogsPlus.progressStart("正在更新"+$scope.updateInfo[1].name,"下载中...");
           $cordovaFileTransfer.download($scope.updateInfo[1].url, cordova.file.externalDataDirectory + $scope.updateInfo[1].name + "_temp.json", {}, true)
             .then(function (success_download) {
@@ -290,7 +329,7 @@ angular.module('starter.controllers', [])
             })
         }
 
-        if ($scope.updateInfo[2].checked == true) {
+        if ($scope.updateInfo[2].isUpdated == true) {
           //var loader2 = window.navigator.dialogsPlus.progressStart("正在更新"+$scope.updateInfo[2].name,"下载中...");
           $cordovaFileTransfer.download($scope.updateInfo[2].url, cordova.file.externalDataDirectory + $scope.updateInfo[2].name + "_temp.json", {}, true)
             .then(function (success_download) {
@@ -320,7 +359,7 @@ angular.module('starter.controllers', [])
               });
             })
         }
-        if ($scope.updateInfo[3].checked == true) {
+        if ($scope.updateInfo[3].isUpdated == true) {
           //  var loader3 = window.navigator.dialogsPlus.progressStart("正在更新"+$scope.updateInfo[3].name,"下载中...");
           $cordovaFileTransfer.download($scope.updateInfo[3].url, cordova.file.externalDataDirectory + $scope.updateInfo[3].name + "_temp.json", {}, true)
             .then(function (success_download) {

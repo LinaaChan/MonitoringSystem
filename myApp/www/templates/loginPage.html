@@ -37,7 +37,9 @@
         {{ item.text }}
       </ion-checkbox>
     </div>
-
+    <ion-checkbox style="border: none"  disabled="disabled">
+      {{ index.name }}
+    </ion-checkbox>
 
   </ion-content>
   <script id="my-modal.html" type="text/ng-template">
@@ -50,9 +52,10 @@
       <ion-content>
         <div class="list">
           <div class="item"  ng-repeat="index in updateInfo |filter:{isUpdated:true}">
-            <ion-checkbox style="border: none" ng-model="index.checked">
+         <!--   <ion-checkbox style="border: none" ng-model="index.checked" disabled="disabled">
               {{ index.name }}
-            </ion-checkbox>
+            </ion-checkbox>-->
+            <p>{{ index.chineseName }}</p>
              <progress style="height: 1px;color: #0c60ee" value={{index.downloadProgress}} max="100" ></progress>
           </div>
         </div>
