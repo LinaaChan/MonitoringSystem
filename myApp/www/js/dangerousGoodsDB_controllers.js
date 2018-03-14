@@ -8,7 +8,7 @@ angular.module('dangerousGoods.controllers', [])
     }
   })
   /*危险货物数据库控制器，模块一级界面2*/
-  .controller('allDangerGoodCtrl', function($scope,$http,$cordovaFile) {
+  .controller('allDangerGoodCtrl', function($scope,$http,$cordovaFile,$state) {
     $scope.input={'content':''}
     $cordovaFile.readAsText(cordova.file.externalDataDirectory, "DBInfo.json")
       .then(function (data) {

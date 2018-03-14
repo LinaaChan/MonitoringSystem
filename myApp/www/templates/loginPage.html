@@ -36,9 +36,28 @@
                     ng-checked="item.checked">
         {{ item.text }}
       </ion-checkbox>
-
-
+    </div>
 
 
   </ion-content>
+  <script id="my-modal.html" type="text/ng-template">
+    <div class="modal">
+      <ion-header-bar class="bar-positive">
+        <button class="button button-clear button-primary" ng-click="modal.hide()">关闭</button>
+        <h1 class="title">可更新文件</h1>
+        <button class="button button-clear button-primary" ng-click="update()" >更新</button>
+      </ion-header-bar>
+      <ion-content>
+        <div class="list">
+          <div class="item"  ng-repeat="index in updateInfo |filter:{isUpdated:true}">
+            <ion-checkbox style="border: none" ng-model="index.checked">
+              {{ index.name }}
+            </ion-checkbox>
+             <progress style="height: 1px;color: #0c60ee" value={{index.downloadProgress}} max="100" ></progress>
+          </div>
+        </div>
+
+      </ion-content>
+    </div>
+  </script>
 </ion-view>

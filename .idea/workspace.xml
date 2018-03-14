@@ -2,9 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="400c2b84-283a-474f-86e6-ba3661523832" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myApp/config.xml" afterPath="$PROJECT_DIR$/myApp/config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myApp/www/js/controllers.js" afterPath="$PROJECT_DIR$/myApp/www/js/controllers.js" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/myApp/config.xml" afterPath="$PROJECT_DIR$/myApp/config.xml" />
+      <change beforePath="$PROJECT_DIR$/myApp/package-lock.json" afterPath="$PROJECT_DIR$/myApp/package-lock.json" />
+      <change beforePath="$PROJECT_DIR$/myApp/package.json" afterPath="$PROJECT_DIR$/myApp/package.json" />
+      <change beforePath="$PROJECT_DIR$/myApp/www/css/style.css" afterPath="$PROJECT_DIR$/myApp/www/css/style.css" />
+      <change beforePath="$PROJECT_DIR$/myApp/www/index.html" afterPath="$PROJECT_DIR$/myApp/www/index.html" />
+      <change beforePath="$PROJECT_DIR$/myApp/www/js/controllers.js" afterPath="$PROJECT_DIR$/myApp/www/js/controllers.js" />
+      <change beforePath="$PROJECT_DIR$/myApp/www/js/dangerousGoodsDB_controllers.js" afterPath="$PROJECT_DIR$/myApp/www/js/dangerousGoodsDB_controllers.js" />
+      <change beforePath="$PROJECT_DIR$/myApp/www/js/services.js" afterPath="$PROJECT_DIR$/myApp/www/js/services.js" />
+      <change beforePath="$PROJECT_DIR$/myApp/www/templates/emergencysupport_details.html" afterPath="$PROJECT_DIR$/myApp/www/templates/emergencysupport_details.html" />
+      <change beforePath="$PROJECT_DIR$/myApp/www/templates/loginPage.html" afterPath="$PROJECT_DIR$/myApp/www/templates/loginPage.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,18 +29,28 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/myApp/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="1" column="6" lean-forward="false" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
+            <state relative-caret-position="650">
+              <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/myApp/config.xml">
+      <file leaf-file-name="loginPage.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/myApp/www/templates/loginPage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="12" column="36" lean-forward="true" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
+            <state relative-caret-position="1400">
+              <caret line="56" column="16" lean-forward="false" selection-start-line="56" selection-start-column="16" selection-end-line="56" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/myApp/www/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="850">
+              <caret line="34" column="1" lean-forward="false" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -41,8 +59,8 @@
       <file leaf-file-name="controllers.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/myApp/www/js/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="140" column="21" lean-forward="true" selection-start-line="140" selection-start-column="21" selection-end-line="140" selection-end-column="21" />
+            <state relative-caret-position="475">
+              <caret line="360" column="31" lean-forward="false" selection-start-line="360" selection-start-column="31" selection-end-line="360" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -59,7 +77,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>苯</find>
       <find>dangergood_result</find>
       <find>cla</find>
       <find>sea</find>
@@ -89,6 +106,7 @@
       <find>异戊二烯</find>
       <find>丙烷</find>
       <find>change</find>
+      <find>show</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -107,7 +125,6 @@
         <option value="$PROJECT_DIR$/myApp/www/templates/cargoship_searchresult.html" />
         <option value="$PROJECT_DIR$/myApp/www/templates/classification_search.html" />
         <option value="$PROJECT_DIR$/myApp/www/templates/emergency_search.html" />
-        <option value="$PROJECT_DIR$/myApp/www/templates/emergencysupport_details.html" />
         <option value="$PROJECT_DIR$/myApp/www/templates/equipment_requirement.html" />
         <option value="$PROJECT_DIR$/myApp/www/templates/IBCIGCRequirement.html" />
         <option value="$PROJECT_DIR$/myApp/www/templates/infrastructure_requirement.html" />
@@ -121,7 +138,6 @@
         <option value="$PROJECT_DIR$/myApp/www/templates/dangerousgoods_details.html" />
         <option value="$PROJECT_DIR$/myApp/www/templates/cargoRquirement.html" />
         <option value="$PROJECT_DIR$/myApp/www/templates/homepage.html" />
-        <option value="$PROJECT_DIR$/myApp/www/css/style.css" />
         <option value="$PROJECT_DIR$/myApp/www/templates/dangerousgoodsDB.html" />
         <option value="$PROJECT_DIR$/myApp/www/templates/dangerousgoods_emergency.html" />
         <option value="$PROJECT_DIR$/myApp/www/templates/alldangerousgoods_emergency.html" />
@@ -130,19 +146,22 @@
         <option value="$PROJECT_DIR$/myApp/www/templates/special_requirement.html" />
         <option value="$PROJECT_DIR$/myApp/www/templates/according_to_checktable.html" />
         <option value="$PROJECT_DIR$/myApp/www/templates/emergency.json" />
-        <option value="$PROJECT_DIR$/myApp/www/index.html" />
         <option value="$PROJECT_DIR$/myApp/www/templates/cargoship.json" />
-        <option value="$PROJECT_DIR$/myApp/www/js/services.js" />
         <option value="$PROJECT_DIR$/myApp/www/templates/loadingTemplate.html" />
         <option value="$PROJECT_DIR$/myApp/www/templates/DBInfo.json" />
         <option value="$PROJECT_DIR$/myApp/www/js/cargoshipCheck_controllers.js" />
-        <option value="$PROJECT_DIR$/myApp/www/js/dangerousGoodsDB_controllers.js" />
         <option value="$PROJECT_DIR$/myApp/www/js/app.js" />
         <option value="$PROJECT_DIR$/myApp/www/js/emergencySupport_controllers.js" />
         <option value="$PROJECT_DIR$/myApp/www/templates/alldangerousgoods.html" />
         <option value="$PROJECT_DIR$/myApp/www/templates/emergency_searchresult.html" />
-        <option value="$PROJECT_DIR$/myApp/www/templates/loginPage.html" />
         <option value="$PROJECT_DIR$/myApp/config.xml" />
+        <option value="$PROJECT_DIR$/myApp/www/js/dangerousGoodsDB_controllers.js" />
+        <option value="$PROJECT_DIR$/myApp/www/index.html" />
+        <option value="$PROJECT_DIR$/myApp/www/templates/isUpdatedTemp.html" />
+        <option value="$PROJECT_DIR$/myApp/www/templates/emergencysupport_details.html" />
+        <option value="$PROJECT_DIR$/myApp/www/js/services.js" />
+        <option value="$PROJECT_DIR$/myApp/www/css/style.css" />
+        <option value="$PROJECT_DIR$/myApp/www/templates/loginPage.html" />
         <option value="$PROJECT_DIR$/myApp/www/js/controllers.js" />
       </list>
     </option>
@@ -163,11 +182,11 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/myApp/node_modules" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="925" />
-    <option name="y" value="34" />
-    <option name="width" value="980" />
-    <option name="height" value="820" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1" />
+    <option name="y" value="1" />
+    <option name="width" value="1359" />
+    <option name="height" value="726" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -191,7 +210,9 @@
       </profile-state>
     </entry>
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -207,7 +228,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -237,6 +257,13 @@
               <item name="pro_official" type="462c0819:PsiDirectoryNode" />
               <item name="myApp" type="462c0819:PsiDirectoryNode" />
               <item name="www" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pro_official" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pro_official" type="462c0819:PsiDirectoryNode" />
+              <item name="myApp" type="462c0819:PsiDirectoryNode" />
+              <item name="www" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -251,26 +278,27 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="E:/ionic_filedownload" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
-    <property name="nodejs_interpreter_path" value="D:/Program Files (x86)/nodejs/node" />
+    <property name="nodejs_interpreter_path" value="node" />
     <property name="node.js.path.for.package.jscs" value="project" />
     <property name="node.js.detected.package.jscs" value="true" />
     <property name="node.js.selected.package.jscs" value="E:\pro\Baidu-FE-Code-Style" />
-    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
     <property name="SearchEverywhereHistoryKey" value="packa&#9;FILE&#9;file://E:/pro_official/myApp/package.json&#10;pack&#9;FILE&#9;file://E:/pro_official/myApp/plugins/cordova-plugin-device/package.json&#10;pa&#9;FILE&#9;file://E:/pro_official/myApp/package.json&#10;AndroidManifest.xml&#9;FILE&#9;file://E:/pro_official/myApp/node_modules/cordova-android/framework/AndroidManifest.xml" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\pro_official\myApp\www\templates" />
       <recent name="E:\pro_official\myApp\www\templates" />
       <recent name="E:\pro_official\myApp\www\lib\ionic\js" />
       <recent name="E:\pro_official\myApp\www\templates\imgs" />
       <recent name="E:\pro_official\myApp\www\css" />
-      <recent name="E:\pro_official\myApp\www\js" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -349,17 +377,28 @@
       <workItem from="1520385336754" duration="1408000" />
       <workItem from="1520400448002" duration="13000" />
       <workItem from="1520400473147" duration="11966000" />
+      <workItem from="1520493323463" duration="22671000" />
+      <workItem from="1520587770803" duration="1127000" />
+      <workItem from="1520605621615" duration="5046000" />
+      <workItem from="1520842126591" duration="4137000" />
+      <workItem from="1520847940483" duration="6362000" />
+      <workItem from="1520857287072" duration="1955000" />
+      <workItem from="1520860719220" duration="1302000" />
+      <workItem from="1520952800114" duration="790000" />
+      <workItem from="1521002723851" duration="7383000" />
+      <workItem from="1521018126586" duration="1543000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="150744000" />
+    <option name="totallyTimeSpent" value="203060000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <frame x="1" y="1" width="1359" height="726" extended-state="0" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.265625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2650782" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289183" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -389,48 +428,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/myApp/www/templates/cargoship_search.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="3" column="90" lean-forward="false" selection-start-line="3" selection-start-column="90" selection-end-line="3" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myApp/www/templates/cargoship_searchresult.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="3" column="90" lean-forward="false" selection-start-line="3" selection-start-column="90" selection-end-line="3" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myApp/www/templates/changePwd.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myApp/www/templates/emergency_search.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="3" column="90" lean-forward="false" selection-start-line="3" selection-start-column="90" selection-end-line="3" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myApp/www/templates/oilFence.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="3" column="90" lean-forward="false" selection-start-line="3" selection-start-column="90" selection-end-line="3" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myApp/www/templates/infrastructure_requirement.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="3" column="90" lean-forward="false" selection-start-line="3" selection-start-column="90" selection-end-line="3" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/myApp/www/templates/IBCIGCRequirement.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -463,13 +460,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-810">
           <caret line="3" column="90" lean-forward="false" selection-start-line="3" selection-start-column="90" selection-end-line="3" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myApp/www/templates/emergencysupport_details.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="547">
-          <caret line="43" column="69" lean-forward="false" selection-start-line="43" selection-start-column="69" selection-end-line="43" selection-end-column="69" />
         </state>
       </provider>
     </entry>
@@ -543,24 +533,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myApp/www/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/myApp/www/templates/according_to_checktable.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="6" column="6" lean-forward="false" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myApp/www/lib/ionic/js/ng-cordova.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -604,13 +580,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myApp/www/js/services.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="718">
-          <caret line="151" column="0" lean-forward="true" selection-start-line="151" selection-start-column="0" selection-end-line="151" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/myApp/www/templates/dangerousgoodsDB.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -618,38 +587,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myApp/www/templates/alldangerousgoods.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="17" column="41" lean-forward="false" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/myApp/www/templates/emergency_searchresult.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="17" column="11" lean-forward="true" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myApp/www/js/emergencySupport_controllers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="72" column="8" lean-forward="false" selection-start-line="72" selection-start-column="8" selection-end-line="72" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myApp/www/js/dangerousGoodsDB_controllers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="19" column="16" lean-forward="false" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/myApp/www/templates/loginPage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="26" column="73" lean-forward="false" selection-start-line="26" selection-start-column="73" selection-end-line="26" selection-end-column="73" />
         </state>
       </provider>
     </entry>
@@ -692,7 +633,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myApp/www/js/dangerousGoodsDB_controllers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="60" column="31" lean-forward="true" selection-start-line="60" selection-start-column="31" selection-end-line="60" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -704,18 +651,105 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/myApp/www/js/emergencySupport_controllers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="66" column="62" lean-forward="true" selection-start-line="66" selection-start-column="6" selection-end-line="66" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myApp/www/templates/alldangerousgoods.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="17" column="41" lean-forward="false" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myApp/www/lib/ionic/js/ionic.bundle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="35877" column="40" lean-forward="false" selection-start-line="35877" selection-start-column="36" selection-end-line="35877" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myApp/www/lib/ionic/js/ionic-angular.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-20518">
+          <caret line="2279" column="94" lean-forward="true" selection-start-line="2279" selection-start-column="94" selection-end-line="2279" selection-end-column="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myApp/www/templates/isUpdatedTemp.html" />
+    <entry file="file://$PROJECT_DIR$/myApp/www/templates/emergencysupport_details.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="34" column="19" lean-forward="false" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myApp/plugins/cordova-dialogsPlus/www/ios/dialogsPlus.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1101">
+          <caret line="58" column="33" lean-forward="true" selection-start-line="58" selection-start-column="33" selection-end-line="58" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myApp/plugins/cordova-dialogsPlus/www/android/dialogsPlus.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-99">
+          <caret line="31" column="4" lean-forward="false" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myApp/www/js/services.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="153" column="15" lean-forward="true" selection-start-line="153" selection-start-column="15" selection-end-line="153" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myApp/node_modules/cordova-dialogsPlus/www/android/dialogsPlus.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="31" column="4" lean-forward="false" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myApp/www/lib/ionic/js/ng-cordova.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6751">
+          <caret line="2237" column="39" lean-forward="false" selection-start-line="2237" selection-start-column="39" selection-end-line="2237" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/myApp/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="1" column="6" lean-forward="false" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
+        <state relative-caret-position="650">
+          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myApp/www/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="850">
+          <caret line="34" column="1" lean-forward="false" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myApp/www/templates/loginPage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1400">
+          <caret line="56" column="16" lean-forward="false" selection-start-line="56" selection-start-column="16" selection-end-line="56" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/myApp/www/js/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="140" column="21" lean-forward="true" selection-start-line="140" selection-start-column="21" selection-end-line="140" selection-end-column="21" />
+        <state relative-caret-position="475">
+          <caret line="360" column="31" lean-forward="false" selection-start-line="360" selection-start-column="31" selection-end-line="360" selection-end-column="31" />
           <folding />
         </state>
       </provider>

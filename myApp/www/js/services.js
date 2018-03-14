@@ -148,4 +148,11 @@ angular.module('starter.services', ['ngCordova'])
           });
       }
     };
+
   }])
+  // .factory('', ['$http',function ($http) {
+  //   return {
+  //
+  //   }
+  //
+  // }])

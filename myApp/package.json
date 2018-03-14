@@ -10,9 +10,12 @@
     },
     "dependencies": {
         "cordova-android": "^7.0.0",
+        "cordova-dialogsPlus": "git+https://github.com/laden666666/cordovaDialogsPlus.git",
+        "cordova-plugin-camera": "^4.0.2",
         "cordova-plugin-device": "^1.1.4",
         "cordova-plugin-file": "^5.0.0",
         "cordova-plugin-file-transfer": "^1.7.0",
+        "cordova-plugin-filepath": "^1.2.0",
         "cordova-plugin-network-information": "^2.0.1",
         "cordova-plugin-splashscreen": "^4.0.3",
         "cordova-plugin-statusbar": "^2.2.1",
@@ -27,7 +30,8 @@
             "ionic-plugin-keyboard": {},
             "cordova-plugin-network-information": {},
             "cordova-plugin-file-transfer": {},
-            "cordova-plugin-whitelist": {}
+            "cordova-plugin-whitelist": {},
+            "cordova-dialogsPlus": {}
         },
         "platforms": [
             "android"
